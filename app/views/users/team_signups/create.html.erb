@@ -1,0 +1,38 @@
+<% content_for :custom_layout do %>
+  <div class="cards-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="card card-content">
+            <h2>
+              <%= @team_signup.team.capitalized_name %>
+            </h2>
+
+            Choose a password to create your account.
+            <br/><br/>
+
+            <%= simple_form_for @team_signup, url: user_team_signups_path(signup_url_path: @team_signup.team.signup_url_path) do |f| %>
+              <%= f.simple_fields_for @team_signup.user do |ff| %>
+                <%= ff.input :email, as: 'hidden' %>
+                <%= ff.input :password, label: 'Password&nbsp;&nbsp;<i class="fa fa-question-circle" id="paswd" rel="tooltip" title="Password min length should be 6 characters" ></i>'.html_safe %>
+                <%= ff.input :password_confirmation, label: "Confirm Password", required: true %>
+              <% end %>
+              <fieldset>
+                <div class="checkbox checkbox-lg">
+                  <label>
+                    <input class="boolean required" type="checkbox" value="1" name="user_team_signup[accept_team_of_service_and_privacy_policy]" id="user_team_signup_accept_team_of_service_and_privacy_policy">
+                    <%= I18n.t("accept_terms_of_service.label").html_safe %>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Join #{@team_signup.team.capitalized_name} ", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

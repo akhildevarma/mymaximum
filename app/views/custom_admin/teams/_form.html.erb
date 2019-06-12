@@ -1,0 +1,52 @@
+<% update_team = @team.persisted? %>
+<% @url = update_team ? custom_admin_team_path(@team) : custom_admin_teams_path %>
+<%= simple_form_for @team, multipart: true, url: @url, html: { class: 'form-horizontal' } do |form| -%>
+  <%= form.input :name, required: true -%>
+  <% unless update_team %>
+    <%= form.hidden_field :active, value: true -%>
+  <% else %>
+    <%= form.input :active, as: :boolean -%>
+  <% end %>
+  <%= form.input :admin_email,  label:'Admin Email',required: true -%>
+  <%= form.input :email_domain,label:'Email Domain' ,required: true -%>
+  <%= form.input :signup_url_path, label:'SignUp URL Path',required: true -%>
+  <%= form.input :cmo_name, label:'CMO Full Name'-%>
+  <%= form.input :cmo_email, label:'CMO Email'-%>
+  <%= form.input :cmo_phone, label:'CMO Phone' -%>
+  <%= form.input :private_label, as: :boolean -%>
+  <%= form.input :logo, as: :file ,label:'Logo'%>
+  <div class="form-group">
+  <label class="Launch Date required" for="Launch Date">* Launch Date</label>
+  <%= form.date_field :launch_date, label: 'Launch Date', required: true, class: 'form-control' %>
+  </div>
+  <% if @team.logo.exists? %>
+    <div>
+      crop:<br/>
+      <div>
+        <%= image_tag @team.logo.url(:original), id: 'logo-cropper' %>
+      </div>
+      <div id="cropping-attributes" data-store="<%= @team.cropping_attributes %>">
+      <% @team.cropping_attributes.each do |attr| %>
+        <%= form.hidden_field attr, id: "#{attr}" %>
+      <% end %>
+    </div>
+    <div>
+      original: <%= image_tag @team.logo.url(:original) %>
+    </div>
+    <div>
+      medium: <%= image_tag @team.logo.url(:medium) %>
+    </div>
+    <div>
+      square: <%= image_tag @team.logo.url(:small) %>
+    </div>
+    <div>
+      thumb: <%= image_tag @team.logo.url(:thumb) %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-4">
+      <%= form.submit class: 'btn btn-primary' -%>
+    </div>
+  </div>
+<%- end -%>

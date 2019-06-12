@@ -1,0 +1,33 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {"type": "integer"},
+      "submitter_id": {"type": "integer"},
+      "assignee_id": {"type": ["integer", "null"]},
+      "question": {"type": "string"},
+      "status": {"type": "string"},
+      "turnaround_time": {"type": "string"},
+      "intervention_response": {"type": "boolean"},
+      "custom_response_text": {"type": ["string", "null"]},
+      "received_at": { "type" : "integer" },
+      "created_at": { "type" : "integer" },
+      "updated_at": { "type" : "integer" }
+    },
+    "required": [
+      "id",
+      "submitter_id",
+      "assignee_id",
+      "question",
+      "status",
+      "turnaround_time",
+      "intervention_response",
+      "custom_response_text",
+      "received_at",
+      "created_at",
+      "updated_at"
+    ]
+  },
+  "uniqueItems": true
+}

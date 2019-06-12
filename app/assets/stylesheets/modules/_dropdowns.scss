@@ -1,0 +1,153 @@
+.dropdown-menu.extended {
+  @include border-radius(4px);
+  @include box-shadow(0 2px 5px, rgba(0, 0, 0, 0.176) !important);
+  max-width: 300px !important;
+  min-width: 160px !important;
+  top: 42px;
+  width: 235px !important;
+  padding: 0;
+  border: none !important;
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @include box-shadow(0 2px 8px, rgba(0, 0, 0, 0.176) !important);
+  }
+
+  &.logout > li {
+    float: left;
+    text-align: center;
+    width: 33.3%;
+
+    &:last-child {
+      @include border-radius(0 0 3px 3px);
+      float: left;
+      text-align: center;
+      width: 100%;
+      background-color: $limeGreen;
+
+      & > a, & > a:hover {
+        color: $white;
+        border-bottom: none !important;
+        text-transform: uppercase;
+
+        & > i {
+          color: $white;
+        }
+      }
+    }
+
+    & > a {
+      color: $dropdownLogout_anchor;
+      border-bottom: none !important;
+
+      &:hover {
+        background: none !important;
+
+        i {
+          color: $dropdownLogout_anchorHover;
+        }
+      }
+
+      i {
+        font-size: 17px;
+      }
+
+      & > i {
+        display: block;
+      }
+    }
+  }
+
+  li {
+    p {
+      @include border-radius(4px 4px 0px 0px);
+      background-color: $veryLightGrey;
+      color: $grey;
+      margin: 0;
+      padding: 10px;
+
+      &.green {
+        background-color: $green;
+        color: $white;
+      }
+
+      &.yellow {
+        background-color: $yellow;
+        color: $white;
+      }
+    }
+
+    a {
+      border-bottom: 1px solid $dropdown_anchorBorder !important;
+      font-size: 12px;
+      list-style: none;
+      padding: 15px 10px !important;
+      width: 100%;
+      display: inline-block;
+
+      &:hover {
+        background-color: $dropdown_anchorHoverBackground !important;
+        color: $dropdown_anchorHoverColor;
+      }
+    }
+  }
+
+  .progress {
+    margin-bottom: 0 !important;
+    height: 10px;
+  }
+}
+
+.full-width .dropdown-menu.extended.logout > li > a:hover {
+  background: none !important;
+  color: $dropdownLogout_anchorHover !important;
+}
+
+.dropdown-menu.tasks-bar {
+  .task-info {
+    .desc {
+      font-size: 13px;
+      font-weight: normal;
+    }
+
+    .percent {
+      display: inline-block;
+      float: right;
+      font-size: 13px;
+      font-weight: 600;
+      padding-left: 10px;
+      margin-top: -4px;
+    }
+  }
+}
+
+.dropdown-menu.inbox li a {
+  .photo img {
+    border-radius: 2px 2px 2px 2px;
+    float: left;
+    height: 40px;
+    margin-right: 4px;
+    width: 40px;
+  }
+
+  .subject {
+    display: block;
+
+    .from {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .time {
+      font-size: 11px;
+      font-style: italic;
+      font-weight: bold;
+      position: absolute;
+      right: 5px;
+    }
+  }
+
+  .message {
+    display: block !important;
+    font-size: 11px;
+  }
+}

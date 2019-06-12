@@ -1,0 +1,24 @@
+.well {
+  &.green {
+    background-color: #48cfad;
+    color: #fff;
+    border: none;
+  }
+
+  &.well-small {
+    padding: 13px;
+    width: auto;
+  }
+}
+
+.invoice-body {
+  padding: 30px;
+
+  h1 {
+    font-weight: 900;
+  }
+
+  h4 {
+    margin-left: 0px;
+  }
+}

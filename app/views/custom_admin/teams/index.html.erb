@@ -1,0 +1,44 @@
+<h3>
+  Teams
+
+  <div class="pull-right">
+    <%= link_to I18n.t('teams.new'), new_custom_admin_team_path, class: 'btn btn-primary' -%>
+  </div>
+</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>CMO Name</th>
+      <th>CMO Email</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @teams.each do |team| -%>
+    <tr id="<%= dom_id(team) -%>">
+      <td>
+        <%= team.name -%>
+      </td>
+       <td>
+        <%= team.cmo_name -%>
+      </td>
+      <td>
+        <%= team.cmo_email -%>
+      </td>
+       <td>
+        <%= human_boolean(team.active) -%>
+      </td>
+      <td>
+        <%= link_to 'View', custom_admin_team_path(team), class: 'btn btn-info' -%>
+      </td>
+      <td>
+        <%= link_to 'Members', members_custom_admin_team_path(team), class: 'btn btn-info' -%>
+      </td>
+    </tr>
+    <%- end -%>
+  </tbody>
+</table>

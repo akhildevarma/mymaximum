@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://AC84bb81104231ee1a78a4f7abee3d37b3:ccd10c51a8df6a0c64f9ee163a5d2899@api.twilio.com/2010-04-01/Accounts/AC84bb81104231ee1a78a4f7abee3d37b3/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B16789740432&To=%2B14049358575&Body=Thank+you+for+your+first+inquiry+to+InpharmD%21+We+would+appreciate+your+help+in+shaping+the+direction+of+this+service.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 21 Oct 2013 19:37:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '606'
+      Connection:
+      - close
+      Etag:
+      - ''
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"sid":"SM7c87711645e9110cf189b18a495b7dd7","date_created":"Mon, 21
+        Oct 2013 19:37:30 +0000","date_updated":"Mon, 21 Oct 2013 19:37:30 +0000","date_sent":null,"account_sid":"AC84bb81104231ee1a78a4f7abee3d37b3","to":"+14049358575","from":"+16789740432","body":"Thank
+        you for your first inquiry to InpharmD! We would appreciate your help in shaping
+        the direction of this service.","status":"queued","direction":"outbound-api","api_version":"2010-04-01","price":null,"price_unit":"USD","uri":"\/2010-04-01\/Accounts\/AC84bb81104231ee1a78a4f7abee3d37b3\/SMS\/Messages\/SM7c87711645e9110cf189b18a495b7dd7.json"}'
+    http_version: 
+  recorded_at: Mon, 21 Oct 2013 19:37:22 GMT
+- request:
+    method: post
+    uri: https://AC84bb81104231ee1a78a4f7abee3d37b3:ccd10c51a8df6a0c64f9ee163a5d2899@api.twilio.com/2010-04-01/Accounts/AC84bb81104231ee1a78a4f7abee3d37b3/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B16789740432&To=%2B14049358575&Body=Please+take+a+few+minutes+to+provide+your+feedback+via+a+3+question+survey+sent+via+text.+To+begin%2C+simply+reply+to+this+message%2C+or+opt+out+by+replying+STOP.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 21 Oct 2013 19:37:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '647'
+      Connection:
+      - close
+      Etag:
+      - ''
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"sid":"SMa3936d3812ae5e52110811dc19cf98ff","date_created":"Mon, 21
+        Oct 2013 19:37:31 +0000","date_updated":"Mon, 21 Oct 2013 19:37:31 +0000","date_sent":null,"account_sid":"AC84bb81104231ee1a78a4f7abee3d37b3","to":"+14049358575","from":"+16789740432","body":"Please
+        take a few minutes to provide your feedback via a 3 question survey sent via
+        text. To begin, simply reply to this message, or opt out by replying STOP.","status":"queued","direction":"outbound-api","api_version":"2010-04-01","price":null,"price_unit":"USD","uri":"\/2010-04-01\/Accounts\/AC84bb81104231ee1a78a4f7abee3d37b3\/SMS\/Messages\/SMa3936d3812ae5e52110811dc19cf98ff.json"}'
+    http_version: 
+  recorded_at: Mon, 21 Oct 2013 19:37:23 GMT
+- request:
+    method: post
+    uri: https://AC9eb5b3a067dc8a423c3aa4485a0b3236:86e9f3c1b6e97a389331c50c120684b5@api.twilio.com/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B17706505604&Body=Thank+you+for+your+first+inquiry+to+InpharmD%21+We+would+appreciate+your+help+in+shaping+the+direction+of+this+service.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 15 Nov 2013 22:35:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '625'
+      Connection:
+      - close
+      Etag:
+      - ''
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"sid":"SMf6d7c38b1534fa7214d3a93941464e7a","date_created":"Fri, 15
+        Nov 2013 22:35:39 +0000","date_updated":"Fri, 15 Nov 2013 22:35:39 +0000","date_sent":null,"account_sid":"AC9eb5b3a067dc8a423c3aa4485a0b3236","to":"+17706505604","from":"+15005550006","body":"Thank
+        you for your first inquiry to InpharmD! We would appreciate your help in shaping
+        the direction of this service.","status":"queued","direction":"outbound-api","api_version":"2010-04-01","price":null,"price_unit":"USD","uri":"\/2010-04-01\/Accounts\/AC9eb5b3a067dc8a423c3aa4485a0b3236\/SMS\/Messages\/SMf6d7c38b1534fa7214d3a93941464e7a.json","num_segments":"1"}'
+    http_version: 
+  recorded_at: Fri, 15 Nov 2013 22:35:41 GMT
+- request:
+    method: post
+    uri: https://AC9eb5b3a067dc8a423c3aa4485a0b3236:86e9f3c1b6e97a389331c50c120684b5@api.twilio.com/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B17706505604&Body=Please+take+a+few+minutes+to+provide+your+feedback+via+a+3+question+survey+sent+via+text.+To+begin%2C+simply+reply+to+this+message%2C+or+opt+out+by+replying+STOP.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 15 Nov 2013 22:35:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '666'
+      Connection:
+      - close
+      Etag:
+      - ''
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+    body:
+      encoding: UTF-8
+      string: '{"sid":"SM868fee9cf99483cc84e0d1fafd01a19a","date_created":"Fri, 15
+        Nov 2013 22:35:40 +0000","date_updated":"Fri, 15 Nov 2013 22:35:40 +0000","date_sent":null,"account_sid":"AC9eb5b3a067dc8a423c3aa4485a0b3236","to":"+17706505604","from":"+15005550006","body":"Please
+        take a few minutes to provide your feedback via a 3 question survey sent via
+        text. To begin, simply reply to this message, or opt out by replying STOP.","status":"queued","direction":"outbound-api","api_version":"2010-04-01","price":null,"price_unit":"USD","uri":"\/2010-04-01\/Accounts\/AC9eb5b3a067dc8a423c3aa4485a0b3236\/SMS\/Messages\/SM868fee9cf99483cc84e0d1fafd01a19a.json","num_segments":"1"}'
+    http_version: 
+  recorded_at: Fri, 15 Nov 2013 22:35:42 GMT
+recorded_with: VCR 2.5.0

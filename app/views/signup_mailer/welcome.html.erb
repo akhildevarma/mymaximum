@@ -1,0 +1,35 @@
+<div style="width:600px" width="600">
+  <div style="margin:15px;">
+    <% if @name %>
+      <p>
+        Hi <%= @name -%>,
+      </p>
+    <% end %>
+<p>
+   Welcome to InpharmD™! We built this technology to connect you to a network of academic Drug Information Centers, which can offer you comprehensive, customized literature searches of 20,000 + journals.
+    </p>
+  <p>
+  We're always striving to be better, and we love hearing from you, so let us know if you have any questions, feedback, or ideas; if so, simply reply to this email. Or, let's chat over coffee; just click <a href='https://calendly.com/aaadvani'>here</a> to set up our meeting.
+  </p>
+   <p>
+     We hope you enjoy being a part of the InpharmD™ community, and that using our service makes you a more informed 
+      <%= @is_provider ? 'clinician' : 'patient' -%>.
+    </p>
+    <p>
+      All the best,
+    </p>
+    Ashish Advani, PharmD
+    <br/>
+    Founder, InpharmD™
+    <br/>
+    <br/>
+    <%= image_tag 'logo.png', alt: 'InpharmD: Tailored, On Demand, Digital Drug Information', width:"350", height:"140" -%>
+
+    <br/>
+    <hr/>
+    <p>
+      To ensure that you receive messages from InpharmD™ in the future, please add
+      <span style="white-space:nowrap;">no-reply@inpharmd.com</span> to your address book.
+    </p>
+  </div>
+</div>

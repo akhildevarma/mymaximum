@@ -1,0 +1,70 @@
+<table>
+  <tr>
+    <td>
+<div style='width: 100%;height: 100%; margin: auto;padding: 10px;'>
+    <div id="one" style='width: 100%; height: 100%;'>
+      <% if @user.full_name.present? %>
+        <p style=" margin:10px; word-wrap: break-word;">
+          <%="Dear #{@user.full_name},"%>
+        </p>
+      <% end %>
+    <p style=" margin:10px; word-wrap: break-word;">
+    As a <%=@team_name%> provider, you have access to InpharmD™, a website and app that allows you to ask any question, anytime, on campus or off, and receive an up to date/real time, customized summary of the available published literature. <p>
+<p style=" margin:10px; word-wrap: break-word;">We just activated your account and hope that this helps you deliver World Class Healthcare.</p>
+    </div>
+</div>
+</td>
+</tr>
+<tr>
+  <td>
+
+<div style='width: 100%;height: 100%; margin: 0;'>
+    <div id="two" style='width: 100%; height:100%;'>
+      <div class="block" style="margin:20px;margin-bottom:10px;background: lightgray none repeat scroll 0 0; width: 230px;">
+    <ul class='team-box' style="margin: 0;margin-top:15px; margin-left:15px; padding: 0;list-style: none; display: block;">
+    <li class='heading' style="padding: 15px 5px; position: relative;font-size: 16px;"><b>My account</b></li>
+    <li style="padding: 5px; position: relative;">
+      <div><b>Username</b>
+        <p style=" margin:0; word-wrap: break-word;"><%=@user.email%></p>
+      </div>
+    </li>  
+    <li style="padding: 5px; position: relative;"><div><b>Membership date</b>
+      <p style=" margin:0; word-wrap: break-word;"><%= format_date(@user.created_at) %></p></div>
+     </li>
+    <li style="padding: 5px; position: relative;">
+      <div>
+        <b>Inquiry count</b>
+        <p style=" margin:0; word-wrap: break-word;"><%=@user.submitted_inquiries.size%></p>
+      </div>
+    </li>
+     <li style="padding: 5px; position: relative;"><p><%= link_to @url ,style: 'color: black;font-weight:bold;' do %>Pick my password and begin.<% end %></p></li>
+    </ul> <br>
+  </div>
+    </div>
+</div>
+</td>
+</tr>
+<tr>
+  <td>
+    <div style='width: 100%;height: 100%; margin: auto;padding: 20px;'>
+    <div id="two" style='width: 100%; height:100%;'>
+        <p style=" margin:1px; word-wrap: break-word;">Sincerely,</p>
+        <% if  @team && @team.cmo_name %>
+        <p style=" margin:1px; word-wrap: break-word;"><%=@team.cmo_name %></p>
+        <p style=" margin:1px; word-wrap: break-word;"><%= @team.cmo_email %></p>
+        <p style=" margin:1px; word-wrap: break-word;"><%= @team.cmo_phone %></p>
+        <% else %>
+        <p style=" margin:1px; word-wrap: break-word;"><%= @team_admin_name %></p>
+        <p style=" margin:1px; word-wrap: break-word;">
+          Ashish Advani, PharmD </p>
+         <% end %> 
+      </div>
+    </div>
+  </td>
+  </tr>
+</table>
+
+<!-- <div class="container" style="height: 100%;width: 100%;background: #EEE; margin:10px;">
+  
+</div> -->
+

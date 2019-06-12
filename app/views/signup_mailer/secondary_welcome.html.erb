@@ -1,0 +1,59 @@
+<div style="width:600px" width="600">
+  <div style="margin:15px;">
+    <% if @name %>
+      <p>
+        Hi <%= @name -%>,
+      </p>
+    <% end %>
+<%- if @is_provider -%>
+      <p>
+        It's really important to us that you get most out of your experience with our
+        website and app. <a href="https://www.youtube.com/watch?v=VTwYj-4XvZo">Click here</a>
+        for a quick video guide to asking your first question.
+      </p>
+
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td width="500" style="width:500px;">
+              <a href="https://www.youtube.com/watch?v=VTwYj-4XvZo" style="text-decoration:none;display:block;" target="_blank">
+                <img src="https://img.youtube.com/vi/VTwYj-4XvZo/mqdefault.jpg" height="274" width="498"/>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td width="500" style="width:500px;">
+              <a href="https://www.youtube.com/watch?v=VTwYj-4XvZo" style="text-decoration:none;" target="_blank">
+                <div style="font-family:arial,Arial,sans-serif;font-size:15px;color:#333333;line-height:20px;font-weight:bold;">
+                  Support Your Clinical Decision Making
+                </div>
+              </a>
+              <div style="font-family:arial,Arial,sans-serif;font-size:13px;color:#999999;line-height:20px;">
+                by
+                <a href="https://www.youtube.com/user/InpharmD" style="font-family:arial,Arial,sans-serif;font-size:13px;color:#999999;line-height:20px;text-decoration:none;" target="_blank">
+                  InpharmD™
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <%- end -%>
+    <p>
+      All the best,
+    </p>
+    Ashish Advani, PharmD
+    <br/>
+    Founder, InpharmD™
+    <br/>
+    <br/>
+    <%= image_tag 'logo.png', alt: 'InpharmD: Tailored, On Demand, Digital Drug Information', width:"180", height:"70" -%>
+
+    <br/>
+    <hr/>
+    <p>
+      To ensure that you receive messages from InpharmD™ in the future, please add
+      <span style="white-space:nowrap;">no-reply@inpharmd.com</span> to your address book.
+    </p>
+  </div>
+</div>

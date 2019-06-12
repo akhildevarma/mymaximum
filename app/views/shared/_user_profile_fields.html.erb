@@ -1,0 +1,54 @@
+<fieldset>
+  <legend>Email</legend>
+  <%= f.simple_fields_for user_profile.user do |ff| %>
+    <%= ff.input :email, label: "Email", disabled: true %>
+    <%= ff.input :role, label: "Role", disabled: true %>
+  <% end %>
+</fieldset>
+<br/><br/>
+<fieldset>
+  <legend>Preferred Email</legend>
+  <% if not_activated_email = user_profile.user.not_activated_email %>
+    <%= f.simple_fields_for (not_activated_email) do |ff| %>
+      <%= ff.input :email, label: "Email", disabled: true %>
+       <p style='font-size: 10px;'>* We have sent an activation code to this email, please activate this email and login into your account.</p>
+    <% end %>
+  <% else %>
+    <%= f.simple_fields_for (user_profile.user.emails.last || User::Email.new) do |ff| %>
+      <%= ff.input :email, label: "Email" %>
+      <%= ff.input :is_primary %>
+      <%= ff.hidden_field :id %>
+    <% end %>
+  <% end %>
+</fieldset>
+
+<br/><br/>
+<fieldset>
+  <legend>Password</legend>
+  <%= f.simple_fields_for user_profile.user do |ff| %>
+  <%= ff.input :password, label: 'New password&nbsp;&nbsp;<i class="fa fa-question-circle" id="paswd" rel="tooltip" title="Password min length should be 6 characters" ></i>'.html_safe %>
+    <%= ff.input :password_confirmation, label: 'Confirm New Password' %>
+  <% end %>
+</fieldset>
+<br/><br/>
+<fieldset>
+  <legend>Profile Information</legend>
+  <%= f.simple_fields_for user_profile.profile do |ff| %>
+    <%= ff.input :first_name, label:'First Name'%>
+    <%= ff.input :last_name, label:'Last Name'%>
+    <%= ff.input :phone_number, label: 'Phone Number' %>
+  <% end %>
+<%- if user_profile.provider.present? %>
+  <%= f.simple_fields_for user_profile.provider do |ff| %>
+    <% if browser.modern? %>
+    <%= ff.input :specialty, input_html: { data: { provide: "typeahead", source: I18n.t("providers.specialties") }, autocomplete: "off" } %>
+    <% else %>
+    <%= ff.input :specialty, collection: specialties, input_html: { class: 'chosen-select' } %>
+    <%  end %>
+ <%- unless user_profile.user.in_team? %>
+      <%= ff.input :license_number %>
+      <%= ff.input :licensing_state, collection: us_states, input_html: { class: 'chosen-select' } %>
+    <% end %>
+  <% end %>
+<% end %>
+</fieldset>

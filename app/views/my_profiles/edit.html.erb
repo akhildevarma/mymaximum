@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+    <h3>
+      Edit Profile
+      <%- if current_user.payment_account.present? %>
+      <span class="pull-right">
+        <%= link_to "My Billing Information", edit_payment_account_path, class: "btn btn-primary" %>
+      </span>
+      <% end %>
+    </h3>
+    <%= render 'shared/docs_section', resource: current_user, resource_type: 'user', doc_name: 'My' unless current_user.private_labeled_user?%>
+
+    <br/><br/>
+
+    <%= simple_form_for @user_profile, url: my_profile_path, method: "patch" do |f| %>
+      <%= render partial: 'shared/user_profile_fields', locals: { f: f, user_profile: @user_profile } %>
+      </br></br>
+      <div class="form-actions">
+        <%= f.button :submit, "Save Changes", class: "btn btn-primary" %>
+        <%= link_to "Cancel", root_path, class: "btn" %>
+        <br/><br/>
+        <div class="col-sm-20">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%=t("account.deactivate.title")%></h3>
+            </div>
+            <div class="panel-body">
+            <p><%=t("account.deactivate.message")%></p>
+              <%= link_to t("account.deactivate.button"), deactivate_my_profile_path, class: "btn btn-danger",method: :delete,
+          data: { confirm: t("administrate.actions.confirm") }%>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

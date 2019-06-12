@@ -1,0 +1,29 @@
+.modal-header {
+  background: $blueGreen;
+
+  h4.modal-title {
+    font-weight:300;
+    font-family: $openSansFontFamily;
+  }
+}
+
+.modal-title {
+  color: white;
+}
+
+.modal-body label {
+  font-weight:400;
+  font-family: $openSansFontFamily;
+}
+
+.modal-footer {
+  .btn {
+    @media (max-width: $screen-sm) {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+.modal-image {
+  width: 100%;
+}

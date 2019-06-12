@@ -1,0 +1,114 @@
+
+{
+  "definitions": {
+    "attributesObject": {
+      "type": "object",
+      "patternProperties": {
+        "^(?!relationships$|links$)\\w[-\\w_]*$": {}
+      }
+    },
+    "metaObject": {
+      "type": "object"
+    },
+    "linksObject": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "meta": {
+              "$ref": "#/definitions/metaObject"
+            }
+          }
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "resourceIdentifier": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "meta": { "$ref": "#/definitions/metaObject" }
+      },
+      "required": ["id", "type"],
+      "additionalProperties": false
+    },
+    "resourceLinkage": {
+      "oneOf": [
+        {
+          "type": ["object","null"],
+          "$ref": "#/definitions/resourceIdentifier"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/resourceIdentifier"
+          }
+        }
+      ]
+    },
+    "relationshipsObject" : {
+      "type": "object",
+      "anyOf": [
+        {
+          "properties": {
+            "links": {
+              "type": "object",
+              "properties" : {
+                "self": {
+                    "$ref": "#/definitions/linkObject"
+                },
+                "related": {
+                  "$ref": "#/definitions/linkObject"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+         },
+         {
+           "properties": {
+             "data": {
+               "$ref": "#/definitions/resourceLinkage"
+             }
+           }
+         },
+         {
+           "properties": {
+             "meta": {
+               "type": "object"
+             }
+           }
+         }
+       ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+      "id": {
+        "type": "string"
+      },
+      "type" : {
+        "type": "string"
+      },
+      "attributes": {
+        "$ref": "#/definitions/attributesObject"
+      },
+      "relationships": {
+        "$ref": "#/definitions/relationshipsObject"
+      },
+      "links": {
+        "type": "object"
+      },
+      "meta": {
+        "type": "object"
+      }
+    },
+    "required": ["id", "type"]
+}

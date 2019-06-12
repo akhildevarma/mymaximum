@@ -1,0 +1,42 @@
+<div class="ipd-inquiries-list-item card-disabled">
+   
+<div class="md-list-item-text" layout="column" >
+        <div data-truncate="" style="
+              font-size: 14px;
+              color: #545454;
+              font-weight: bold;
+              padding:16px;
+              margin-bottom: 1px;">
+          <%= item.question %>
+        </div>
+      </div>
+       
+     <div class="row">
+       <div id="inquiry_rating_<%=item.id%>" class="pull-right rating-card-members ">
+          <%= render partial: 'rating', locals: { inquiry: item } %>
+      </div>
+      <div class="col-xs-12" style='margin-bottom: 20px;'>
+        <span class="submitted">
+          Submitted by
+          <strong>
+            <%= link_to item.submitter.full_name_or_email, user_profile_path(id: item.submitter_id) -%>
+          </strong>
+          on <%= local_date(item.created_at,'%B %e, %Y %l:%M%P') -%>
+            <% if item.reopened_at?%>
+              | Reopened on <%= local_date(item.reopened_at,'%B %e, %Y %l:%M%P')%>
+            <% end %>
+           | Due on <%= local_date(inquiry_due_time(item), '%B %e, %Y %l:%M%P')%>
+           <% if item.closed? && item.completed_at %>
+            | Completed on <%= local_date(item.completed_at,'%B %e, %Y %l:%M%P') -%>
+            <% end %>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+        <div class="rating-card-members">
+      <%= render partial: 'survey_response', collection: item.no_rating_survey_responses %>
+    </div>
+    </div>
+    
+</div>
+ <br/>

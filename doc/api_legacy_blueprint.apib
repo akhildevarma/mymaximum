@@ -1,0 +1,295 @@
+FORMAT: 1A
+HOST: http://inpharmd.com/
+
+
+# InpharmD
+
++ Trait Rails
+  + Response Headers
+    + date (optional, string, `Thu, 07 May 2015 17:23:53 GMT`) ...
+    + status (optional, string, `200 OK`) ...
+    + connection (required, string, `close`)
+    + x-frame-options (required, string, `SAMEORIGIN`)
+    + x-xss-protection (optional, string, `1; mode=block`)
+    + x-content-type-options (optional, string, `nosniff`)
+    + content-type (required, string, `application/json`)
+    + etag (optional, string, `W/"7215ee9c7d9dc229d2921a40e899ec5f"`)
+    + cache-control (optional, string, `max-age=0, private, must-revalidate`)
+    + x-request-id (optional, string, `95ed2dd5-472e-4ddc-87db-15643d9a2329`)
+    + x-runtime (optional, string, `0.033178`)
+    + transfer-encoding (optional, string, `chunked`)
+
+
+
+# InpharmD API Root [/]
+
+This resource does not have any attributes. Instead it offers the initial
+API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values,
+[Link](https://tools.ietf.org/html/rfc5988) or Location headers where
+applicable to retrieve resources. Instead of constructing your own URLs,
+to keep your client decoupled from implementation details.
+
+<!--### Retrieve the Entry Point [GET]-->
+  <!--+ Response 200 (application/json)-->
+
+# Group Application Settings
+
+## Application Settings [/application_settings.json]
+
++ Model (application/json)
+
+    + Body
+
+                {
+                    "id":2,
+                    "require_general_invitations":false,
+                    "created_at":"2015-04-27T18:08:53.352Z",
+                    "updated_at":"2015-04-27T18:08:53.352Z",
+                    "allow_promo_code":true
+                }
+
+### View Detail [GET]
++ Traits
+    + [Rails][]
+
++ Response 200
+    [Application Settings][]
+
+
+
+
+
+
+
+
+# Group My Inquiries
+## My Inquiries [/my_inquiries.json]
+
+### View List [GET]
++ Response 200 (application/json)
+    + Body
+
+                {
+                    "require_general_invitations" : "false",
+                    "allow_promo_code": "false"
+                }
+
+### Create [POST]
+
++ Request (application/json)
+
+              {
+                  "question": "What drug makes you fall most in love?",
+                  "turnaround": "asap"
+              }
+
++ Response 200 (application/json)
+
+
+# Group Summary Table
+## Summary Table [/my_inquiries/{inquiry_id}/summary_table.json]
++ Parameters
+    + inquiry_id (required, number, `1`) ... ID of the Inquiry in form of an integer
+
+### View [GET]
++ Response 200 (application/json)
+
+
+
+# Group My Profile
+## My Profile [/my_profile.json]
+    + Attributes:
+    + user_profile
+        + profile
+            + first_name
+            + middle_name
+            + last_name
+            + name_suffix
+            + name_title
+            + company
+            + city
+            + state
+            + phone_number
+        + provider
+            + license_number
+            + licensing_state
+            + specialty
+        + user
+            + password
+            + password_confirmation
+
+### View [GET]
++ Response 200 (application/json)
+
+### Update [PATCH]
++ Request (application/json)
+          {
+            "user_profile" : {}
+          }
+
++ Response 200 (application/json)
+
+
+# Group Provider Signup
+## Provider Signup [/provider_signup.json]
+    Attributes:
+    + provider_signup
+      + accept_terms_of_service
+      + invitation
+        + token
+      + user
+        + email
+        + password
+        + password_confirmation
+        + promo_code
+        + team_id
+      + provider
+        + license_number
+        + licensing_state
+        + specialty
+      + profile
+        + first_name
+        + middle_name
+        + last_name
+        + name_suffix
+        + name_title
+        + company
+        + city
+        + state
+        + phone_number
+      + payment_account
+        + plan_id
+        + stripe_card_token
+        + last_four_digits
+        + coupon_code
+
+### Create [POST]
++ Request (application/json)
+
+            {
+                "provider_signup" : {}
+            }
+
++ Response 200 (application/json)
+
+# Group Patient Signup
+## Patient Signup [/patient_signup.json]
+    Attributes:
+    + patient_signup
+      + accept_terms_of_service
+      + invitation
+        + token
+      + user
+        + email
+        + password
+        + password_confirmation
+        + promo_code
+      + profile
+        + first_name
+        + middle_name
+        + last_name
+        + name_suffix
+        + name_title
+        + company
+        + city
+        + state
+        + phone_number
+
+### Create [POST]
++ Request (application/json)
+
+            {
+              "patient_signup" : {}
+            }
+
++ Response 200 (application/json)
+
+
+# Group Waitlisted Patient
+## Waitlisted Patient [/waitlisted_patient.json]
+  Attributes:
+  + waitlisted_user
+    + email
+### Create [POST]
++ Request (application/json)
+
+            {
+                "waitlisted_user": {
+                  "email": "example@me.com"
+                }
+            }
+
++ Response 200 (application/json)
+
+
+# Group Waitlisted Provider
+## Waitlisted Provider [/waitlisted_provider.json]
+    Attributes
+    + waitlisted_user
+      + email
+### Create [POST]
++ Request (application/json)
+
+            {
+                "waitlisted_user": {
+                  "email": "example@me.com"
+                }
+            }
+
++ Response 200 (application/json)
+
+# Group Password Reset
+## Password Reset [/password_reset.json]
++ user
+  + password
+  + password_confirmation
+
+### Send [POST]
++ Request (application/json)
+
+            { "user": {
+                "password": "test1234",
+                "password_confirmation": "test1234"
+            } }
+
++ Response 200 (application/json)
+
+
+# Group Session
+## Session [/session.json]
++ email
++ password
+
+### Login [POST]
++ Request (application/json)
+
+            {
+                "email": "example@me.com",
+                "password": "changeme"
+            }
+
++ Response 200 (application/json)
+
+
+
+# Group Topic Searches
+## Topic Searches [/topic_searches.json]
++ Attributes:
+    + topic_search
+        - search_terms
+        - drug_name
+
+### Submit [POST]
++ Request (application/json)
+
+        {
+          "topic_search":
+            {
+                "search_terms": "test search terms",
+                "drug_name": "test drug name"
+            }
+        }
+
++ Response 200 (application/json)

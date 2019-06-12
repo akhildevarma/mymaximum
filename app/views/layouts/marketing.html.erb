@@ -1,0 +1,20 @@
+<%= content_for :head do %>
+  <%= javascript_include_tag "healthcare.modern.entry" -%>
+<% end %>
+
+<%= render layout: 'layouts/base' do %>
+
+  <section id="main-content">
+      <section class="wrapper">
+        <%= render partial: "shared/flash_messages", flash: flash %>
+
+        <%= render template: "layouts/main" %>
+
+      </section>
+    </section>
+
+    <% content_for(:footer) do %>
+      <%= render 'shared/footer' %>
+    <% end %>
+
+<% end %>

@@ -1,0 +1,16 @@
+<div id="inquiries" class="nav-units">
+   <h3>Team Inquiries</h3>
+  <div>
+	  <h3>
+	   <%= @team.try :name %>
+	   <div class="pull-right">
+	    <%= link_to 'Back to members', members_custom_admin_team_path(@team), class: 'btn btn-primary' -%>
+	  </div>
+	 </h3>
+	</div>
+   <hr>
+   <%= render partial: "item", collection: @inquiries %>
+   <div class="pull-right">
+      <%= will_paginate @inquiries %>
+   </div>
+</div>

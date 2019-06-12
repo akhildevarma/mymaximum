@@ -1,0 +1,51 @@
+<!-- Modal -->
+<div id="modalProfile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Can we get to know you better?</h4>
+      </div>
+      <div class="modal-body">
+         
+        <div id='errors-profile' style='color:red;margin-bottom: 8px;font-weight: bold;font-size: 14px;'><%=@errors.full_messages.join(' ') if @errors.present?%></div>
+          <% @user_profile = UserProfile.for(current_user.decorate)%>
+        <%= simple_form_for @user_profile, remote: true, url: join_discussion_my_profile_url(inquiry_id: @inquiry.id),  html: { multipart: true, method: :post, id: :profile_form } do |f| -%>
+        
+          <%= f.simple_fields_for @user_profile.profile do |ff| %>
+            <div class="field">
+            
+            <%= ff.input :first_name, required: false %>
+          
+            </div>
+            <br>
+             <div class="field">
+           
+            <%= ff.input :last_name, required: false %>
+           
+            </div>
+             <br>
+             <div class="field">
+             <%= ff.input :phone_number %>
+              <p style='font-size:11px;'> <i>We won't text often, but when we do, it'll be worth it.</i></p>
+            </div>
+          <% end%>
+          <% if @user_profile.provider.present? %>
+          <%= f.simple_fields_for @user_profile.provider do |ff| %>
+            <%= ff.input :specialty, input_html: { data: { provide: "typeahead", source: I18n.t("providers.specialties") }, autocomplete: "off" } %>
+          <% end %>
+        <% end %>
+
+        <% end %>
+      
+      </div>
+      <div class="modal-footer">
+        <button name="button" class="btn btn-default" data-dismiss="modal" value="Submit" onclick=" $('#profile_form').submit();" type="button">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

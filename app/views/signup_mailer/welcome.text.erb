@@ -1,0 +1,21 @@
+<%= @name ? "#{@name},\n\n" : '' -%>
+I want to be the first to welcome you to InpharmD™. This project was started in an effort to facilitate the exchange of fair, balanced drug/medical information. To learn more about our story, visit the following URL:
+
+<%= page_url('our_story') -%>
+
+
+<%- if @is_provider -%>
+It's really important to us that you get most out of your experience with our website and app. For a quick video guide to asking your first question, visit the following URL:
+
+https://www.youtube.com/watch?v=VTwYj-4XvZo
+<%- end -%>
+
+We're always striving to be better, and we love hearing from you, so let us know if you have any questions, feedback, or ideas; if so, simply reply to this email. I hope you enjoy being a part of the InpharmD™ community, and that using our service makes you a more informed <%= @is_provider ? 'clinician' : 'patient' -%>.
+
+
+All the best,
+
+Ashish Advani, PharmD
+Founder, InpharmD™
+
+| To ensure that you receive messages from InpharmD™ in the future, please add no-reply@inpharmd.com to your address book.

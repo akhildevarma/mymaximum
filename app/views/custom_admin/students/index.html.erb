@@ -1,0 +1,32 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Can Assign</th>
+      <th>Is Alumn</th>
+      <th>Last Assignment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @students.each do |student| -%>
+    <tr id="<%= dom_id(student) -%>">
+      <td>
+        <%= student.email -%>
+      </td>
+      <td>
+        <%= human_boolean(student.can_assign) -%>
+      </td>
+      <td>
+        <%= human_boolean(student.is_alumn) -%>
+      </td>
+      <td>
+        <%= student.last_auto_assign ? local_time(student.last_auto_assign, "%b %d, %Y %l:%M:%S%p") : '' -%>
+      </td>
+      <td>
+        <%= link_to 'View', custom_admin_student_path(student), class: 'btn btn-info' -%>
+      </td>
+    </tr>
+    <%- end -%>
+  </tbody>
+</table>

@@ -1,0 +1,79 @@
+#login-page > .container {
+  padding-bottom: 6em;
+}
+
+.login-logo {
+  @extend .img-responsive;
+  margin: 24px auto 0;
+  width: 300px;
+}
+
+.form-login {
+  @include border-radius(5px);
+  max-width: 330px;
+  margin: 0 auto;
+  background: $white;
+
+  h2.form-login-heading {
+    @include border-radius(5px 5px 0 0);
+    margin: 0;
+    padding: 25px 20px;
+    text-align: center;
+    background: $blue;
+    color: $white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  input, select {
+    margin-bottom: 12px;
+  }
+
+  .tos_checkbox {
+    line-height: 0.5;
+    margin-bottom: 24px;
+  }
+}
+
+.login-wrap {
+  padding: 20px;
+
+  .forgot-password {
+    margin-bottom: 12px;
+  }
+
+  .forgot-password, .registration {
+    text-align: center;
+  }
+}
+
+.login-social-link {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 15px;
+
+  a {
+    @media (max-width: 320px) {
+      padding: 15px 17px !important;
+    }
+  }
+}
+
+#passwordReset {
+  .modal-header {
+    @include border-radius(5px 5px 0 0);
+    background: $blue;
+    color: $white;
+
+    .modal-title {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .close {
+      color: $white;
+      opacity: .6;
+    }
+  }
+}

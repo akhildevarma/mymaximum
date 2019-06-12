@@ -1,0 +1,45 @@
+<!-- SIDE NAV -->
+<nav class="response-document-nav-wrapper hidden-xs col-sm-4">
+  <ul class="response-document-nav">
+    <% document_sections.reject {|k,section| section[:object].blank? }.each do |key, section| %>
+      <li class="">
+        <a href="#<%= key %>">
+          <%= section[:title] %>
+        </a>
+      </li>
+      <% if key == :literature_review %>
+        <ul class="subnav">
+          <% section[:object].each_with_index do |item, index| %>
+            <li>
+              <a href="#table_<%= index + 1 %>">
+                Table <%= index + 1 %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    <%- end -%>
+  </ul>
+</nav>
+
+<div class="response-document-nav-horizontal-wrapper visible-xs-block">
+  <div class="row">
+    <nav class="col-xs-12">
+      <div class="response-document-nav-horizontal">
+        <div class="response-document-nav-horizontal-container">
+          <ul class="">
+            <% document_sections.reject {|k,section| section[:object].blank? }.each do |key, section| %>
+              <li class="">
+                <a href="#<%= key %>">
+                  <%= section[:title] %>
+                </a>
+              </li>
+            <%- end -%>
+            <li style="width:30px;"><!-- blank --></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- /SIDE NAV -->

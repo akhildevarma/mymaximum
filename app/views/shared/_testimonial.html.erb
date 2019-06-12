@@ -1,0 +1,25 @@
+<blockquote class="in-testimonial-item">
+  <i class="fa fa-quote-left"></i>
+    <%= testimonial[:quoted_text].html_safe %>
+  <i class="fa fa-quote-right"></i>
+
+  <div class="text-left row in-testimonial-author">
+    <% if testimonial[:image_url] %>
+      <div class="col-xs-3" style="padding:0;padding-left:15px;">
+        <%= image_tag testimonial[:image_url], :class => 'in-testimonial-author-image' -%>
+      </div>
+    <% end %>
+    <div class="<%= testimonial[:image_url] ? 'col-xs-9' : 'col-xs-12' %> in-testimonial-item-author">
+      <span class="in-testimonial-author-name">
+        <%= testimonial[:name] %>
+      </span>
+      <span class="in-testimonial-author-title">
+        <%= testimonial[:title] %>
+      </span>
+      <br>
+      <span class="in-testimonial-author-company">
+        <%= testimonial[:company] %>
+      </span>
+    </div>
+  </div>
+</blockquote>

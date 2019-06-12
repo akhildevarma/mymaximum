@@ -1,0 +1,13 @@
+<div class="progress progress-home">
+  <div class="progress-bar progress-bar-success progress-bar-striped"
+       role="progressbar"
+       aria-valuenow="<%= inquiry.progress %>"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       style="width: <%= inquiry.progress %>%;border-radius: 8px;">
+    <span class="sr-only">
+      <%= inquiry.progress -%>% Complete
+    </span>
+<%= inquiry.status.text -%>
+  </div>
+</div>

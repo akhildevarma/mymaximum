@@ -1,0 +1,14 @@
+
+<%= simple_form_for @upload_user, url: custom_admin_upload_user_path(@upload_user), html: { class: 'form-horizontal' } do |f| -%>
+  <%= f.input :email, required: true -%>
+  <%= f.input :first_name, required: true -%>
+  <%= f.input :last_name, required: true -%>
+  <%= f.input :phone_number, required: true -%>
+  <%= f.input :specialty, required: true -%>
+  <%= f.hidden_field :status, value: nil -%>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-4">
+      <%= f.submit class: 'btn btn-primary' -%>
+    </div>
+  </div>
+<%- end -%>

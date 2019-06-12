@@ -1,0 +1,131 @@
+.btn {
+  @media (max-width: $screen-sm) {
+    margin-bottom: 5px;
+  }
+}
+
+.btn.btn-secondary {
+  background-color: rgb(192, 192, 192);
+}
+
+.btn-round {
+  @include border-radius(20px);
+}
+
+.btn-theme {
+  color: $white;
+  background-color: $blueGreen;
+  border-color: $blueGreen;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: lighten($blueGreen, 10%);
+    border-color: lighten($blueGreen, 10%);
+  }
+}
+
+.open .dropdown-toggle.btn-theme {
+  color: $white;
+  background-color: lighten($blueGreen, 10%);
+  border-color: lighten($blueGreen, 10%);
+}
+
+.btn-theme02 {
+  color: $white;
+  background-color: $lightPurple;
+  border-color: $darkPurple;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: $darkPurple;
+    border-color: $darkPurple;
+  }
+}
+
+.open .dropdown-toggle.btn-theme02 {
+  color: $white;
+  background-color: $darkPurple;
+  border-color: $darkPurple;
+}
+
+.btn-theme03 {
+  color: $white;
+  background-color: $lightGreen;
+  border-color: $darkerGreen;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: $darkerGreen;
+    border-color: $darkerGreen;
+  }
+}
+
+.open .dropdown-toggle.btn-theme03 {
+  color: $white;
+  background-color: $darkerGreen;
+  border-color: $darkerGreen;
+}
+
+.btn-theme04 {
+  color: $white;
+  background-color: $cherryRed;
+  border-color: $darkCherryRed;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: $darkCherryRed;
+    border-color: $darkCherryRed;
+  }
+}
+
+.open .dropdown-toggle.btn-theme04 {
+  color: $white;
+  background-color: $darkCherryRed;
+  border-color: $darkCherryRed;
+}
+
+.btn-clear-g {
+  color: $darkGreen;
+  background: transparent;
+  border-color: $darkGreen;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-facebook {
+  color: $white;
+  background-color: #5193ea;
+  border-color: $facebookBlue;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: $facebookBlue;
+    border-color: $facebookBlue;
+  }
+}
+
+.open .dropdown-toggle.btn-facebook {
+  color: $white;
+  background-color: $facebookBlue;
+  border-color: $facebookBlue;
+}
+
+.btn-twitter {
+  color: $white;
+  background-color: #44ccfe;
+  border-color: $twitterBlue;
+
+  &:hover, &:focus, &:active, &.active {
+    color: $white;
+    background-color: $twitterBlue;
+    border-color: $twitterBlue;
+  }
+}
+
+.open .dropdown-toggle.btn-twitter {
+  color: $white;
+  background-color: $twitterBlue;
+  border-color: $twitterBlue;
+}

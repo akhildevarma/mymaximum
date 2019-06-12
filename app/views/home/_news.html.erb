@@ -1,0 +1,19 @@
+<div class="inquiry-item card" style="margin-bottom: 30px;">
+  <%= link_to guid_url(news.slug), class: "inquiry-item-link", id: "published_inquiry_#{news.id}" do %>
+<div class ="container-fluid">
+  <div class ="row">
+    <div style='margin-top:12px' class ="col-md-3 col-sm-6">
+        <% if news.submitter.try(:team).try(:logo).present? %>
+        <%= image_tag news.submitter.try(:team).try(:logo).url(:small)%>
+      <% else %>
+          <%= image_tag 'hospital-icon.png', style: 'width:50px;hieght:50px;margin-bottom:5px;' %>
+      <% end %>
+    </div>
+    <div  class ="col-md-9 col-sm-6  news-feed">
+        <%= news.title.capitalize_first %>
+        
+     </div>
+  </div>
+</div>
+<% end %>
+</div>

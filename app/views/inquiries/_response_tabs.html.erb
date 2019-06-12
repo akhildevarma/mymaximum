@@ -1,0 +1,90 @@
+<% unless @inquiry.submitter.private_labeled_user? %>
+<div class="in-inquiry-tabs-wrapper">
+  <div class="in-inquiry-tabs" id="inquiry-response-tabs">
+        <div class="in-inquiry-tabs-container">
+            <style>
+              md-tabs md-tabs-wrapper {
+                background: #e4e4e4;
+                padding-top: 10px;
+              }
+              md-pagination-wrapper {
+                margin-left: 10px;
+              }
+              md-tabs-wrapper md-prev-button, md-tabs-wrapper md-next-button {
+                background: none !important;
+                transition: all 0.5s cubic-bezier(0.35, 0, 0.15, 1.5)
+              }
+              md-tabs-wrapper md-prev-button.md-disabled, md-tabs-wrapper md-next-button.md-disabled {
+                visibility: hidden;
+              }
+              md-tabs-wrapper md-prev-button {
+                left: 10px;
+              }
+              md-tabs-wrapper md-next-button {
+                right: 10px;
+              }
+              md-tabs-wrapper md-prev-button, md-tabs-wrapper md-next-button {
+                top: 64%;
+                border: solid 17px;
+                border-radius: 50%;
+                height: 32px;
+                border-color: rgba(232,232,232,0.9);
+              }
+              .md-tab {
+                padding: 12px 23px;
+                border: solid 1px #c5c5c5;
+                background: #e0e0e0;
+                color: #8a8a8a;
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+                border-bottom-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                bottom: -4px;
+                transition: none;
+
+              }
+              .md-tab.md-active {
+                background-color: #f7f7f7;
+                border-color: #d6d6d6;
+                color: #e0e0e0;
+                font-weight: normal;
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+                border-bottom-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                bottom: 0px;
+              }
+              .md-tab.md-active .in-tab-item {
+                color: #717171;
+              }
+              .md-tab .in-tab-item {
+                text-shadow: #e0e0e0 0px 1px 1px;
+              }
+              md-tabs .md-tab.md-focused {
+                background-color: #f7f7f7 !important;
+              }
+              md-tabs-wrapper md-prev-button md-icon, md-tabs-wrapper md-next-button md-icon {
+                height: 32px;
+              }
+              md-tabs-canvas.md-paginated {
+                margin: 0px;
+              }
+
+            </style>
+            <md-tabs md-dynamic-height md-no-ink md-no-ink-bar md-swipe-content md-selected="<%= inquiry_response_default_tab_index(@enable_discussion) %>">
+              <% inquiry_document_sections(:tabs, @enable_discussion).each do |key, section| %>
+                <md-tab>
+                  <md-tab-label>
+                     <div class="in-tab-item <%='discussions-tab-item' if key==:discussion %>" data-url="<%= api_v1_user_preferences_url %>" onclick="reset_comments()"><%= section[:title] %></div>
+                  </md-tab-label>
+                  <md-tab-body>
+                    <%= render partial: 'shared/inquiry_response_document_body', locals: { key: key, section: section , enable_discussion: @enable_discussion} %>
+                  </md-tab-body>
+
+                </md-tab>
+              <% end %>
+            </md-tabs>
+
+      </div>
+</div>
+<%end%>

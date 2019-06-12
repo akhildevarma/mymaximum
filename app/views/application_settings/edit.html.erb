@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+
+    <h3>Application Settings</h3>
+    <%= simple_form_for @application_settings, url: application_settings_path, method: :put, html: { class: "form-horizontal" } do |f| %>
+
+      <fieldset>
+        <%= f.input :require_general_invitations, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: "Require invitations for non-student users?" %>
+        <%= f.input :allow_promo_code, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: "Allow promo code"  %>
+      </fieldset>
+
+      <br/>
+      <div class="form-actions">
+        <%= f.submit class: "btn btn-primary", value: "Save Changes" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

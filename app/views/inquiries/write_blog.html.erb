@@ -1,0 +1,67 @@
+<div class="pull-right">
+      <%= link_to 'Review blog post', review_inquiry_path(@inquiry), class: 'btn btn-success' -%>
+  </div>
+  <br>
+  <div>
+    <%= render 'shared/image_uploader', resource: @inquiry, resource_type: 'inquiry', doc_name: 'Blog Image'%>
+  </div>
+
+<% if @image = @inquiry.images.last %>
+  <div>
+    <div>
+        <%= image_tag @image.image.url(:small), id: 'logo-cropper' %>
+      </div>
+  </div>
+<% end %>
+<%= simple_form_for @inquiry do |f| -%>
+<%= f.input :title, label: 'Publishable Title',  input_html: { class: 'input-block-level', rows: '4', placeholder: 'Enter title to show recipient; preferably in form of question.' } -%>
+<%= f.input :background, input_html: { class: 'input-block-level', rows: '12', placeholder: 'Assuming the audience lacks familiarity with the topic, establish the rationale for this study with an objective presentation of existing evidence as an introduction to the study you are summarizing.' } -%>
+
+<%= f.input :background_references, input_html: { class: 'input-block-level', rows: '2' } -%>
+<%= f.hidden_field :inquiry_type%>
+
+<%= f.submit 'Save Changes', class: 'btn btn-primary' -%>
+<%- end -%>
+<hr>
+<%- if @inquiry.id && @inquiry.summary_tables.empty? -%>
+  <p>
+    No one has submitted any tables yet.
+  </p>
+<%- else -%>
+  <%- @inquiry.summary_tables.each_with_index do |summary_table, index| -%>
+    <h4>
+      Table <%= index + 1 -%>
+      <small>
+        <%= summary_table.responder.try :email -%>
+      </small>
+      <%= link_to 'Edit', [:edit, @inquiry, summary_table], class: 'btn btn-small' -%>
+      <%= link_to 'Delete', [@inquiry, summary_table], method: :delete, data: { confirm: 'Really delete this table?'}, class: 'btn btn-small btn-danger' %>
+      <div class='pull-right'>
+        <%= render partial: 'shared/summary_table_status', locals: { summary_table: summary_table } -%>
+      </div>
+    </h4>
+    <%= render partial: 'shared/summary_table', locals: { summary_table: summary_table } -%>
+    <hr>
+  <%- end -%>
+<% end %>
+<% if @inquiry.id %>
+<%= link_to 'Add a Table', new_inquiry_summary_table_path(@inquiry), class: 'btn btn-primary' -%>
+<% end %>
+
+<script> 
+$(document).ready(function()
+  {
+    $('textarea').change(function()
+      {
+        $.ajax({
+          type: 'POST',
+          url: "<%= auto_save_inquiry_path(@inquiry)%>",
+          data: $(this).serialize(),
+          success: function(data)
+          {
+             console.log('data saved');
+          }
+      });
+    });
+});
+</script>

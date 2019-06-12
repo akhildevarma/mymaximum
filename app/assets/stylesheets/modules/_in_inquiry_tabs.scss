@@ -1,0 +1,36 @@
+md-tabs {
+  background-color: #F7F7F7;
+}
+
+.md-tab.md-active {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+md-tabs md-tabs-wrapper, .in-inquiry-tabs-wrapper {
+  // padding-bottom: 50px;
+  // background: white !important;
+}
+.in-inquiry-tabs-container {
+  // padding-top: 20px;
+  // padding-left: 50px;
+  // padding-right: 50px;
+  .in-tabs-wrapper {
+    .in-tab-item {
+      color: #555555;
+      background-color: #D7D7D7;
+    }
+  }
+}
+.in-tab-item {
+  color: #737373;
+  text-shadow: #fff 0px 1px 1px;
+  text-transform: none;
+}
+.md-tab.md-active .in-tab-item {
+  color: #fff;
+  text-shadow: none;
+}

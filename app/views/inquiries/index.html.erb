@@ -1,0 +1,45 @@
+<h3>
+  Open Inquiries
+  <small>
+    <%= link_to 'Closed Inquiries', closed_inquiries_path -%>
+  </small>
+
+  <%- if student? -%>
+    <%= form_for current_user.student,
+                  url: student_path(current_user.student),
+                  method: :put,
+                  html: {
+                    class: 'form-inline pull-right update-student',
+                    role: 'form'
+                  },
+                  remote: true do |f| -%>
+      <!-- <=f.select :is_active, [['Offline', false], ['Online', true]], {}, class: 'form-control', onchange: 'submitUpdateStudent()' %> -->
+      <div class="onoffswitch">
+        <%= f.check_box :is_active, class: "onoffswitch-checkbox", id: "myonoffswitch",  :onchange => 'submitUpdateStudent()'%>
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+      </div>
+      <%= f.submit 'Update Student', class: 'hide' %>
+    <%- end -%>
+  <%- end -%>
+</h3>
+<%- if @inquiries.empty? -%>
+<p>
+  There are currently no open inquiries.
+</p>
+<%- else -%>
+<div id="inquiries" class="nav-units">
+  <hr>
+  <%- @inquiries.each do |inquiry| -%>
+    <%= render 'list_item', { inquiry: inquiry , show_link: true } %>
+  <%- end -%>
+</div>
+<%- end -%>
+
+<script>
+  function submitUpdateStudent() {
+    $('form.update-student').submit();
+  }
+</script>

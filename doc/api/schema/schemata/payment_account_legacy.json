@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {"type": "integer"},
+    "user_id": {"type": "integer"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "stripe_customer_token": {"type": "string"},
+    "last_four_digits": {"type": ["integer", "null"]},
+    "plan_id": {"type": "integer"},
+    "coupon_code": {"type": ["string", "null"]}
+  },
+  "required": [
+    "id",
+    "user_id",
+    "created_at",
+    "updated_at",
+    "stripe_customer_token",
+    "last_four_digits",
+    "plan_id",
+    "coupon_code"
+  ]
+
+}

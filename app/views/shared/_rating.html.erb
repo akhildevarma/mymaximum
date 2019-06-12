@@ -1,0 +1,20 @@
+<% if current_user == inquiry.submitter && inquiry.closed? %>
+<% if (stars = inquiry.rating(current_user)) && !stars.try(:zero?)%>
+<div class='rated'>
+  <% stars.times do  %>
+  <span class="glyphicon glyphicon-star" style='color:orange;'></span>
+  <% end %>
+  <% (5 - stars).times do  %>
+    <span class="glyphicon glyphicon-star-empty"></span>
+  <% end %>
+  <span>(Rating: <%= stars %>)</span>
+</div>
+<% else %>
+  <div class='rating'>
+    <% 5.downto(1) do |star| %>
+       <%= link_to rating_inquiry_path(inquiry, score: star), class: 'glyphicon glyphicon-star-empty', remote: true, method: :put, data: { confirm: "Your star rating is #{star}.", action: 'rating' } do %>
+       <% end %>
+    <% end %>
+  </div>
+<% end %>
+<% end %>

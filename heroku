@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# script_globals: variables to be accessible in all functions
+args=$@
+account=''
+application=''
+
+
+#script run order
+function run() {
+    set_application
+    run_heroku
+}
+
+
+# script global functions
+function set_application() {
+  application_name="mercer-inpharmd"
+  application="${application_name}"
+  if [[ "${args}" == *staging* ]]; then
+    args="${args#staging}"
+    application="staging-${application}"
+  elif [[ "${args}" == *dev* ]]; then
+    args="${args#dev}"
+    application="dev-${application}"
+  elif [[ "${args}" =~ (test-([0-9]+)) ]]; then
+    args="${args#$BASH_REMATCH}"
+    application="staging-${application}-pr-${BASH_REMATCH[2]}"
+  fi
+
+  print "Set application to ${application}"
+}
+
+function run_heroku(){
+  if [ -n "${args}" ]; then
+      cmd="heroku ${args} --app ${application}"
+      print $cmd
+      eval $cmd
+  else
+      heroku
+  fi
+}
+
+
+function print() {
+  echo $@
+}
+
+#run script
+run

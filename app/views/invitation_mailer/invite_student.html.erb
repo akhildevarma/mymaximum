@@ -1,0 +1,18 @@
+<p>
+  You've been invited by <%= @inviter.email %> to create a student account on InpharmD™.
+</p>
+<p>
+  <%= link_to new_student_signup_url(@invitation_params) do %>
+    Click here to complete signup
+  <% end -%>,&nbsp;or copy and paste the following URL into your browser:<br/>
+</p>
+
+<p><%= new_student_signup_url(@invitation_params) -%></p>
+
+<p>You can also simply visit inpharmd.com and click "Sign Up", using the credentials below.</p>
+<p>
+  <ul>
+    <li>Email: <%= @invitation.email -%></li>
+    <li>Invitation Token: <%= @invitation.token -%></li>
+  </ul>
+</p>

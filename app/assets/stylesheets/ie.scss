@@ -1,0 +1,21 @@
+#logo {
+  max-width: none;
+}
+
+// FIXME NOTE
+// What is this even for?
+// Causes IE8 to crash
+//
+// body:before {
+//     content: '';
+//     background: white image-url("bg.png") repeat-y scroll 0 0;
+//     background-repear: no-repeat;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     display: block;
+//     z-index: 1;
+// }
+// NOTE END

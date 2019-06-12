@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  <% if @errors.blank? %>
+    if (!!$.prototype.modal) { $('#modalProfile').modal('hide'); }
+    location.reload();
+  <% else %>
+    $('#modalProfile').modal('show');
+    $('#errors-profile').html("<%=@errors.full_messages.join(', ').gsub('Phone number taken', 'Sorry! This phone number is taken. Try another?').html_safe%>");
+    // alert("<%=@errors.full_messages.join(', ').html_safe%>")
+  <% end %>
+});

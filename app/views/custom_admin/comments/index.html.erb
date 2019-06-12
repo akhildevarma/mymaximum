@@ -1,0 +1,52 @@
+<div>
+ <h2>Manage Comments</h2>
+  <hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Author</th>
+      <th>Body</th>
+      <th>Deleted</th>
+      <th>Flagged(Count)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @comments.each do |comment| -%>
+    <tr id="<%= dom_id(comment) -%>">
+      <td>
+        <%= comment.title -%>
+      </td>
+      <td><%=comment.referenceable_type.gsub('Decorator','') if comment.referenceable_type.present?%>
+      </td>
+      <td><%=comment.user.email if comment.user.present?%>
+      </td>
+      <td><%=comment.body%>
+      </td>
+      <td><%=comment.deleted%>
+      </td>
+      <td>
+      <% flagged_comments = comment.flagged_comments%>
+      <% if flagged_comments.present? %>
+      <%= link_to "#{flagged_comments.present?} (#{flagged_comments.size})", flagged_comment_users_path(comment)-%>
+      <% else %>
+          <%=flagged_comments.present?%>
+      <% end %>
+      </td>
+      <td>
+       <%= link_to 'Edit', edit_custom_admin_comment_path(comment), class: 'btn btn-info btn-sm' -%>
+      </td>
+    </tr>
+    <%- end -%>
+    <tr>
+      <td colspan="4">
+        <div class="pull-right">
+          <%= will_paginate @comments %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

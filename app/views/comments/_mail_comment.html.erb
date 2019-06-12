@@ -1,0 +1,10 @@
+<div class="well">
+  <h2><%= comment.title %></h2>
+    <p class="text-muted"><%= comment.root? ? "Started by" : "Replied by" %> <strong><%= comment.user.profile.decorate.full_name  if comment.user.present? &&  comment.user.profile.present? %></strong> on
+    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+
+  <blockquote>
+    <p><%= comment.body %></p>
+  </blockquote>
+
+</div>

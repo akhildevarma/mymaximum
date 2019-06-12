@@ -1,0 +1,8 @@
+<h5><u>Intervention report</u></h5>
+<p><%= "#{t("survey_questions.appropriate_answer")} | Answer: #{ human_boolean(survey_response.appropriate)}" %></p>
+<p><%= "#{t("survey_questions.intervention_answer")} | Answer: #{ human_boolean(survey_response.intervention)}" %></p>
+
+<p><%= "#{t("survey_questions.what_was_intervention_answer")} | Answer: #{ survey_response.what_was_intervention}" %></p>
+
+<p><%= "#{t("survey_questions.outcome_answer")} | Answer: #{survey_response.outcome}" %></p>
+

@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div id="add_doc_url" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Google Docs sharable URL</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :inquiry, url: add_doc_inquiry_url(@inquiry), html: { multipart: true, method: :put, class: 'form-horizontal', id: 'add_doc' } do |f| -%>
+    
+         
+          <div class="form-group">
+            
+            <%= f.label "Google Docs URL", class: 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+            <%= f.text_area :doc_url,rows: 2, cols: 60 %>
+            </div>
+           
+          </div>
+        <br />
+        <input name="button" class='pull-right' value="Submit" onclick=" $('#add_doc').submit();" type="button"></br>
+       <% end -%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

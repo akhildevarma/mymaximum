@@ -1,0 +1,30 @@
+<div class="ipd-inquiries-list-item <%= 'card-disabled' unless item.closed? %>">
+   <% if item.closed? %>
+      <a href="<%= inquiry_path(item) %>">
+       <%- closing_tag = '</a>' %>
+     <% else %>
+      <%- closing_tag = '' %>
+     <% end %>
+<div class="md-list-item-text" layout="column" >
+        <div data-truncate="" style="
+              font-size: 14px;
+              color: #545454;
+              font-weight: bold;
+              padding:16px;
+              margin-bottom: 1px;">
+          <%= item.question %>
+        </div>
+      </div>
+       <div class="">
+      <% if !item.closed? %>
+      <%= render partial: "shared/inquiry_status_progress_bar", locals: { inquiry: item } -%>
+      <% end %>
+      </div>
+      <br/>
+  <div class="">
+        <small class="submitted">Submitted on&nbsp;<%= local_date(item.created_at) %></small>
+      </div>
+      <br/>
+     <%= closing_tag.html_safe %>
+</div>
+ <br/>

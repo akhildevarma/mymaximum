@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "required": ["id","require_general_invitations","allow_promo_code", "created_at", "updated_at"],
+  "properties": {
+    "id": {"type": "integer"},
+    "require_general_invitations": { "type": "boolean" },
+    "allow_promo_code": { "type": "boolean" },
+    "created_at" : { "type" : "string", "format": "date-time" },
+    "updated_at" : { "type" : "string", "format": "date-time" }
+  }
+}

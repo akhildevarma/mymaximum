@@ -1,0 +1,473 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 06 Sep 2013 19:25:12 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - CFAUTHORIZATION_dailymed_48863B5BDCA01B090A4358859A61B7726=;expires=Thu, 06-Sep-2012
+        19:25:12 GMT;path=/
+      - CFAUTHORIZATION_dailymed_48863B5BDCA01B090A4358859A61B7726=;expires=Thu, 06-Sep-2012
+        19:25:12 GMT;path=/
+      - CFID=158434116;expires=Sun, 30-Aug-2043 19:25:12 GMT;path=/
+      - CFID=158434117;expires=Sun, 30-Aug-2043 19:25:12 GMT;path=/
+      - CFTOKEN=968d24f0539d088c-8F5954CA-A923-2A03-66554BDCAD47FC72;expires=Sun,
+        30-Aug-2043 19:25:12 GMT;path=/
+      - CFTOKEN=d51464a47d5a9ce3-8F595570-A640-36BB-830F28E5D30953A3;expires=Sun,
+        30-Aug-2043 19:25:12 GMT;path=/
+      - JSESSIONID=8430ccc652d6d5553b817a65122f78727432;path=/
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+      X-Vip-Info:
+      - 130.14.16.124:80
+      X-Pool-Info:
+      - /Common/dailymed_p 10.1.11.29 80
+    body:
+      encoding: UTF-8
+      string: "\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"
+        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\"
+        xml:lang=\"en\" lang=\"en\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=utf-8\" />\r\n<meta http-equiv=\"X-UA-Compatible\"
+        content=\"IE=edge\" />\r\n<link rel=\"shortcut icon\" href=\"/dailymed/images/favicon.ico\"
+        />\r\n<meta name=\"ROBOTS\" content=\"NOFOLLOW\" />\r\n\r\n\r\n\r\n<script
+        type=\"text/javascript\" src=\"/dailymed/scripts/1.3.2/jquery.js\"></script>
+        \r\n<script type=\"text/javascript\" src=\"/dailymed/scripts/autocomplete/jquery.autocomplete.js\"></script>\r\n\r\n<link
+        rel=\"stylesheet\"   href=\"/dailymed/styles/base.css\" type=\"text/css\"
+        \ />\r\n\r\n<link rel=\"stylesheet\"   href=\"/dailymed/scripts/autocomplete/jquery.autocomplete.css\"
+        type=\"text/css\" />\r\n\r\n<script src=\"/dailymed/scripts/drop_down.js\"
+        type=\"text/javascript\"></script>\r\n<script src=\"/dailymed/scripts/shared.js\"
+        type=\"text/javascript\"></script>\r\n<!--[if IE]>\r\n<link rel=\"stylesheet\"
+        type=\"text/css\" href=\"/dailymed/styles/ie-hacks.css\" />\r\n<![endif]-->\r\n<script
+        type=\"text/javascript\">\r\n\t$(document).ready(function(){\r\n\t\t\r\n\t\t//
+        check to see if autocomplete plugin has been loaded by looking for existance
+        of \"autocomplete\" function in jQuery object\r\n\t\tif( $.fn.autocomplete
+        ) {  \r\n\t\t\t// THE PLUGIN HAS BEEN LOADED!\r\n\t\t\t//alert(\" autocomplete
+        is already loaded! great! \");\r\n\r\n\t\t}\r\n\t\telse {\r\n\t\t\t// reinsert
+        the script tag into the head to load the autocomplete plugin\r\n\t\t\t\r\n\t\t\t//alert(\"
+        we need to load in autocomplete...\" );\r\n\t\t\t$(\"head\").append('<script
+        type=\"text/javascript\" src=\"/dailymed/scripts/autocomplete/jquery.autocomplete.js\"
+        />');\r\n\t\r\n\t\t}\r\n\t\t\r\n\t\t// actually activate autocomplete\r\n\t\t$(\"#startswith\").autocomplete(\"/dailymed/autocomplete.cfm?key=search\",{\r\n\t\t\twidth:
+        275,\r\n\t\t\tselectFirst: false,\r\n\t\t\tcacheLength:1,\r\n\t\t\tmax:200,\r\n\t\t\tmatchSubset:false,\r\n\t\t\tdelay:300,\r\n\t\t\tminChars:3\r\n\t\t});\r\n\t});\r\n\t\r\n
+        \   \r\n\r\n \r\n  </script>\r\n  \r\n<noscript>Your browser does not support
+        JavaScript!</noscript>\r\n\r\n\r\n\r\n\t\t\r\n\r\n<title>ASPIRIN LOW DOSE
+        SAFETY COATED (ASPIRIN) TABLET, COATED [HEALTHY ACCENTS (DZA BRANDS, LLC)]</title>\r\n<link
+        rel=\"alternate\" type=\"application/rss+xml\" href=\"/dailymed/labelrss.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"\r\ntitle=\"RSS
+        Feed for ASPIRIN LOW DOSE SAFETY COATED (ASPIRIN) TABLET, COATED [HEALTHY
+        ACCENTS (DZA BRANDS, LLC)] Label\"/>\r\n<link rel=\"bookmark\" href=\"lookup.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"
+        title=\"ASPIRIN LOW DOSE SAFETY COATED (ASPIRIN) TABLET, COATED [HEALTHY ACCENTS
+        (DZA BRANDS, LLC)]\" />\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"fdastyles/spl.css\"
+        />\r\n\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/layouts/slidingdoors.css\"
+        />\r\n\r\n</head>\r\n<body>\r\n\r\n\t<div id=\"controls\">\r\n<ul>\r\n    \r\n\t<li><a
+        class=\"skipicon1\" href=\"#druglabelcontent\" title=\"Skip to DrugLabel content
+        paragraph\">Skip to DrugLabel content</a></li>\r\n\t<li><a class=\"skipicon2\"
+        href=\"#dmsections\" title=\"Skip to DrugLabel sections paragraph\">Skip to
+        DrugLabel sections</a></li>\r\n  \r\n </ul>\r\n</div>\r\n  <div id=\"dailymedbanner\">\r\n
+        \ \t\t<div id=\"brandimage\">\r\n        <img src=\"images/DM_LOGO_HEADER.png\"
+        alt=\"DailyMed Logo Header image\" />\r\n        </div>\r\n        <div id=\"top\">\r\n
+        \         <h1>Daily\r\n            <span>Med</span>\r\n          </h1>\r\n
+        \         <h2>\r\n            <span>Current </span>\r\n            <span>Medication
+        </span>\r\n            <span>Information</span>\r\n          </h2>\r\n        </div>\r\n
+        \ </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div id=\"actions\">\r\n\t<div
+        id=\"options\">\r\n\t\t<h2>Options</h2>\r\n\t\t<ul id=\"dmnav\">\r\n\t      \t\t<li>\r\n\t\t\t\t\t<a
+        \ttitle=\" Link to DailyMed Home \"\r\n\t\t\t\t\t\thref='/dailymed/about.cfm'\r\n\t\t\t\t\t\tid=\"home\">Home</a>\r\n\t\t\t\t</li>\r\n\t
+        \     \t\t<li>\r\n\t\t\t\t\t<a \ttitle=\" Link to E-mail Label Information
+        \"\r\n\t\t\t\t\t\thref=\"/dailymed/emailWebLink.cfm\"\r\n\t\t\t\t\t\tid=\"email\">E-mail
+        Label Information</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li><a \tclass=\"rightarrow\"\r\n\t\t\t\t\t\thref=\"#\"\r\n\t\t\t\t\t\ttitle=\"Links
+        to download options\">Downloads</a>\r\n\t\t\t\t\t<ul>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a\ttitle=\"
+        Link opens new window to download all drug labels \"\r\n\t\t\t\t\t\t\t\thref=\"/dailymed/downloadLabels.cfm\">Download
+        All Drug Labels</a>\r\n\t\t\t\t\t\t</li>\r\n                        <li>\r\n
+        \                       \t<a\ttitle=\" Link opens new window to download all
+        indexing files\" \r\n                            \thref=\"/dailymed/downloadIndexing.cfm\">Download
+        All Indexing Files</a>\r\n                        </li>\r\n                        <li>\r\n
+        \                       \t<a\ttitle=\" Link opens new window to download all
+        mapping files\" \r\n                            \thref=\"/dailymed/downloadMappingFiles.cfm\">Download
+        All Mapping Files</a>\r\n                        </li>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a\ttitle=\"
+        Link opens new window to download this label (XML) \"\r\n\t\t\t\t\t\t\t\thref=\"/dailymed/getFile.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b&amp;type=zip&amp;name=ASPIRIN
+        LOW DOSE SAFETY COATED\">Download this Label(XML)</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a\thref=\"http://www.fda.gov/oc/datacouncil/spl.html\"\r\n\t\t\t\t\t\t\t\ttitle=\"Link
+        opens in a new window for FDA SPL Resources\"\r\n\t\t\t\t\t\t\t\ttarget=\"FDA\">FDA
+        SPL XML Schema</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a\thref=\"ftp://public.nlm.nih.gov/nlmdata/.dailymed/SPLIMAGE_Specification_v3_0_2_2012_03212012_FINAL_c_Figures.pdf\"\r\n\t\t\t\t\t\t\t\ttitle=\"Link
+        opens in a new window to download SPLIMAGE Specification Version 3.0.2\"\r\n\t\t\t\t\t\t\t\ttarget=\"ftpsplimagespecs\">SPLIMAGE
+        Specification Version 3.0.2</a>\r\n\t\t\t\t\t\t</li>\r\n                        \r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t\r\n\r\n\t\t\t\t<li><a
+        \ttitle=\"SPL History\"\r\n\t\t\t\t\t\thref=\"/dailymed/splshistory.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"\r\n\t\t\t\t\t\tid=\"splhistory\">SPL
+        History </a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li><a \ttitle=\"Link to Print this
+        Label\"\r\n\t\t\t\t\t\thref=\"/dailymed/fda/fdaDrugXsl.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b&amp;type=display\"\r\n\t\t\t\t\t\tid=\"printitem\"\r\n\t\t\t\t\t\ttarget=\"_blank\">
+        Print this Label </a>\r\n\t\t\t\t</li>\r\n                <li>\r\n                \r\n\t\t\t\t\r\n
+        \                   <a\ttitle=\"Download PDF of this Label\" \r\n                            href=\"/dailymed/getFile.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b&amp;type=pdf&amp;name=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"\r\n
+        \                           id=\"downloadpdf\"> Download this Label (PDF)</a>\r\n
+        \                 \r\n                             \r\n                </li>
+        \       \r\n\t\t\t\t\r\n\t      \t    <li>\r\n\t\t\t\t\t\t<a\ttitle=\" Notify
+        of Updates \"\r\n\t\t\t\t\t\thref=\"/dailymed/rsshome.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"\r\n\t\t\t\t\t\tid=\"rss\">Notify
+        of Updates</a>\r\n\t\t\t\t</li>\r\n\t      \t\t<li>\r\n\t\t\t\t\t<a\ttitle=\"
+        Contact Us \"\r\n\t\t\t\t\t\thref=\"/dailymed/contactUs.cfm\"\r\n\t\t\t\t\t\tid=\"contact\">Contact
+        Us</a>\r\n\t\t\t\t</li>\r\n                <li>\r\n\t\t\t\t\t<a\ttitle=\"
+        Help \"\r\n\t\t\t\t\t\thref=\"/dailymed/help.cfm\"\r\n\t\t\t\t\t\tid=\"help\">Help</a>\r\n\t\t\t\t</li>\r\n
+        \               <li>\r\n\t\t\t\t\t<a\ttitle=\" Web Services \"\r\n\t\t\t\t\t\thref=\"/dailymed/help.cfm#webservices\"\r\n\t\t\t\t\t\tid=\"help\">Web
+        Services</a>\r\n\t\t\t\t</li>\r\n                <li class=\"new-option\">\r\n
+        \               \t<a\ttitle=\" Browse Drug Classes \"\r\n                    \thref=\"/dailymed/browseClasses.cfm\"\r\n
+        \                       id=\"browse\">Browse Drug Classes<img src=\"/dailymed/images/new.gif\"
+        alt=\"New menu option\" style=\"border:none;\"/>\r\n                    </a>\r\n
+        \                   \r\n                </li>\r\n\t\t\t\t<li><h2>Additional
+        Resources</h2></li>\r\n\t\t\t\t<li>\r\n\t\t\t\t\t<a\tid=\"splimagesspec\"\r\n\t\t\t\t\t\thref=\"splimagesspec.cfm\"\r\n\t\t\t\t\t\ttarget=\"SPLIMAGESPEC\"\r\n\t\t\t\t\t\ttitle=\"SPLIMAGE
+        Specifications\">SPLIMAGE Specification Version 3.0.2  </a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>\r\n\t\t\t\t\t<a\tid=\"report\"\r\n\t\t\t\t\t\thref=\"http://www.fda.gov/medwatch/how.htm\"\r\n\t\t\t\t\t\ttarget=\"FDA\"\r\n\t\t\t\t\t\ttitle=\"FDA
+        Page to Report Adverse Event\">Report Adverse Event</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\r\n\t\t\t\r\n\t\t\t
+        \   <li><a href=\"http://www.nlm.nih.gov/search/medlineplus?query=ASPIRIN\"
+        title=\"Link opens new window to MedlinePlus Information\" target=\"medlinePlus\">MedlinePlus
+        Information</a></li>\r\n\t\t\t    <li><a href=\"http://www.clinicaltrials.gov/ct/search?submit=Search&amp;term=ASPIRIN\"
+        title=\"Link opens new window to Find Clinical Trials\" target=\"clinicalTrials\">Find
+        Clinical Trials</a></li>\r\n\t\t\t\t<li><a href=\"http://www.drugbank.ca/search/search?query=APRD00264\"
+        title=\"Link opens new window to University of Alberta DrugBank\" target=\"drugBank\">Biochemical
+        Data Summary</a></li>\r\n\t\t\t    <li><a href=\"#\" class=\"rightarrow\"
+        title=\"Links to Search PubMed Articles\">Search PubMed Articles</a>\r\n\t\t\t\t
+        \ <ul>\r\n\t\t\t\t\t<li><a href=\"http://www.ncbi.nlm.nih.gov/sites/entrez?DB=pubmed&amp;term=ASPIRIN[All
+        Fields]\" title=\"Link opens new window for All Citations\" target=\"pubmed\">All
+        Citations</a></li>\r\n\t\t\t\t\t<li><a href=\"http://www.ncbi.nlm.nih.gov/sites/entrez?DB=pubmed&amp;term=ASPIRIN/AE\"
+        title=\"Link opens new window for Adverse Effects\" target=\"pubmed\">Adverse
+        Effects</a></li>\r\n\t\t\t\t\t<li><a href=\"http://www.ncbi.nlm.nih.gov/sites/entrez?DB=pubmed&amp;term=ASPIRIN/TU\"
+        \ title=\"Link opens new window for Therapeutic Use\" target=\"pubmed\">Therapeutic
+        Use</a></li>\r\n\t\t\t\t\t<li><a href=\"http://www.ncbi.nlm.nih.gov/sites/entrez?DB=pubmed&amp;term=ASPIRIN/PD\"
+        title=\"Link opens new window for Pharmacology\" target=\"pubmed\">Pharmacology</a></li>\r\n\t\t\t\t\t<li><a
+        href=\"http://www.ncbi.nlm.nih.gov/sites/entrez?DB=pubmed&amp;term=ASPIRIN[All
+        Fields] AND Clinical Trial[ptyp]\" title=\"Link opens new window for Clinical
+        Trials\" target=\"pubmed\">Clinical Trials</a></li>\r\n\t\t\t\t  </ul>\r\n\t\t\t
+        \   </li>\r\n\t\t\t\t<li>\r\n\t\t\t\t\t<a href=\"http://toxnet.nlm.nih.gov/cgi-bin/sis/search/r?dbs+lact:@na+ASPIRIN\"
+        target=\"toxnet\" title=\"Link opens new window for Presence in Breast Milk\">Presence
+        in Breast Milk</a>\r\n\t\t\t\t\r\n\t\t\t\t</li>\r\n\r\n\t     </ul>\r\n\t\t
+        \r\n\t\t \t<div id=\"mdswitch\">\r\n\t\t\t\t\r\n\t\t\t\t\t<a  href=\"/dailymed/drugInfo.cfm?id=91985&amp;dictionary=on\"\r\n\t\t\t\t\t\ttitle=\"Turn
+        Dictionary Words On\">\r\n\t\t\t\t\t\t<img src=\"/dailymed/images/dictionaryon.jpg\"
+        alt=\"Turn Dictionary Words On\"/>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t\r\n\r\n\t</div>\r\n\t\t\r\n\t\t\r\n\t\t\t\r\n\r\n<link
+        rel=\"stylesheet\" href=\"styles/thickbox.css\" type=\"text/css\" media=\"screen\"
+        />\r\n\r\n<script language=\"JavaScript\" src=\"scripts/1.3.2/jquery.js\"></script>
+        \r\n<script language=\"javascript\" type=\"text/javascript\" src=\"scripts/thickbox.js\"></script>\r\n\r\n\r\n<script
+        type=\"text/javascript\" src=\"scripts/autocomplete/lib/jquery.bgiframe.min.js\"></script>\r\n<script
+        type=\"text/javascript\" src=\"scripts/autocomplete/lib/jquery.dimensions.js\"></script>\r\n\r\n<script
+        language=\"JavaScript\"> \r\n\r\n/*$(function(){\r\n\t$(\"img[id='prdimg'][src*='.jpg']\").thumbPopup({\r\n\t\timgSmallFlag:
+        \"_s\",\r\n\t\timgLargeFlag: \"_l\",\r\n\t\tcursorLeftOffset: 150\r\n\t});\r\n\t\r\n});*/\r\n</script>
+        \r\n\r\n<style type=\"text/css\">\r\n\t\thtml body {\r\n\t\tmin-width:1024px;\r\n\t\t}\r\n
+        \       .smallimage {\r\n            border: 1px solid ##ACBECE;\r\n        }\r\n</style>\r\n\r\n\r\n\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n
+        \   \r\n\t    \r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\t\r\n\t\r\n\t\t\r\n\r\n\t\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\t\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n
+        \   \r\n\t\r\n    \r\n    \r\n     \r\n    \r\n    \r\n    \r\n    \r\n\t\r\n\t
+        \  \r\n    \r\n\t\r\n    \r\n    \r\n        \r\n    \r\n       \r\n    \r\n\r\n\r\n\r\n\r\n\r\n\t\t\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div
+        id=\"content\">\r\n<div id=\"searchpane\">\r\n\r\n\r\n\r\n<div id=\"search\">\r\n<form
+        action=\"/dailymed/search.cfm\" name=\"searchform\">\r\n<div class=\"divtable\">\r\n
+        \   <div class=\"divtr\">\r\n            <div class=\"divtd\">Search :</div>\r\n
+        \           <div class=\"divtd\">\r\n            \t<label for=\"startswith\"
+        class=\"invisibletag\">Enter a drug Name to search</label>\r\n                <input
+        style=\"width:95%;\"\r\n                type=\"text\" \r\n                id=\"startswith\"
+        \r\n                name=\"startswith\" \r\n                title=\"enter
+        a drug name to search\"  \r\n                onclick=\"javascript:resetme()\"
+        /> &nbsp;           \r\n            </div>\r\n            <div class=\"divtd\">\r\n
+        \             \t<label for=\"go\" class=\"invisibletag\">Go</label>\r\n                <input
+        type=\"image\" \r\n                src=\"/dailymed/images/goButton.gif\" \r\n
+        \               alt=\"Click this button to start your drug name search\" \r\n
+        \               title=\"Click this button to start your drug name search\"
+        \r\n                id=\"go\"/> &nbsp;\r\n            </div>\r\n            <div
+        class=\"divtd80\">\r\n            \t<a href=\"/dailymed/advancedSearch.cfm\">Advanced
+        Search</a>\r\n            </div>\r\n    </div>\r\n    <div class=\"divtr\">\r\n
+        \   \t\t<div class=\"divtd85\">Limits:</div>\r\n            <div class=\"divtd85\">\r\n
+        \               <input  class=\"searchoptions\"  type=\"radio\" name=\"searchdb\"
+        value=\"drugname\" id=\"name-radio\" title=\"Drug Name\" />\r\n                <label
+        for=\"name-radio\" class=\"searchoptions\">Drug Name</label>\r\n                <input
+        \ class=\"searchoptions\"  type=\"radio\" name=\"searchdb\" value=\"ndc\"
+        id=\"ndc-radio\" title=\"NDC Code\" />\r\n               \t<label for=\"ndc-radio\"
+        class=\"searchoptions\">NDC Code</label>\r\n                <input  class=\"searchoptions\"
+        \ type=\"radio\" name=\"searchdb\" value=\"drugclass\" id=\"class-radio\"
+        title=\"Drug Class\" />\r\n               \t<label for=\"class-radio\" class=\"searchoptions\">Drug
+        Class</label>\r\n                <input  class=\"searchoptions\"  type=\"radio\"
+        name=\"searchdb\" value=\"setid\" id=\"setid-radio\" title=\"SETID\" />\r\n
+        \              \t<label  for=\"setid-radio\" class=\"searchoptions\">SetId</label>\r\n
+        \           </div>\r\n    </div>\r\n    <div class=\"divtr\">\r\n            <div
+        class=\"divtd85\">Label Type:</div>\r\n            <div class=\"divtd85\"
+        style=\"float:left;\">\r\n                <input class=\"searchoptions\" type=\"radio\"
+        name=\"labeltype\" value=\"human\" id=\"human-radio\" title=\"Human Drugs\"
+        />\r\n               \t<label for=\"human-radio\" class=\"searchoptions\">Human
+        Drugs</label>\r\n                <input class=\"searchoptions\" type=\"radio\"
+        name=\"labeltype\" value=\"animal\" id=\"animal-radio\" title=\"Animal Drugs\"
+        />\r\n               \t<label for=\"animal-radio\" class=\"searchoptions\">Animal
+        Drugs</label>\r\n            </div>\r\n    </div>          \r\n</div>\r\n</form>\r\n\r\n</div>\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\t\t<div
+        id=\"rxnormlist\">\r\n\t\t<h3>RxNorm Names</h3>\r\n\t\t\r\n\t\t\t\r\n\t\t\t<ul
+        style=\"maring:0px; padding:0px;\">\r\n\t\t\t\t<li id=\"item1\" style=\"padding:1px;
+        margin:1px;\">\r\n\t\t\t\t\t  \r\n\t\t\t\t\t\t<a \tid=\"viewrxnorm\"\r\n\t\t\t\t\t\t\thref=\"rxnormdata.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\"\r\n\t\t\t\t\t\t\tonclick=\"rxnormpopup(this.href);return
+        false;\"\r\n\t\t\t\t\t\t\ttarget=\"rxnorm\" title=\"Link to Review RxNorm
+        Normal Forms\" >\r\n\t\t\t\t\t\t\t<img src=\"images/closed.gif\"\r\n\t\t\t\t\t\t\t\t
+        alt=\"Icon attached Review or Hide All RxNorm Normal Forms Link\"\r\n\t\t\t\t\t\t\t\t
+        id=\"img_item1\"\r\n\t\t\t\t\t\t\t\t border=\"0\"\r\n\t\t\t\t\t\t\t\t style=\"clear:none;float:left\">Review
+        RxNorm Normal Forms</a>\r\n\t\t\t\t\t  \r\n\t\t\t  \t</li>\r\n\t\t\t </ul>\r\n\t\t\r\n\t\t</div>\r\n\t\r\n\r\n<!DOCTYPE
+        html PUBLIC \"-\">\n<p class=\"DocumentTitle\">\n<strong>ASPIRIN LOW DOSE
+        SAFETY COATED\n\t\t\t(aspirin) \n\t\t tablet, coated</strong>\n<br> [Healthy
+        Accents (DZA Brands, LLC)] \n\t</p><br>\n\r\n<div class=\"permalink\">\r\n\t<h3><strong>Permanent
+        Link: </strong></h3><span><a href=\"lookup.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b\">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f414b76d-22e6-4874-b889-bb8ddc76ac7b
+        </a><span>\r\n</div>\r\n<div id=\"nlmdrugstatus\">\r\n<table border=\"4\"
+        width=\"100%\" style=\"border: 1px solid rgb(142, 1, 10); padding: 0pt; float:
+        right; margin-bottom: 0.75em; margin-top: 0.75em; position: relative; right:
+        0pt;\">\r\n<thead align=\"left\" bgcolor=\"#F6F6F6\" style=\"color:#8e010a;
+        font-size:1.2em\">\r\n<tr>\r\n<th scope=\"col\">\r\n\t<a class=\"anchor1\"
+        href=\"http://www.fda.gov/ForIndustry/DataStandards/StructuredProductLabeling/ucm162063.htm\"
+        target=\"fda\"\r\nonclick=\"fdapopup(this.href);return false;\" title=\"Document
+        Type including Content of Labeling Type\">\r\nCategory</a></th>\r\n<th scope=\"col\">\r\n\t<a
+        class=\"anchor1\" href=\"http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071816.htm\"
+        target=\"fda\" onclick=\"fdapopup(this.href);return false;\" title=\"SPL DEA
+        Schedule\">\r\nDEA Schedule</a></th>\r\n<th scope=\"col\">\r\n<a class=\"anchor1\"
+        href=\"http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071826.htm\"
+        target=\"fda\" onclick=\"fdapopup(this.href);return false;\" title=\"Marketing
+        Category\">Marketing Status</a></th>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td
+        scope=\"row\"><strong>HUMAN OTC DRUG LABEL</strong></td>\r\n<td scope=\"row\"><strong></strong></td>\r\n<td
+        scope=\"row\"><strong>OTC monograph final</strong></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div
+        id=\"disclaimer\" >\r\n\t\r\n\t\r\n\t\t<strong><span>NOTE:</span>MOST OTC
+        DRUGS ARE NOT REVIEWED AND APPROVED BY FDA, HOWEVER THEY MAY BE MARKETED IF
+        THEY COMPLY WITH APPLICABLE REGULATIONS AND POLICIES. FDA HAS NOT EVALUATED
+        WHETHER THIS PRODUCT COMPLIES.</strong>\r\n     \r\n</div>\r\n</div>\r\n\n<div
+        id=\"dmsectionsfieldset\">\n<fieldset>\n<legend>Drug Label Sections</legend>\n<div
+        id=\"dmsections\">\n<ul>\n<li>\n<a title=\"Description\" href=\"#nlm34089-3\"
+        class=\"nlmlinkfalse\">Description</a>\n</li>\n<li>\n<a title=\"Clinical Pharmacology\"
+        href=\"#nlm34090-1\" class=\"nlmlinkfalse\">Clinical Pharmacology</a>\n</li>\n<li>\n<a
+        title=\"Indications &amp; Usage\" href=\"#nlm34067-9\" class=\"nlmlinktrue\">Indications
+        &amp; Usage</a>\n</li>\n<li>\n<a title=\"Contraindications\" href=\"#nlm34070-3\"
+        class=\"nlmlinkfalse\">Contraindications</a>\n</li>\n<li>\n<a title=\"Warnings\"
+        href=\"#nlm34071-1\" class=\"nlmlinktrue\">Warnings</a>\n</li>\n<li>\n<a title=\"Precautions\"
+        href=\"#nlm42232-9\" class=\"nlmlinkfalse\">Precautions</a>\n</li>\n<li>\n<a
+        title=\"Adverse Reactions\" href=\"#nlm34084-4\" class=\"nlmlinkfalse\">Adverse
+        Reactions</a>\n</li>\n<li>\n<a title=\"Overdosage\" href=\"#nlm34088-5\" class=\"nlmlinkfalse\">Overdosage</a>\n</li>\n<li>\n<a
+        title=\"Dosage &amp; Administration\" href=\"#nlm34068-7\" class=\"nlmlinktrue\">Dosage
+        &amp; Administration</a>\n</li>\n<li>\n<a title=\"How Supplied\" href=\"#nlm34069-5\"
+        class=\"nlmlinkfalse\">How Supplied</a>\n</li>\n<li>\n<a title=\"Patient Counseling
+        Information\" href=\"#nlm34076-0\" class=\"nlmlinkfalse\">Patient Counseling
+        Information</a>\n</li>\n<li>\n<a title=\"Supplemental Patient Material\" href=\"#nlm38056-8\"
+        class=\"nlmlinkfalse\">Supplemental Patient Material</a>\n</li>\n<li>\n<a
+        title=\"Boxed Warning\" href=\"#nlm34066-1\" class=\"nlmlinkfalse\">Boxed
+        Warning</a>\n</li>\n<li>\n<a title=\"Patient Package Insert\" href=\"#nlm42230-3\"
+        class=\"nlmlinkfalse\">Patient Package Insert</a>\n</li>\n<li>\n<a title=\"Highlights\"
+        href=\"#nlmhighlights\" class=\"nlmlinkfalse\">Highlights</a>\n</li>\n<li>\n<a
+        title=\"Full Table of Contents\" href=\"javascript:nlmftoc('nlmftoc');\" class=\"nlmlinkfalse\">Full
+        Table of Contents</a>\n</li>\n<li><a href=\"#\" class=\"nlmlinkfalse\">Medication
+        Guide</a></li></ul>\n</div>\n</fieldset>\n</div>\n\r\n<div class=\"spl\">\r\n\t\n<a
+        name=\"druglabelcontent\"></a>\n<div class=\"Contents\">\n<div class=\"Section\"
+        data-sectionCode=\"48780-1\">\n<a name=\"section-1\"></a>\n<p></p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"55106-9\">\n<a name=\"LINK_0b6f874a-c83b-4907-b5bc-28096099301c\"></a><a
+        name=\"section-1\"></a>\n<p></p>\n<h1>\n<a name=\"nlm55106-9\"></a>Active
+        ingredient (in each tablet)</h1>\n<p class=\"First\">\n<span class=\"Bold\">Aspirin
+        81 mg (NSAID)*</span>\n</p>\n<p>\n<span class=\"Bold\">*nonsteroidal anti-inflammatory
+        drug&nbsp;</span>\n</p>\n</div>\n<div class=\"Section\" data-sectionCode=\"55105-1\">\n<a
+        name=\"LINK_a238097c-7855-4a64-a61d-9c4adbeda8f4\"></a><a name=\"section-2\"></a>\n<p></p>\n<h1>\n<a
+        name=\"nlm55105-1\"></a>Purpose</h1>\n<p class=\"First\">\n<span class=\"Bold\">Pain&nbsp;reliever&nbsp;</span>\n</p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"34067-9\">\n<a name=\"LINK_32dbc685-1673-42d3-ace6-5870b27d8c3b\"></a><a
+        name=\"section-3\"></a>\n<p></p>\n<h1>\n<a name=\"nlm34067-9\"></a>Uses</h1>\n<ul
+        class=\"Square\">\n<li>for the temporary relief of&nbsp;minor aches and pains
+        or as recommended by your doctor. <span class=\"Bold\">Because of its delayed
+        action, this product will not provide fast relief of headaches or other symptoms
+        needing immediate relief.</span>\n</li>\n<li>ask your doctor about other uses
+        for safety coated 81 mg aspirin</li>\n</ul>\n</div>\n<div class=\"Section\"
+        data-sectionCode=\"34071-1\">\n<a name=\"LINK_58328d71-6790-40bb-a18e-28db096d7fc0\"></a><a
+        name=\"section-4\"></a>\n<p></p>\n<h1>\n<a name=\"nlm34071-1\"></a>Warnings</h1>\n<p
+        class=\"First\">\n<span class=\"Bold\">Reye's syndrome</span>: Children and
+        teenagers who have or are recovering from chicken pox or flu-like symptoms
+        should not use this product.&nbsp; When using this product, if changes in
+        behavior with nausea and vomiting occur, consult a doctor because these symptoms
+        could be an early sign of Reye's syndrome, a rare but serious illness.</p>\n<p>\n<span
+        class=\"Bold\">Allergy&nbsp;alert</span>: Aspirin may cause a severe allergic
+        reaction, which may include: &nbsp;</p>\n<ul class=\"Square\">\n<li>hives
+        \n</li>\n<li>facial swelling \n</li>\n<li>shock \n</li>\n<li>asthma (wheezing)</li>\n</ul>\n<p>\n<span
+        class=\"Bold\">Stomach bleeding warning: </span>This product contains an NSAID,
+        which may cause severe stomach bleeding.&nbsp; The chance is higher if you:</p>\n<ul
+        class=\"Square\">\n<li>are age 60 or older \n</li>\n<li>have had stomach ulcers
+        or bleeding problems \n</li>\n<li>take a blood thinning (anticoagulant) or
+        steroid drug \n</li>\n<li>take other drugs containing prescription or nonprescription
+        NSAIDs [aspirin, ibuprofen, naproxen, or others] \n</li>\n<li>have 3 or more
+        alcoholic drinks every day while using this product \n</li>\n<li>take more
+        or for a longer time than directed</li>\n</ul>\n<div class=\"Section\" data-sectionCode=\"50570-1\">\n<a
+        name=\"LINK_1980660a-2936-4efa-92b5-bad9afecfa85\"></a><a name=\"section-4.1\"></a>\n<p></p>\n<h2>\n<a
+        name=\"nlm50570-1\"></a>Do not use</h2>\n<p class=\"First\">if you are allergic
+        to aspirin or any other pain reliever/fever reducer.&nbsp;</p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"50569-3\">\n<a name=\"LINK_35f976a3-b14d-44f2-96bd-571e9b2799b8\"></a><a
+        name=\"section-4.2\"></a>\n<p></p>\n<h2>\n<a name=\"nlm50569-3\"></a>Ask a
+        doctor before use if</h2>\n<ul class=\"Square\">\n<li>stomach bleeding&nbsp;warning
+        applies to you \n</li>\n<li>you have a history of stomach problems, such as
+        heartburn \n</li>\n<li>you have high blood pressure, heart disease, liver
+        cirrhosis or kidney disease \n</li>\n<li>you have asthma</li>\n<li>you are
+        taking a diuretic&nbsp; </li>\n</ul>\n</div>\n<div class=\"Section\" data-sectionCode=\"50568-5\">\n<a
+        name=\"LINK_46b114cf-0986-4238-a233-e3141aa3a440\"></a><a name=\"section-4.3\"></a>\n<p></p>\n<h2>\n<a
+        name=\"nlm50568-5\"></a>Ask a doctor or pharmacist before use if you are</h2>\n<p
+        class=\"First\">taking a prescription drug for</p>\n<ul class=\"Square\">\n<li>gout
+        \n</li>\n<li>diabetes \n</li>\n<li>arthritis&nbsp;</li>\n</ul>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"50566-9\">\n<a name=\"LINK_1a11c67b-b892-47be-92d6-7e48090fb2be\"></a><a
+        name=\"section-4.4\"></a>\n<p></p>\n<h2>\n<a name=\"nlm50566-9\"></a>Stop
+        use and ask a doctor if</h2>\n<ul class=\"Square\">\n<li>you experience any
+        of the following signs of stomach bleeding: \n<ul class=\"Circle\">\n<li>feel
+        faint \n</li>\n<li>have bloody or black stools \n</li>\n<li>vomit blood \n</li>\n<li>have
+        stomach pain that&nbsp;does not get better </li>\n</ul>\n</li>\n<li>an allergic
+        reaction occurs. Seek medical help right away.&nbsp; \n</li>\n<li>new symptoms
+        occur \n</li>\n<li>pain gets worse or lasts more than 10 days \n</li>\n<li>redness
+        or swelling is present \n</li>\n<li>ringing in the ears or loss of hearing
+        occurs</li>\n</ul>\n</div>\n<div class=\"Section\" data-sectionCode=\"53414-9\">\n<a
+        name=\"LINK_98b74249-3d2a-4bed-81c2-f9a4f8accc72\"></a><a name=\"section-4.5\"></a>\n<p></p>\n<h2>\n<a
+        name=\"nlm53414-9\"></a>If pregnant or breast-feeding,</h2>\n<p class=\"First\">ask
+        a health professional before use.&nbsp;<span class=\"Bold\"> It is especially
+        important not to use aspirin during the last 3 months of pregnancy unless
+        definitely directed to do so by a doctor because it may cause problems in
+        the unborn child or complications&nbsp;during delivery.&nbsp;</span>\n</p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"50565-1\">\n<a name=\"LINK_ff2e454b-522d-434f-8c22-683c13da7df5\"></a><a
+        name=\"section-4.6\"></a>\n<p></p>\n<h2>\n<a name=\"nlm50565-1\"></a>Keep
+        out of reach of children.</h2>\n<p class=\"First\">In case of overdose, get
+        medical help or contact a Poison Control Center right away.&nbsp;</p>\n</div>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"34068-7\">\n<a name=\"LINK_7cc11553-086c-4fcc-8c1b-5f9559be0349\"></a><a
+        name=\"section-5\"></a>\n<p></p>\n<h1>\n<a name=\"nlm34068-7\"></a>Directions</h1>\n<ul
+        class=\"Square\">\n<li>drink a full glass of water with each dose \n</li>\n<li>adults
+        and children 12 years and over: take 4 to 8 tablets every 4 hours not to exceed
+        48 tablets in 24 hours unless directed by a doctor \n</li>\n<li>children under
+        12 years: do not use</li>\n</ul>\n</div>\n<div class=\"Section\" data-sectionCode=\"44425-7\">\n<a
+        name=\"LINK_156d1e66-5ae9-4d14-91f3-80019128abca\"></a><a name=\"section-6\"></a>\n<p></p>\n<h1>\n<a
+        name=\"nlm44425-7\"></a>Other information</h1>\n<ul class=\"Square\">\n<li>store
+        at controlled room temperature 15&ordm;-30&ordm;C (59&ordm;-86&ordm;F) </li>\n</ul>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"51727-6\">\n<a name=\"LINK_73783ab1-2cbe-4242-af0e-0e922e502065\"></a><a
+        name=\"section-7\"></a>\n<p></p>\n<h1>\n<a name=\"nlm51727-6\"></a>Inactive
+        ingredients</h1>\n<p class=\"First\">anhydrous lactose**, black iron oxide**,
+        brown iron oxide**,&nbsp;croscarmellose sodium**, D&amp;C yellow #10, FD&amp;C
+        yellow #6**,&nbsp;hypromellose**, methacrylic acid copolymer, microcrystalline
+        cellulose, mineral oil**, polysorbate 80**,&nbsp; potassium hydroxide**, pregelatinized
+        starch**, propylene glycol**, purified water**, shellac**, silicon dioxide,
+        simethicone**,&nbsp;sodium bicarbonate**, sodium hydroxide**, sodium lauryl
+        sulfate**, stearic acid**, talc, titanium dioxide, triethyl citrate, yellow
+        iron oxide**</p>\n<p>**contains one or more of these ingredients&nbsp;</p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"53413-1\">\n<a name=\"LINK_8417ba4f-3dbc-40e2-9fce-2459d65c1b8c\"></a><a
+        name=\"section-8\"></a>\n<p></p>\n<h1>\n<a name=\"nlm53413-1\"></a>Questions
+        or comments?</h1>\n<p class=\"First\">Call toll free&nbsp;<span class=\"Bold\">1-866-322-2439</span>\n</p>\n</div>\n<div
+        class=\"Section\" data-sectionCode=\"51945-4\">\n<a name=\"LINK_fa3a2dc9-6f51-406e-bf5a-3aa7abffc412\"></a><a
+        name=\"section-9\"></a>\n<p></p>\n<h1>\n<a name=\"nlm51945-4\"></a>Principal
+        Display Panel</h1>\n<p class=\"First\">\n<span class=\"Bold\">Compare to </span><span
+        class=\"Bold\">Bayer&reg; Low Dose Aspirin</span> active ingredient&dagger;</p>\n<p>\n<span
+        class=\"Bold\">Aspirin 81 mg</span>\n</p>\n<p>Pain Reliever <span class=\"Bold\">(NSAID)</span>\n</p>\n<p>Low
+        Dose Safety Coated</p>\n<p>Aspirin Regimen&Dagger;</p>\n<p>ENTERIC COATED
+        TABLETS</p>\n<p>&dagger;This product is not manufactured or distributed by
+        Bayer HealthCare LLC, owner of the registered trademark Bayer&reg; Low Dose
+        Aspirin.</p>\n<p>&Dagger;Aspirin is not appropriate for everyone, so be sure
+        you talk to your doctor before you begin an aspirin regimen.</p>\n<p>\n<span
+        class=\"Bold\">KEEP OUTER CARTON FOR COMPLETE WARNINGS AND PRODUCT INFORMATION.</span>\n</p>\n<p>\n<span
+        class=\"Bold\">TAMPER EVIDENT: DO NOT USE IF IMPRINTED SAFETY SEAL UNDER CAP
+        IS BROKEN OR MISSING.</span>\n</p>\n<p>Distributed by: DZA Brands, LLC</p>\n<p>Salisbury,
+        NC&nbsp; 28147</p>\n<p>Scarborough, ME&nbsp; 04074</p>\n</div>\n<div class=\"Section\"
+        data-sectionCode=\"51945-4\">\n<a name=\"LINK_0500c65c-d8de-445d-b3ff-c5c4ba3c1258\"></a><a
+        name=\"section-10\"></a>\n<p></p>\n<h1>\n<a name=\"nlm51945-4\"></a>Product
+        Label</h1>\n<div class=\"Figure\">\n<img src=\"image.cfm?id=91985&type=img&name=aspirin%2D81%2Dmg%2Dlow%2Ddose%2Dsafety%2Dcoated%2Dyellow%2Dtablet%2D1.jpg\"
+        alt=\"Aspirin 81 mg\"><p class=\"MultiMediaCaption\">Healthy Accents Aspirin
+        81 mg Low Dose Safety Coated Tablets</p>\n</div>\n</div>\n</div>\n<div class=\"DataElementsTables\">\n<table
+        width=\"100%\" cellPadding=\"3\" cellSpacing=\"0\" class=\"contentTablePetite\">\n<tbody>\n<tr>\n<td
+        class=\"contentTableTitle\"><strong>ASPIRIN&nbsp;\t\t\n\t\t\t\t\tLOW DOSE
+        SAFETY COATED</strong>\n<br>\n<span class=\"contentTableReg\">aspirin tablet,
+        coated</span></td>\n</tr>\n<tr>\n<td>\n<table class=\"formTablePetite\" cellspacing=\"0\"
+        cellpadding=\"5\" width=\"100%\">\n<tr>\n<td class=\"formHeadingTitle\" colspan=\"4\">Product
+        Information</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td class=\"formLabel\">Product
+        Type</td><td class=\"formItem\">HUMAN OTC DRUG</td><td class=\"formLabel\">Item
+        Code (Source)</td><td class=\"formItem\">NDC:55316-227</td>\n</tr>\n<tr class=\"formTableRow\">\n<td
+        class=\"formLabel\" width=\"30%\">Route of Administration</td><td class=\"formItem\">ORAL</td><td
+        class=\"formLabel\" width=\"30%\">DEA Schedule</td><td class=\"formItem\">&nbsp;&nbsp;&nbsp;&nbsp;\n\t\t\t\t\t\t\t</td>\n</tr>\n</table>\n</td>\n</tr>\n<tr>\n<td>\n<table
+        class=\"formTablePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingTitle\" colspan=\"3\">Active Ingredient/Active Moiety</td>\n</tr>\n<tr>\n<td
+        class=\"formTitle\">Ingredient Name</td><td class=\"formTitle\">Basis of Strength</td><td
+        class=\"formTitle\">Strength</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>ASPIRIN</strong> (ASPIRIN) </td><td class=\"formItem\">ASPIRIN</td><td
+        class=\"formItem\">81&nbsp;mg</td>\n</tr>\n</table>\n</td>\n</tr>\n<tr>\n<td>\n<table
+        class=\"formTablePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingTitle\" colspan=\"2\">Inactive Ingredients</td>\n</tr>\n<tr>\n<td
+        class=\"formTitle\">Ingredient Name</td><td class=\"formTitle\">Strength</td>\n</tr>\n<tr
+        class=\"formTableRowAlt\">\n<td class=\"formItem\"><strong>POLYSORBATE 80</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRow\">\n<td class=\"formItem\"><strong>DIMETHICONE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>SODIUM HYDROXIDE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>SODIUM LAURYL SULFATE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>TALC</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>TRIETHYL CITRATE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>ANHYDROUS LACTOSE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>FERROSOFERRIC OXIDE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>BROWN IRON OXIDE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>CROSCARMELLOSE SODIUM</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>D&amp;C YELLOW NO. 10</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>FD&amp;C YELLOW NO.
+        6</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>HYPROMELLOSES</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>METHACRYLIC ACID -
+        METHYL METHACRYLATE COPOLYMER (1:1)</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRowAlt\">\n<td class=\"formItem\"><strong>CELLULOSE, MICROCRYSTALLINE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRow\">\n<td class=\"formItem\"><strong>MINERAL
+        OIL</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>POTASSIUM HYDROXIDE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>STARCH, CORN</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>PROPYLENE GLYCOL</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>WATER</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>SHELLAC</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>SILICON DIOXIDE</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>SODIUM BICARBONATE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>STEARIC ACID</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>TITANIUM DIOXIDE</strong></td><td class=\"formItem\">&nbsp;</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formItem\"><strong>FERRIC OXIDE YELLOW</strong></td><td
+        class=\"formItem\">&nbsp;</td>\n</tr>\n</table>\n</td>\n</tr>\n<tr>\n<td>\n<table
+        class=\"formTablePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingTitle\" colspan=\"4\">Product Characteristics</td>\n</tr>\n<tr
+        class=\"formTableRowAlt\">\n<td class=\"formLabel\">Color</td><td class=\"formItem\">YELLOW</td><td
+        class=\"formLabel\">Score</td><td class=\"formItem\">no score</td>\n</tr>\n<tr
+        class=\"formTableRow\">\n<td class=\"formLabel\">Shape</td><td class=\"formItem\">ROUND</td><td
+        class=\"formLabel\">Size</td><td class=\"formItem\">7mm</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formLabel\">Flavor</td><td class=\"formItem\"></td><td class=\"formLabel\">Imprint
+        Code</td><td class=\"formItem\">\n                           \n                           E;T81;1\n
+        \                       </td>\n</tr>\n<tr class=\"formTableRow\">\n<td class=\"formLabel\">Contains</td><td
+        class=\"formItem\">&nbsp;&nbsp;&nbsp;&nbsp;</td>\n</tr>\n</table>\n</td>\n</tr>\n<tr>\n<td>\n<table
+        class=\"formTablePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingTitle\" colspan=\"4\">Packaging</td>\n</tr>\n<tr>\n<td
+        class=\"formTitle\" width=\"1\">#</td><td class=\"formTitle\">Item Code</td><td
+        class=\"formTitle\">Package Description</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>1</strong></td><td class=\"formItem\">NDC:55316-227-30</td><td
+        class=\"formItem\">1  in 1 BOX</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\"><strong>1</strong></td><td class=\"formItem\"></td><td
+        class=\"formItem\">300  in 1 BOTTLE, PLASTIC</td>\n</tr>\n<tr class=\"formTableRow\">\n<td
+        class=\"formItem\"><strong>2</strong></td><td class=\"formItem\">NDC:55316-227-12</td><td
+        class=\"formItem\">1  in 1 BOX</td>\n</tr>\n<tr class=\"formTableRow\">\n<td
+        class=\"formItem\"><strong>2</strong></td><td class=\"formItem\"></td><td
+        class=\"formItem\">120  in 1 BOTTLE, PLASTIC</td>\n</tr>\n</table>\n</td>\n</tr>\n<tr>\n<td></td>\n</tr>\n<tr>\n<td
+        class=\"normalizer\">\n<table class=\"formTableMorePetite\" cellspacing=\"0\"
+        cellpadding=\"3\" width=\"100%\">\n<tr>\n<td class=\"formHeadingReg\" colspan=\"4\"><span
+        class=\"formHeadingTitle\">Marketing Information</span></td>\n</tr>\n<tr>\n<td
+        class=\"formTitle\">Marketing Category</td><td class=\"formTitle\">Application
+        Number or Monograph Citation</td><td class=\"formTitle\">Marketing Start Date</td><td
+        class=\"formTitle\">Marketing End Date</td>\n</tr>\n<tr class=\"formTableRowAlt\">\n<td
+        class=\"formItem\">OTC MONOGRAPH FINAL</td><td class=\"formItem\">part343</td><td
+        class=\"formItem\">03/01/2013</td><td class=\"formItem\"></td>\n</tr>\n</table>\n</td>\n</tr>\n</tbody>\n</table>\n<table
+        class=\"formTableMorePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingReg\" colspan=\"4\"><span class=\"formHeadingTitle\">Labeler
+        -&nbsp;</span>Healthy Accents (DZA Brands, LLC)\n\t\t\t\t\t\t\t(090322194)\n\t\t\t\t\t\t</td>\n</tr>\n</table>\n<table
+        class=\"formTableMorePetite\" cellspacing=\"0\" cellpadding=\"3\" width=\"100%\">\n<tr>\n<td
+        class=\"formHeadingReg\" colspan=\"4\"><span class=\"formHeadingTitle\">Registrant
+        -&nbsp;</span>P and L Development of New York Corporation (800014821)</td>\n</tr>\n</table>\n</div>\n<p>\n<div
+        class=\"EffectiveDate\">Revised: 02/2013<div class=\"DocumentMetadata\">\n<div>Document
+        Id: b7eae08f-e124-4424-a9be-c851d8976e3f</div>\n<div>Set id: f414b76d-22e6-4874-b889-bb8ddc76ac7b</div>\n<div>Version:
+        4</div>\n<div>Effective Time: 20130225</div>\n</div>\n</div>&nbsp;<div class=\"DistributorName\">Healthy
+        Accents (DZA Brands, LLC)</div>\n</p>\n\r\n</div>\r\n</div>\r\n\r\n\r\n<div
+        id=\"nlmfooter\">\r\n\t<a href=\"http://www.nlm.nih.gov\">\r\n\t\t<img  src=\"/dailymed/images/logo.gif\"\r\n\t\talt=\"Visit
+        The National Library of Medicine\" />\r\n\t</a>\r\n\t<a href=\"http://www.nlm.nih.gov/copyright.html\">Copyright</a>,\r\n\t<a
+        href=\"http://www.nlm.nih.gov/privacy.html\">Privacy</a>,\r\n\t<a href=\"http://www.nlm.nih.gov/accessibility.html\">Accessibility</a><br
+        />\r\n\t<a href=\"http://www.nlm.nih.gov\">U.S. National Library of Medicine</a>,
+        8600 Rockville Pike, Bethesda, MD 20894<br />\r\n\t<a href=\"http://www.nih.gov/\">National
+        Institutes of Health</a>,\r\n\t<a href=\"http://www.hhs.gov/\">Health &amp;
+        Human Services</a>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Fri, 06 Sep 2013 19:25:22 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div id="modalImageUploader" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upload Image</h4>
+      </div>
+      <div class="modal-body">
+        <div id='errors'><%=@errors.full_messages.join(' ') if @errors.present?%></div>
+        <%= form_for :blog_image, remote: true, authenticity_token: true, url: blog_images_upload_path(resource_id: @resource.id, resource_type: @resource.class.name.downcase), html: {multipart: true , id: 'image_upload-form'} do |f| -%>
+       <label class="control-label">Select Image File</label>
+        <%= f.file_field :image -%>   <br/>
+        <input name="button" value="Submit" onclick=" $('#image_upload-form').submit();" type="button"></br>
+       <% end -%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

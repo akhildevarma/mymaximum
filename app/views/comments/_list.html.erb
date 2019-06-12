@@ -1,0 +1,3 @@
+<% comments.map do |comment, nested_comments| %>
+  <%= render 'comments/comment', comment: comment, nested_comments: nested_comments, reference: comment.reference, redirect_path: redirect_path%>
+<% end %>

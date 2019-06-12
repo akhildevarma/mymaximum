@@ -1,0 +1,31 @@
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  
+  <li class="nav-item <%='active' if params[:active_tab] == 'shortage-tab'%>">
+    <a class="nav-link active" id="shortage-tab" data-toggle="tab" href="#shortage" role="tab" aria-controls="shortage" aria-selected="false">Hospital Shortages</a>
+  </li>
+
+  <li class="nav-item <%='active' if params[:active_tab] == 'fda-tab'%>">
+    <a class="nav-link <%='active' if params[:active_tab] == 'fda-tab'%>" id="fda-tab" data-toggle="tab" href="#fda" role="tab" aria-controls="fda" aria-selected="true" aria-expanded='true'>FDA Drug Shortages</a>
+  </li>
+  <% if administrator? %>
+  <li class="nav-item <%='active' if params[:active_tab] == 'hospital-tab'%>">
+    <a class="nav-link" id="hospital-tab" data-toggle="tab" href="#hospital" role="tab" aria-controls="hospital" aria-selected="false">Hospital Drugs</a>
+  </li>
+  <% end %>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade in <%='active' if params[:active_tab] == 'fda-tab'%>" id="fda" role="tabpanel" aria-labelledby="fda-tab">
+    <%= render 'fda_shortages' %>
+  </div>
+  <% if administrator? %>
+  <div class="tab-pane fade in <%='active' if params[:active_tab] == 'hospital-tab'%>" id="hospital" role="tabpanel" aria-labelledby="hospital-tab">
+      <%= render 'hospital_drugs' %>
+  </div>
+  <% end %>
+
+   <div class="tab-pane fade in <%='active' if params[:active_tab] == 'shortage-tab'%>" id="shortage" role="tabpanel" aria-labelledby="shortage-tab">
+      <%= render 'hospital_shortage' %>
+  </div>
+</div>

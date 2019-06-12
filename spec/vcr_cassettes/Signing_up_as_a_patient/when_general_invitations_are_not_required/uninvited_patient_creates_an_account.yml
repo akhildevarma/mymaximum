@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: description=ima%40weirdo.net&plan=a_la_carte&card=tok_102dzg2S246iGQtm6Rw3o4up
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Emperor-Norton.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10
+        PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '78'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 26 Sep 2013 16:32:25 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1734'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "customer",
+          "created": 1380213145,
+          "id": "cus_2dzgZZnZEh8J3F",
+          "livemode": false,
+          "description": "ima@weirdo.net",
+          "email": null,
+          "delinquent": false,
+          "subscription": {
+            "id": "su_102dzg2S246iGQtmAyzrSK7s",
+            "plan": {
+              "interval": "week",
+              "name": "Pay per request",
+              "amount": 0,
+              "currency": "usd",
+              "id": "a_la_carte",
+              "object": "plan",
+              "livemode": false,
+              "interval_count": 1,
+              "trial_period_days": 90
+            },
+            "object": "subscription",
+            "start": 1380213145,
+            "status": "trialing",
+            "customer": "cus_2dzgZZnZEh8J3F",
+            "cancel_at_period_end": false,
+            "current_period_start": 1380213145,
+            "current_period_end": 1387989145,
+            "ended_at": null,
+            "trial_start": 1380213145,
+            "trial_end": 1387989145,
+            "canceled_at": null,
+            "quantity": 1,
+            "application_fee_percent": null
+          },
+          "discount": null,
+          "account_balance": 0,
+          "cards": {
+            "object": "list",
+            "count": 1,
+            "url": "/v1/customers/cus_2dzgZZnZEh8J3F/cards",
+            "data": [
+              {
+                "id": "card_102dzg2S246iGQtmdlhT4EjA",
+                "object": "card",
+                "last4": "4242",
+                "type": "Visa",
+                "exp_month": 12,
+                "exp_year": 2020,
+                "fingerprint": "5M3VnAm092ve6Lcm",
+                "customer": "cus_2dzgZZnZEh8J3F",
+                "country": "US",
+                "name": "Ray Smuckles",
+                "address_line1": null,
+                "address_line2": null,
+                "address_city": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_country": null,
+                "cvc_check": "pass",
+                "address_line1_check": null,
+                "address_zip_check": null
+              }
+            ]
+          },
+          "default_card": "card_102dzg2S246iGQtmdlhT4EjA"
+        }
+    http_version: 
+  recorded_at: Thu, 26 Sep 2013 16:32:26 GMT
+recorded_with: VCR 2.5.0

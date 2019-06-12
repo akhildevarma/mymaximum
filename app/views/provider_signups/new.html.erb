@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+    <h3>Create a Healthcare Provider Account</h3>
+    <%- if ApplicationSettings.load.require_general_invitations %>
+      <div class="alert alert-warning">
+        <p>
+          <strong>Need an invitation?</strong>
+          <%= link_to "Request one here", new_waitlisted_provider_path %>
+        </p>
+        <p>
+          <strong>Already have your invitation?</strong>
+          Sign up below to start your 3 month free trial of InpharmD&trade;!
+          </p>
+      </div>
+    <% end %>
+    <br/><br/>
+    <%= simple_form_for @provider_signup, url: provider_signup_path do |f| %>
+      <noscript> STOP! JavaScript is required for this form. You must enable it in your web browser settings before continuing.</noscript>
+
+      <fieldset>
+        <legend>Account Information</legend>
+        <%= f.simple_fields_for @provider_signup.user do |ff| %>
+          <%= ff.hidden_field :team_id, value: @provider_signup.user.team_id.to_s %>
+          <%= ff.input :email, required: true %>
+          <%= ff.input :password,  label: 'Password&nbsp;&nbsp;<i class="fa fa-question-circle" id="paswd" rel="tooltip" title="Password min length should be 6 characters" ></i>'.html_safe,required: true %>
+          <%= ff.input :password_confirmation, required: true %>
+        <% end %>
+        <%- if ApplicationSettings.load.require_general_invitations %>
+          <%= f.simple_fields_for @provider_signup.invitation do |ff| %>
+            <%= ff.input :token, label:'Invitation Token',required: true %>
+          <% end %>
+        <% end %>
+        <%- if ApplicationSettings.load.allow_promo_code && !@user_in_team %>
+          <%= f.simple_fields_for @provider_signup.user do |ff| %>
+            <%= ff.input :promo_code, required: false %>
+          <% end %>
+        <% end %>
+      </fieldset>
+      <br/><br/>
+      <fieldset>
+        <legend>Personal Information</legend>
+        <%= f.simple_fields_for @provider_signup.profile do |ff| %>
+          <%= ff.input :first_name , label:'First Name'%>
+          <%= ff.input :last_name , label:'Last Name'%>
+        <% end %>
+      </fieldset>
+      <br/><br/>
+      <fieldset>
+        <legend>Contact Information</legend>
+        <%= f.simple_fields_for @provider_signup.profile do |ff| %>
+          <%= ff.input :phone_number , label:'Phone Number'%>
+        <% end %>
+        <%= f.simple_fields_for @provider_signup.provider do |ff| %>
+          <%= ff.input :license_number, label:'License Number', required: (!@user_in_team) %>
+          <%= ff.input :licensing_state,  label:'Licensing State',collection: us_states, input_html: { class: 'chosen-select' } %>
+        <% end %>
+      </fieldset>
+      <br/><br/>
+      <fieldset>
+        <legend>Disclaimer</legend>
+        <div class="well well-small">
+          <%= I18n.t("signup.disclaimer") %>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <%= f.input :accept_terms_of_service, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: I18n.t("accept_terms_of_service.label").html_safe %>
+      </fieldset>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Create Account", class: "btn btn-primary" %>
+      </div>
+    <% end  %>
+  </div>
+</div>
+<script type="text/javascript">
+  $("#provider_signup_user_email").blur(function(){
+    var email = $(this).val();
+    $.ajax({
+      type: 'POST',
+      url: "<%= sign_up_tracker_provider_signup_path %>",
+      data: {email: email},
+      success: function(data)
+      {
+        console.log(data);
+      }
+    });
+  })
+</script>

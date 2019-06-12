@@ -1,0 +1,51 @@
+.ds {
+  background: #d6d9dc;
+  padding-top: 20px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  a {
+    color: #4ECDC4;
+  }
+
+  i {
+    font-size: 14px;
+  }
+
+  .desc {
+    border-bottom: 1px dotted #979797;
+    display: inline-block;
+    padding: 15px 0;
+    width: 100%;
+
+    &:hover {
+      background: #ffffff;
+    }
+  }
+
+  .thumb {
+    width: 30px;
+    margin: 0 10px 0 20px;
+    display: block;
+    float: left;
+  }
+
+  .details {
+    width: 170px;
+    float: left;
+  }
+
+  & > .desc p {
+    font-size: 11px;
+  }
+
+  p > .muted {
+    font-size: 9px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #666666
+  }
+}

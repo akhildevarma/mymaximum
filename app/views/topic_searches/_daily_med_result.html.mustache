@@ -1,0 +1,13 @@
+{{#daily_med_result}}
+  {{#data}}
+    <h5><a href="{{{url}}}">{{title}}</a></h5>
+    <div>{{{html}}}</div>
+    <a href="{{{url}}}">View full prescribing information</a>
+    <hr/>
+  {{/data}}
+  <div><a href="{{{more_results_url}}}">View on DailyMed</a></div>
+{{/daily_med_result}}
+{{^daily_med_result}}
+  No DailyMed results found.
+{{/daily_med_result}}
+

@@ -1,0 +1,43 @@
+
+<div class="inquiry-item card <%= 'card-disabled' unless item.closed? %>">
+
+  <div id="inquiry_rating_<%=item.id%>" class="pull-right rating-card">
+    <%= render partial: 'shared/rating', locals: { inquiry: item } %>
+  </div>
+<% if item.closed? %>
+    <a href="<%= inquiry_url(item.id) %>" class="inquiry-item-link" id="completed_inquiry_<%= item.id  %>">
+    <%- closing_tag = '</a>' %>
+<% else %>
+    <div class="inquiry-item-link" >
+    <%- closing_tag = '</div>' %>
+<% end %>
+        <div class="">
+        <div class="" style="
+              font-size: 14px;
+              color: #545454;
+              font-weight: bold;
+              padding:12px;
+              margin-bottom: 10px;">
+          <%= simple_format(item.question) %>
+        </div>
+      </div>
+     <div class="">
+        <% if item.closed? %>
+            <div class="background-by-me"><%= truncate(simple_format(item.background), length: 210, escape: false) %></div>
+        <% else %>
+          <%= render partial: "shared/inquiry_status_progress_bar", locals: { inquiry: item } -%>
+        <% end %>
+      </div>
+
+      <br/>
+      <div class="">
+        <small class="submitted">Submitted on&nbsp;<%= local_date(item.created_at) %></small>
+
+      </div>
+      <div>
+        <% if item.project_types.present? &&  item.project_types!='none' %>
+        &nbsp; &nbsp;&nbsp;P&T: <strong><%= item.project_types.gsub('_',' ').titleize %></strong>
+        <% end %>
+     </div>
+    <%= closing_tag.html_safe %>
+</div>

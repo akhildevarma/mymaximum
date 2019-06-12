@@ -1,0 +1,223 @@
+.sidebar-toggle-box {
+  float: left;
+  padding-right: 15px;
+  margin-top: 20px;
+
+  .fa-bars {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+.sidebar-closed {
+  & > #sidebar > ul {
+    display: none;
+  }
+
+  #main-content {
+    margin-left: 0px;
+  }
+
+  #sidebar {
+    margin-left: -180px;
+  }
+}
+
+.nav-collapse.collapse {
+  display: inline;
+}
+
+#sidebar {
+  width: 210px;
+  height: 100%;
+  position: fixed;
+  background: $lightBlue;
+
+  @media (max-width: $screen-sm) {
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 1001;
+    margin: 0px !important;
+  }
+
+  h5 {
+    color: $lightGrey;
+    font-weight: 700;
+  }
+
+  ul li {
+    position: relative;
+  }
+
+  .sub-menu > .sub {
+    li {
+      padding-left: 32px;
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  & > ul > li {
+    @media (max-width: $screen-sm) {
+      margin: 0 10px 5px 10px;
+    }
+
+    & > ul.sub {
+      display: none;
+    }
+
+    &.active > ul.sub, & > ul.sub > li > a {
+      display: block;
+    }
+
+    & > a {
+      @media (max-width: $screen-sm) {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 10px;
+        text-align: left;
+      }
+
+      & > span {
+        @media (max-width: $screen-sm) {
+          line-height: 35px;
+        }
+      }
+
+      .arrow, .arrow.open {
+        @media (max-width: $screen-sm) {
+          margin-right: 10px;
+          margin-top: 15px;          
+        }
+      }
+    }
+  }
+
+  .btn-navbar.collapsed .arrow {
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+  .btn-navbar .arrow {
+    @media (max-width: $screen-sm) {
+      position: absolute;
+      right: 35px;
+      width: 0;
+      height: 0;
+      top: 48px;
+      border-bottom: 15px solid #282e36;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  #sidebar ul > li.active > a .arrow, 
+  #sidebar ul > li > a:hover .arrow, 
+  #sidebar ul > li > a:focus .arrow,
+  #sidebar > ul > li.active > a .arrow.open, 
+  #sidebar > ul > li > a:hover .arrow.open, 
+  #sidebar > ul > li > a:focus .arrow.open{
+    margin-top: 15px;
+  }
+
+  #sidebar > ul > li > a,
+  #sidebar > ul > li > ul.sub > li {
+    width: 100%;
+  }
+
+  #sidebar > ul > li > ul.sub > li > a {
+    background: transparent !important;
+  }
+}
+
+ul.sidebar-menu {
+  margin: 75px 0 0;
+  padding: 0;
+
+  li {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &.sub-menu {
+      line-height: 15px;
+    }
+
+    a {
+      @include transition(all 0.3s ease);
+      color: $black;
+      text-decoration: none;
+      display: block;
+      padding: 15px 0 15px 10px;
+      font-size: 12px;
+      outline: none;
+
+      &.active, &:hover, &:focus {
+        @include transition(all 0.3s ease);
+        background: $blue;
+        color: $white;
+        display: block;
+        i {
+          color: $white;
+        }
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      i {
+        font-size: 15px;
+        padding-right: 6px;
+      }
+    }
+
+    ul.sub {
+      margin-top: -2px;
+      padding: 0;
+
+      li {
+        background: #2f323a;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:last-child {
+          @include border-radius(0 0 4px 4px);
+        }
+
+        a {
+          @include transition(all 0.3s ease);
+          font-size: 12px;
+          padding: 6px 0;
+          line-height: 35px;
+          height: 35px;
+          color: $semiGrey;
+
+          &:hover {
+            color: white;
+            background: transparent;
+          }
+
+          @media (max-width: $screen-sm) {
+            padding: 0;
+          }
+        }
+
+        &.active a {
+          @include transition(all 0.3s ease);
+          color: #4ECDC4;
+          display: block;
+        }
+      }
+    }
+  }
+} 

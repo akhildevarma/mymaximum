@@ -1,0 +1,18 @@
+= @name ? "#{@name}," : ''
+= "\n\n"
+| Thanks for your inquiry (reference # 
+= @inquiry.id
+' )!
+
+= "\n\n"
+| "
+= @inquiry.question
+| "
+= "\n\n"
+' Your response is ready and can be viewed here:
+= summary_tables_my_inquiry_url(@inquiry)
+
+= "\n\n"
+| Let's do this again sometime,
+= "\n"
+| InpharmD™ Administrators

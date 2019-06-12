@@ -1,0 +1,34 @@
+#blog-bg {
+  @include background-size(100%);
+  @include background-size(cover);
+  // background: url(../img/blog-bg.jpg) no-repeat center top;
+  margin-top: -15px;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 150px;
+  width: 100%;
+
+  .badge {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+  }
+}
+
+.blog-title {
+  background-color: rgba(0,0,0,0.5);
+  bottom: 100px;
+  padding: 6px;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  display: block;
+  width: 120px;
+}
+
+.blog-text {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 15px;
+  font-size: 12px;
+}

@@ -1,0 +1,24 @@
+<% if @name %>
+  <p>
+    <%= @name %>,
+  </p>
+<% end %>
+<p>
+  Thanks for your inquiry (reference #<%= @inquiry.id %>)!
+</p>
+<p style="white-space: pre-line; word-break: keep-all;">
+  <em><%= @inquiry.question %></em>
+</p>
+<p>You will be alerted when your response is ready.</p>
+
+<p>
+  In the meantime, you may track the progress of your response&nbsp;<%= link_to "here", my_inquiries_url %>.
+</p>
+<p>
+  Want to save on your subscription?&nbsp;<%= link_to "Refer friends", page_url('referrals') %>&nbsp;and get an extra month on us!
+</p>
+<p>
+  Let's do this again sometime,
+  <br/>
+  InpharmD™ Administrators
+</p>

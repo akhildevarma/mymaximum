@@ -1,0 +1,340 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.stripe.com/v1/customers/cus_2boUgOUX1650rT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Emperor-Norton.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10
+        PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64"}'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2013 02:29:27 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1098'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "customer",
+          "created": 1379710269,
+          "id": "cus_2boUgOUX1650rT",
+          "livemode": false,
+          "description": "TEST USER: DO NOT DELETE",
+          "email": "doc@doc.doc",
+          "delinquent": false,
+          "subscription": {
+            "id": "su_102cco2S246iGQtmX0LlC85Z",
+            "plan": {
+              "interval": "week",
+              "name": "Pay per request",
+              "amount": 0,
+              "currency": "usd",
+              "id": "a_la_carte",
+              "object": "plan",
+              "livemode": false,
+              "interval_count": 1,
+              "trial_period_days": null
+            },
+            "object": "subscription",
+            "start": 1379897450,
+            "status": "active",
+            "customer": "cus_2boUgOUX1650rT",
+            "cancel_at_period_end": false,
+            "current_period_start": 1379897450,
+            "current_period_end": 1380502250,
+            "ended_at": null,
+            "trial_start": null,
+            "trial_end": null,
+            "canceled_at": null,
+            "quantity": 1,
+            "application_fee_percent": null
+          },
+          "discount": null,
+          "account_balance": -12401,
+          "cards": {
+            "object": "list",
+            "count": 0,
+            "url": "/v1/customers/cus_2boUgOUX1650rT/cards",
+            "data": []
+          },
+          "default_card": null
+        }
+    http_version: 
+  recorded_at: Mon, 23 Sep 2013 02:29:27 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers/cus_2boUgOUX1650rT/subscription
+    body:
+      encoding: US-ASCII
+      string: plan=a_la_carte
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Emperor-Norton.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10
+        PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '15'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2013 02:29:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '633'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "su_102cco2S246iGQtmX0LlC85Z",
+          "plan": {
+            "interval": "week",
+            "name": "Pay per request",
+            "amount": 0,
+            "currency": "usd",
+            "id": "a_la_carte",
+            "object": "plan",
+            "livemode": false,
+            "interval_count": 1,
+            "trial_period_days": null
+          },
+          "object": "subscription",
+          "start": 1379897450,
+          "status": "active",
+          "customer": "cus_2boUgOUX1650rT",
+          "cancel_at_period_end": false,
+          "current_period_start": 1379897450,
+          "current_period_end": 1380502250,
+          "ended_at": null,
+          "trial_start": null,
+          "trial_end": null,
+          "canceled_at": null,
+          "quantity": 1,
+          "application_fee_percent": null
+        }
+    http_version: 
+  recorded_at: Mon, 23 Sep 2013 02:29:31 GMT
+- request:
+    method: get
+    uri: https://api.stripe.com/v1/customers/cus_2boUgOUX1650rT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Emperor-Norton.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10
+        PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64"}'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2013 02:29:32 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1098'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "customer",
+          "created": 1379710269,
+          "id": "cus_2boUgOUX1650rT",
+          "livemode": false,
+          "description": "TEST USER: DO NOT DELETE",
+          "email": "doc@doc.doc",
+          "delinquent": false,
+          "subscription": {
+            "id": "su_102cco2S246iGQtmX0LlC85Z",
+            "plan": {
+              "interval": "week",
+              "name": "Pay per request",
+              "amount": 0,
+              "currency": "usd",
+              "id": "a_la_carte",
+              "object": "plan",
+              "livemode": false,
+              "interval_count": 1,
+              "trial_period_days": null
+            },
+            "object": "subscription",
+            "start": 1379897450,
+            "status": "active",
+            "customer": "cus_2boUgOUX1650rT",
+            "cancel_at_period_end": false,
+            "current_period_start": 1379897450,
+            "current_period_end": 1380502250,
+            "ended_at": null,
+            "trial_start": null,
+            "trial_end": null,
+            "canceled_at": null,
+            "quantity": 1,
+            "application_fee_percent": null
+          },
+          "discount": null,
+          "account_balance": -12401,
+          "cards": {
+            "object": "list",
+            "count": 0,
+            "url": "/v1/customers/cus_2boUgOUX1650rT/cards",
+            "data": []
+          },
+          "default_card": null
+        }
+    http_version: 
+  recorded_at: Mon, 23 Sep 2013 02:29:31 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/invoiceitems
+    body:
+      encoding: US-ASCII
+      string: customer=cus_2boUgOUX1650rT&amount=799&currency=usd&description=Inquiry%3A%20A%20serious%20question
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Emperor-Norton.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan  6 22:37:10
+        PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '99'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2013 02:29:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '275'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "invoiceitem",
+          "id": "ii_102ceP2S246iGQtm3duE6SH6",
+          "date": 1379903373,
+          "amount": 799,
+          "livemode": false,
+          "proration": false,
+          "currency": "usd",
+          "customer": "cus_2boUgOUX1650rT",
+          "description": "Inquiry: A serious question",
+          "invoice": null
+        }
+    http_version: 
+  recorded_at: Mon, 23 Sep 2013 02:29:33 GMT
+recorded_with: VCR 2.5.0

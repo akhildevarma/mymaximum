@@ -1,0 +1,36 @@
+<h3>
+  Closed Inquiries
+  <small>
+    <%= link_to 'Open Inquiries', inquiries_path -%>
+  </small>
+
+  <%- if student? -%>
+    <%= form_for current_user.student,
+                  url: student_path(current_user.student),
+                  method: :put,
+                  html: {
+                    class: 'form-inline pull-right update-student',
+                    role: 'form'
+                  },
+                  remote: true do |f| -%>
+      <%= f.select :is_active, [['Offline', false], ['Online', true]], {}, class: 'form-control', onchange: 'submitUpdateStudent()' -%>
+      <%= f.submit 'Update Student', class: 'hide' %>
+    <%- end -%>
+  <%- end -%>
+</h3>
+
+<div id="inquiries" class="nav-units">
+  <hr>
+  <%- @inquiries.each do |inquiry| -%>
+    <%= render 'list_item', { inquiry: inquiry, show_link: administrator? } %>
+  <%- end -%>
+<div class="pull-right">
+    <%= will_paginate @inquiries %>
+  </div>
+</div>
+
+<script>
+  function submitUpdateStudent() {
+    $('form.update-student').submit();
+  }
+</script>

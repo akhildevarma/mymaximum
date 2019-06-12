@@ -1,0 +1,29 @@
+<% @comment =  Comment.new %>
+<%= form_for @comment, remote: true, html: { class: 'in-comments-composer', role: 'form' } do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+          <ul>
+            <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <% if defined? reference %>
+        <%= f.hidden_field :referenceable_id, value: reference.id%>
+        <%= f.hidden_field :referenceable_type, value: reference.class.name%>
+      <% end %>
+      <% if defined? parent_id %>
+        <%= f.hidden_field :parent_id, value: parent_id %>
+      <% end %>
+      <%=hidden_field_tag 'redirect_path', redirect_path%>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :body, rows: 3, class: 'form-control input-md', required: true, placeholder: 'Enter your comment here...', style: 'resize: none;' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: 'btn btn-secondary', value: button_name, data: { disable_with: 'Publishing...' }, style: 'color: white;' %>
+    </div>
+<% end %>

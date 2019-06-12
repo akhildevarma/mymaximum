@@ -1,0 +1,61 @@
+<% content_for :custom_layout do %>
+  <div class="cards-container content-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="card card-content">
+              <% if @team_signup.team.logo.exists? %>
+                <div style="text-align: center;padding: 20px 20px 0 20px;">
+                  <%= image_tag @team_signup.team.logo.url(:medium), alt: "" %>
+                  <p style="padding-top: 20px;">Complete your email below to join.</p>
+                </div>
+              <% else %>
+                <h2><%= @team_signup.team.name %></h2>
+              <% end %>
+            <div id="mobile-form" class="visible-xs-block">
+              <%= simple_form_for @team_signup, url: user_team_signups_path(signup_url_path: @team_signup.team.signup_url_path) do |f| %>
+                <div class="form-group <%= 'has-error' if @team_signup.errors.present? %>">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <%= f.input_field :email_username, placeholder: "Username", class: 'form-control' %>
+                    </div>
+                    <div class="panel-footer" style="padding-left: 20px;font-weight: bold;">@<%= @team_signup.team.email_domain %></div>
+                  </div>
+                  <small class="help-block" style="margin:10px 0 0 10px;">
+                    <i>
+                      <strong>Tip:</strong>&nbsp;Username is normally the first part of your institution email.
+                      <br class="hidden-xs">
+                      <strong>Example:</strong> If your email is 'amazing.doctor@institution.com', then your username is 'amazing.doctor'.
+                    </i>
+                  </small>
+                </div>
+
+                <%= f.button :submit, "Join #{@team_signup.team.capitalized_name}", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+
+            <div id="desktop-form" class="hidden-xs">
+              <%= simple_form_for @team_signup, url: user_team_signups_path(signup_url_path: @team_signup.team.signup_url_path) do |f| %>
+                <div class="form-group <%= 'has-error' if @team_signup.errors.present? %>">
+                  <div class="input-group">
+                    <%= f.input_field :email_username, placeholder: "Username", class: 'form-control' %>
+                    <span class="input-group-addon">@<%= @team_signup.team.email_domain %></span>
+                  </div>
+                  <small class="help-block" style="margin:10px 0 0 10px;">
+                    <i>
+                      <strong>Tip:</strong>&nbsp;Username is normally the first part of your institution email.
+                      <br class="hidden-xs">
+                      <strong>Example:</strong> If your email is 'amazing.doctor@institution.com', then your username is 'amazing.doctor'.
+                    </i>
+                  </small>
+                </div>
+
+                <%= f.button :submit, "Join #{@team_signup.team.capitalized_name}", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

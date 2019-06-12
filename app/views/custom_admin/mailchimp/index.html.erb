@@ -1,0 +1,12 @@
+<div>
+Available campaigns:
+<br>
+<br>
+<%  @campaigns.each do |campaign| %>
+    
+    <% if campaign[:title].present? %>
+    <%= link_to campaign[:title], custom_admin_mailchimp_send_path(campaign_id: campaign[:campaign_id]) , class: 'btn-info' , data: { confirm: 'Are you sure you want to send this campaign?' , method: :post}%>
+    <% end %>
+    <br>
+<% end %>
+</div>

@@ -1,0 +1,24 @@
+<div class="text-error">
+  <%= f.error :billing %>
+</div>
+<%= f.input :card_number, label: "Credit Card Number", name: nil, data: { stripe: "number"}  %>
+
+<%= f.input :card_code, label: "CVC", name: nil, data: { stripe: "cvc" }, class: "input-mini", maxlength: 4 %>
+
+<%= label_tag :card_month, class: "required" do %>
+  Expiration
+ <div class="input-group">
+    <%= select_month nil, {add_month_numbers: true}, {id: "card_month", name: nil, data: { stripe: "exp_month"}, class: "input-medium"} %>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {id: "card_year", name: nil, data: { stripe: "exp_year"}, class: "input-small"} %>
+  </div>
+<% end %>
+
+<%= f.input :cardholder_name, label: "Cardholder Name", name: nil, data: { stripe: "name" } %>
+
+<%= f.input :cardholder_zip, label: "Billing Zip Code", name: nil, data: { stripe: "zip" }, class: "input-small" %>
+<%= f.hidden_field :last_four_digits %>
+<%= f.hidden_field :stripe_card_token %>
+<div class="error">
+  <div id="stripe_errors" class="help-block">
+  </div>
+</div>

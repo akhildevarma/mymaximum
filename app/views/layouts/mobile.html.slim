@@ -1,0 +1,14 @@
+doctype html
+html lang='en'
+  head 
+    title InpharmD™
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "healthcare.modern.entry"
+    style
+      ' body { background: none !important; padding: 10px; }
+      ' .static-page-title { display: none; }
+
+    meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+  body
+    = yield :custom_layout
+    = yield

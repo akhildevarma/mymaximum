@@ -1,0 +1,79 @@
+<% comment_uid = Digest::SHA1.hexdigest("#{comment.id}.#{Time.now.to_i}.#{Time.now.nsec}") %>
+<li class="in-comments-list-item">
+  <!-- AVATAR -->
+  <!-- <div class="in-avatar-sm"> -->
+    <%# image_tag "blank_avatar.jpg" -%>
+  <!-- </div> -->
+  <!-- /AVATAR -->
+  <div class="in-comment" data-id="in-comment">
+
+    <div class="in-comment-author">
+      <%= comment.user.try(:profile).try(:decorate).try(:full_name) %>
+    </div>
+
+    <p class="in-comment-text">
+      <%= best_in_place_if feature?(:discussion_edit, comment: comment), comment,
+          :body,
+          as: :textarea,
+          id: "#{comment_uid}",
+          class: "comment_#{comment_uid}",
+          url: api_v1_comment_path(comment),
+          ok_button: 'Save',
+          cancel_button: 'Cancel',
+          ok_button_class:'btn-xs btn-primary',
+          cancel_button_class:'btn-xs btn-primary',
+          place_holder: "Click me to add content!" %>
+
+    </p>
+    <ul class="in-comment-nav">
+      <li>
+        <%= time_ago_in_words(comment.created_at) %>&nbsp;ago
+      </li>
+
+      <% if feature?(:discussion_edit, comment: comment) %>
+        <li><a href="javascript:void(0);" onclick="invokeEdit('<%=comment_uid%>');">Edit</a></li>
+      <% end %>
+      <% if feature?(:discussion_delete, comment: comment, nested_comments: nested_comments) %>
+        <!-- DELETE -->
+          <li>
+          <%= link_to comment, remote: true,  method: :delete,  data: { confirm: 'Are you sure to delete this comment?' } do %>
+            Delete
+          <% end %>
+          </li>
+        <% end %>
+      <% if feature?(:discussion_reply, comment: comment, inquiry: @inquiry) %>
+        <li>
+          <a href="javascript:void(0);"  data-toggle="collapse" data-target="" data-id="in-comment-reply-form-toggle">
+                Reply
+          </a>
+        </li>
+      <% end %>
+      <% if current_user && feature?(:discussion_flag, comment: comment) %>
+        <li>
+          <%= link_to flag_comment_url(comment), remote: true,  method: :put,  data: { confirm: 'Are you sure to flag this comment?', action: 'flag-comment' } do %>
+            Report abuse
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <% if feature?(:discussion_reply, comment: comment, inquiry: @inquiry) %>
+      <div class="panel-collapse collapse" data-id="in-comment-reply-form">
+        <%= render 'comments/form', reference: comment.reference, redirect_path: redirect_path, button_name: 'Reply', parent_id: comment.id %>
+      </div>
+    <% end %>
+
+  </div>
+  <!-- NESTED COMMENTS -->
+  <% if feature?(:discussion_nested, nested_comments: nested_comments) %>
+    <ul class="in-comments-list">
+      <%= render 'comments/list', comments: nested_comments, reference: comment.reference, redirect_path: redirect_path %>
+    </ul>
+  <% end %>
+  <!-- / NESTED COMMENTS -->
+</li>
+<script>
+  function invokeEdit(in_place_id) {
+   $('.in-comment-text .comment_'+in_place_id).click();
+  }
+
+</script>

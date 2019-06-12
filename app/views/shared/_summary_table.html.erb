@@ -1,0 +1,11 @@
+<div class="summary-table-body">
+  <%= summary_table.body_html.html_safe %>
+</div>
+<%- if summary_table.references? %>
+  <div>
+    References:
+    <small class="references">
+      <%= simple_format(summary_table.references) %>
+    </small>
+  </div>
+<% end %>

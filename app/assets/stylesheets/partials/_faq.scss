@@ -1,0 +1,49 @@
+.dmbox {
+  @include transition(background 0.3s ease-out);
+  @include border-radius(0);
+  margin: 0;
+  border: 0;
+  border: 1px solid #EDEDED;
+  background-color: #fff;
+  padding: 9px 18px;
+  text-align: center;
+}
+
+.dm-icon {
+  @include border-radius(50%);
+  display: inline-block;
+  cursor: pointer;
+  margin: 15px;
+  width: 105px;
+  height: 105px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background:#2B2E31;
+  color: #ffffff;
+
+  &:after {
+    @include box-sizing(content-box);
+    @include border-radius(50%);
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+
+  &:before {
+    speak: none;
+    line-height: 105px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &:active, &:hover {
+    background: #4ECDC4    
+  }
+}

@@ -1,0 +1,53 @@
+<!-- Modal -->
+<div id="modalAlternatives" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ask about alternatives.</h4>
+      </div>
+      <div class="modal-body">
+        <div class="inquiry-item card" style="margin-bottom: 30px;">
+        <div class="card-content">
+        <%= simple_form_for Inquiry.new, url: my_inquiries_path, html: { class: "" } do |f| %>
+        <%= f.input :question ,label: '<span id="label-question">New Inquiry</span>&nbsp;&nbsp;<i class="fa fa-question-circle" id="q-circle"></i>'.html_safe, required: true, input_html: {
+        class: "input-block-level", rows: 5 } %>
+        <div id='turnaround-time-section'>
+        <%= f.input :turnaround_time, label: 'Turnaround Time', required: true, include_blank: false %>
+        </div>
+        <div  id='turnaround-disclaimers'>
+
+        <p id="asap-disclaimers" class="alert alert-block alert-info" style="display:none;margin:5px;"> <%= I18n.t("inquiries.disclaimers.turnaround_time.asap") %></p>
+        </div>
+        <br/>
+        <div class="form-actions">
+        <%= f.button :submit, "Submit", class: "btn btn-primary" %>&nbsp;
+        </div>
+        <% end %>
+        </div>
+
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#inquiry_turnaround_time").find('option[value=a_few_days], option[value=a_week]').remove();
+
+    $("#inquiry_turnaround_time").change(function() {
+    if ($(this).val()==='asap') {
+      $('#asap-disclaimers').show();
+    } else {
+      $('#asap-disclaimers').hide();
+    }
+  }); 
+  });
+</script>

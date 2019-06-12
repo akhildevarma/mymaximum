@@ -1,0 +1,57 @@
+<div class="nav-unit inquiry">
+
+  <%= link_to (!show_link ? inquiry_path(inquiry) : [:edit, inquiry]) do -%>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p class="turnaround">
+          <%= inquiry.turnaround_time.text -%> 
+          <% if inquiry.project_type_related?%>
+           | P&T : <%= inquiry.project_types.text %>
+          <% end %>
+        </p>
+      </div>
+<div class="col-xs-12 col-sm-6">
+        <% if inquiry.closed? && show_link %>
+          <div class="row">
+            <div class="col-xs-12" style="text-align:right;">
+              <%= button_to 'Reopen',
+                            inquiry_path(inquiry, inquiry: { status: 'response_formulation' }),
+                            method: :put,
+                            class: 'btn btn-primary',
+                            data: { confirm: 'Are you sure you want to reopen this inquiry?' } -%>
+            </div>
+</div>
+        <% else %>
+          <%= render "shared/inquiry_status_progress_bar", { inquiry: inquiry } -%>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="assignee">
+          <strong>Assigned to:</strong>
+          <%= inquiry.assignee_name -%>
+        </div>
+<div class="question">
+          <%= simple_format(inquiry.question) -%>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <span class="submitted">
+          Submitted by
+          <strong>
+            <%= link_to inquiry.submitter.full_name_or_email, user_profile_path(id: inquiry.submitter_id) -%>
+          </strong>
+          on <%= local_date(inquiry.created_at,'%B %e, %Y %l:%M%P') -%>
+            <% if inquiry.reopened_at?%>
+              | Reopened on <%= local_date(inquiry.reopened_at,'%B %e, %Y %l:%M%P')%>
+            <% end %>
+           | Due on <%= local_date(inquiry_due_time(inquiry), '%B %e, %Y %l:%M%P')%>
+           <% if inquiry.closed? && inquiry.completed_at %>
+            | Completed on <%= local_date(inquiry.completed_at,'%B %e, %Y %l:%M%P') -%>
+            <% end %>
+        </span>
+      </div>
+    </div>
+<%- end -%>
+</div>

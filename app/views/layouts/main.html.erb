@@ -1,0 +1,7 @@
+<% if content_for?(:custom_layout) %>
+  <%= yield :custom_layout -%>
+<% else # default layout %>
+  <div class="container default-container">
+    <%= yield -%>
+  </div>
+<% end %>

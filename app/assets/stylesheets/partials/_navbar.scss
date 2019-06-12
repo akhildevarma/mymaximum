@@ -1,0 +1,56 @@
+.application-nav {}
+
+.navbar-inpharmd {
+  border-top: solid 2px orange;
+  background: white;
+  border-radius: 0px;
+}
+
+.navbar-brand-link {
+  padding: 0;
+}
+
+.navbar-brand-image {
+  max-height: 40px;
+  margin-top: 3px;
+  padding-left: 15px;
+}
+
+.navbar-mobile {
+  .dropdown {
+    .dropdown-menu {
+      font-size: 13px;
+      background: #F3F3F3;
+      > .active {
+        > {
+          a, a:hover, a:focus {
+            color: #404042 !important;
+            background-color: #F3F3F3 !important;
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle .caret {
+        border-left: 4px dashed;
+        border-bottom: 4px solid transparent;
+        border-top: 4px solid transparent;
+    }
+    &.open {
+      > a {
+        background: none !important;
+        color: #777777 !important;
+      }
+      .dropdown-toggle .caret {
+        border-top: 4px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+      }
+    }
+  }
+
+}
+
+.navbar {
+  margin-bottom: 0;
+}

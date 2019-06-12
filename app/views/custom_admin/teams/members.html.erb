@@ -1,0 +1,157 @@
+<div>
+  <h3>
+   <%= @team.try :name %>
+   <div class="pull-right">
+    <%= link_to 'Settings', custom_admin_team_path(@team), class: 'btn btn-primary'  unless @team.private_label? %>
+  </div>
+
+</h3>
+   <div>
+     <h5><strong>Total Users:</strong> <i><%=@total_users%></i></h5>
+     <h5><strong></strong> <i><%= link_to "Total Inquiries:#{@total_inquiries}", team_inquiries_custom_admin_team_path(@team)%></i>
+     </h5>
+    </div>
+     <% unless @team.private_label? %>
+  <div style='text-align: right;font-size:12px;'>
+  This team is managed by InpharmD™. Click <a href="mailto:support@InpharmD.com">here</a> to contact admin.</div>
+  <% end %>
+
+
+  <div class="control-group">
+    <div class="controls">
+  <%= form_tag request.path, :method => 'get' do %>
+      Search Users:
+      <%= text_field_tag :search, params[:search], size: 75 %>
+      <button type="submit"><i class="fa fa-search"></i></button>
+  <% end %>
+</div>
+</div>
+  <hr>
+
+  <div class="control-group">
+    <div class="controls">
+      <span class="help-block has-error" style="color:green;" id="success"></span>
+      <input type="text" id="invite_email" name="email" value="" placeholder='Enter email of person to invite' style='width:200px;' >
+      <% if @team.private_label? %>
+      <input type="password" id="invite_password" name="password" value="" placeholder='Password'>
+      <input type="password" id="invite_confirm_password" name="password_confirmation" value="" placeholder='Confirm Password'>
+      <% end %>
+      <%= link_to 'Add User', '#', class: 'btn btn-info btn-sm', id: 'add_user', style: 'margin-top:-6px;'-%>
+      <span class="help-block has-error" style="color:red;" id="error"></span>
+      <% unless @team.private_label? %>
+      <div class="pull-right">
+        <button type="button" id='upload_users' class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalUploader" style ='margin-top:-95px;'>Bulk Upload</button>
+        <%= link_to 'Uploaded Users', uploaded_users_path(team_id: @team.id), class: 'btn btn-info btn-sm', id: 'uploaded_users', style: 'margin-top:-95px;'-%>
+      </div>
+      <% end %>
+    </div>
+<%= render 'shared/docs_section', resource: @team, resource_type: 'team', doc_name: 'Team' unless @team.private_label?%>
+  </div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @users.each do |user| -%>
+    <tr id="<%= dom_id(user) -%>">
+      <td>
+        <%= user.email -%>
+      </td>
+      <td>
+        <%= user.full_name -%>
+      </td>
+      <td><%=user.activity_status%> :
+        <%= local_time(user.last_active_at|| user.updated_at, '%B %e, %Y %H:%M:%S') -%>
+      </td>
+      <td>
+        <% if user.account_activated? %>
+        <%= link_to 'Remove from Team', remove_from_team_custom_admin_team_path(user,team_id: @team.id), method: :delete, rel: 'delete-user', class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure you want to delete this user?' } -%>
+       <% end %>
+          <% if user == current_user %>
+            Current Admin
+         <% elsif user!=current_user && user.team_admin? %>
+         <%= link_to 'Change Team Admin', change_team_admin_custom_admin_team_path(user, team_id: @team.id), rel: 'team_admin', class: 'btn btn-success btn-sm', data: { confirm: 'Are you sure you want to remove this user as Team Admin?' } -%>
+         <% else %>
+          <%= link_to 'Make Team Admin', make_team_admin_custom_admin_team_path(user,team_id: @team.id), rel: 'make_admin', class: 'btn btn-info btn-sm', data: { confirm: 'Are you sure you want to make this user as Team Admin?' } -%>
+         <% end %>
+         <% if user.private_labeled_user? && user.requires_account_activation?%>
+            <button id='copy_token' class='btn btn-info btn-sm' onClick="copy_to_clipboard('<%=add_team_user_signups_url(signup_url_path: (@team.signup_url_path) , token: user.account_activation_token)%>')">Copy Invitation Token</button>
+         <% end %>
+      </td>
+    </tr>
+    <%- end -%>
+    <tr>
+      <td colspan="4">
+        <div class="pull-right">
+          <%= will_paginate @users %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<%= render 'uploader' %>
+
+
+<script>
+var initial = false;
+function copy_to_clipboard(token) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(token).select();
+    document.execCommand("copy");
+    $temp.remove();
+    alert('Copied to Clipboard:::'+token);
+  }
+
+$(document).ready(function(){
+
+
+
+    
+    $("#add_user").click(function(){
+        data = {
+          team_id: "<%= @team.id%>",
+          email: $('#invite_email').val()
+        };
+        email_regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if ($('#invite_password').val() && $('#invite_confirm_password').val()) {
+          data['password'] = $('#invite_password').val();
+          data['password_confirmation'] = $('#invite_confirm_password').val();
+        }
+
+        if (email_regex.test($('#invite_email').val())) {
+          $.post("<%=add_team_user_path%>",data,
+            function(data,status){
+              $('#success').html(data.message)
+
+               setTimeout(function(){
+                  location.reload();
+                }, 1000);
+            });
+        } else {
+          $('#error').html("<%=I18n.t('teams.invalid_email')%>")
+        }
+
+    });
+
+    $(function() {
+       startRefresh();
+    });
+    function startRefresh() {
+      setTimeout(function(){
+        $.get("<%= api_v1_admin_teams_user_upload_processing_url(team_id: @team.id, format: 'json')%>", function(data) {
+          if (data.count > 0) {
+            location.reload();
+          }
+        });
+      }, 1000);
+    }
+  });
+</script>

@@ -1,0 +1,17 @@
+.product-panel {
+  background: #dadad2;
+  text-align: center;
+  padding-top: 50px;
+  height: 100%;
+}
+
+.product-panel-2 {
+  background: #dadad2;
+  text-align: center;
+
+  .badge {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+  }
+}

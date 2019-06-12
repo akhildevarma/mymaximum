@@ -1,0 +1,77 @@
+<h1>
+  User Information
+  <%= link_to 'Delete', custom_admin_user_path(@user), method: :delete, rel: 'delete-user', class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this user?' } -%>
+</h1>
+
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <td>
+        <%= @user.id -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>
+        <%= @user.full_name -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>
+        <%= @user.email -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td>
+        <%= @user.phone_number -%>
+      </td>
+    </tr>
+    <% if @user.profile %>
+    <tr>
+      <th>Title</th>
+      <td>
+        <%= @user.profile.name_title -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Company</th>
+      <td>
+        <%= @user.profile.company -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td>
+        <%= @user.profile.city -%>, <%= @user.profile.state -%>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <th>Provider</th>
+      <td>
+        <%= @user.provider? ? 'Yes' : 'No' -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Patient</th>
+      <td>
+        <%= @user.patient? ? 'Yes' : 'No' -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Student</th>
+      <td>
+        <%= @user.student? ? 'Yes' : 'No' -%>
+      </td>
+    </tr>
+    <tr>
+      <th>Admin</th>
+      <td>
+        <%= @user.administrator? ? 'Yes' : 'No' -%>
+      </td>
+    </tr>
+  </tbody>
+</table>

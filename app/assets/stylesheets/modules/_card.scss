@@ -1,0 +1,35 @@
+.cards-container {
+  background: $background-layer;
+  padding: 30px 20px 90px 20px;
+}
+
+.card-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #9e9e9e;
+    text-shadow: 0px 1px 0px #FFFFFF;
+    padding-left: 10px;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: #C1C1C1 0px 1px 0px 0px;
+  border: #EAEAEA solid 1px;
+  background: white;
+  padding: 30px 40px 30px;
+  min-height: 110px;
+  margin-bottom: 30px;
+}
+
+.card-disabled .progress {
+  background: #C7C7C7;
+}
+
+.card-content {
+  padding: 30px 40px 30px;
+}
+
+.card-disabled {
+  background: #E2E2E2;
+  border: solid 1px #D8D8D8;
+}

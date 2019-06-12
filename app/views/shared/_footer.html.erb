@@ -1,0 +1,25 @@
+<footer>
+  <div class="container">
+    <div class='row'>
+
+      <div class="col-xs-12 footer-links">
+        <%= link_to 'Our Story', page_path('our_story') -%>
+        |
+        <%= link_to 'FAQ', '//support.inpharmd.com', target: '_blank' -%>
+        |
+        <%= link_to 'Privacy Policy', page_path('privacy_policy') -%>
+        |
+        <%= link_to 'Terms of Use', page_path('terms_of_use') -%>
+        |
+        <%= link_to 'Partners', page_path('partners')  -%>
+
+        <% if ResidencyHiring.active? %>
+          |&nbsp;<%= link_to 'Residency Opportunities', '/docs/Residency.Information.and.Application.pdf', target: "_blank" -%>
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>

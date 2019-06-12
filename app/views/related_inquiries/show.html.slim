@@ -1,0 +1,9 @@
+h3 
+  ' Related Inquiry
+  .pull-right
+    = link_to "Copy Response", inquiry_copy_path(destination_inquiry_id: @inquiry.id, source_inquiry_id: @related_inquiry.id), class: "btn btn-primary", method: :post, data: { confirm: I18n.t("related_inquiries.warning") } 
+h5 Original:
+p.question= @inquiry.question
+hr
+h5 Related:
+= render "shared/response", inquiry: @related_inquiry

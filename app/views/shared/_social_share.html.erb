@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 social-share">
+    <div class="social-share-image">
+      <%= link_to tw_path(twitter_link: twitter_link) do %>
+       <! <%= image_tag 'twitter-logo.png', class: 'social-share-image' %>
+      <% end %>
+    </div>
+    <div class="social-share-image">
+      <%= link_to fb_path(facebook_link: facebook_link) do %>
+      <!  <%= image_tag 'fb-logo.png', class: 'social-share-image' %> 
+      <% end %>
+    </div>
+    <%- if defined?(app_store) %>
+      <div class="social-share-image social-share-image-itunes" style="padding-top:10px;">
+        <%= render 'shared/download_in_app_store' %>
+      </div>
+    <% end %>
+  </div>
+</div>

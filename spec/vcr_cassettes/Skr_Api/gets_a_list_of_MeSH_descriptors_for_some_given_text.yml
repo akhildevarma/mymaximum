@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://utslogin.nlm.nih.gov/cas/v1/tickets
+    body:
+      encoding: UTF-8
+      string: username=inpharmd&password=BigNerd99!
+    headers:
+      Accept:
+      - text/plain
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:38:14 GMT
+      Location:
+      - https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-289463-WWqEkmgdfwsLxCVOm3hTRHeCz4vnYTE0k6zexc9dSraDziMPi0-cas
+      Accept-Ranges:
+      - bytes
+      Server:
+      - Noelios-Restlet-Engine/1.1.10
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '440'
+      X-Vip-Info:
+      - 130.14.16.164:443
+      X-Pool-Info:
+      - /Common/utslogin_p 10.1.5.113 8080
+    body:
+      encoding: UTF-8
+      string: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>201
+        The request has been fulfilled and resulted in a new resource being created</title></head><body><h1>TGT
+        Created</h1><form action="https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-289463-WWqEkmgdfwsLxCVOm3hTRHeCz4vnYTE0k6zexc9dSraDziMPi0-cas"
+        method="POST">Service:<input type="text" name="service" value=""><br><input
+        type="submit" value="Submit"></form></body></html>
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:38:15 GMT
+- request:
+    method: post
+    uri: https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-289463-WWqEkmgdfwsLxCVOm3hTRHeCz4vnYTE0k6zexc9dSraDziMPi0-cas
+    body:
+      encoding: UTF-8
+      string: service=http%3A%2F%2Fskr.nlm.nih.gov%2Fcgi-bin%2FSKR%2FRestricted_CAS%2FAPI_batchValidationII.pl
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:38:14 GMT
+      Accept-Ranges:
+      - bytes
+      Server:
+      - Noelios-Restlet-Engine/1.1.10
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      Content-Length:
+      - '34'
+      X-Vip-Info:
+      - 130.14.16.164:443
+      X-Pool-Info:
+      - /Common/utslogin_p 10.1.5.113 8080
+    body:
+      encoding: UTF-8
+      string: ST-802363-hdFFFjmusuGQodd3LbrY-cas
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:38:15 GMT
+- request:
+    method: post
+    uri: http://skr.nlm.nih.gov/cgi-bin/SKR/Restricted_CAS/API_batchValidationII.pl?ticket=ST-802363-hdFFFjmusuGQodd3LbrY-cas
+    body:
+      encoding: UTF-8
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:38:14 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - MOD_AUTH_CAS=9be57f4c6a32c0d516af796ba4fab944;Path=/
+      Location:
+      - http://skr.nlm.nih.gov/cgi-bin/SKR/Restricted_CAS/API_batchValidationII.pl
+      Content-Length:
+      - '258'
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>302 Found</title>
+        </head><body>
+        <h1>Found</h1>
+        <p>The document has moved <a href="http://skr.nlm.nih.gov/cgi-bin/SKR/Restricted_CAS/API_batchValidationII.pl">here</a>.</p>
+        </body></html>
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:38:15 GMT
+- request:
+    method: post
+    uri: http://skr.nlm.nih.gov/cgi-bin/SKR/Restricted_CAS/API_batchValidationII.pl?ticket=ST-802363-hdFFFjmusuGQodd3LbrY-cas
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        BAhbDVsHSSINUlVOX1BST0cGOgZFVEkiDkdFTkVSSUNfVgY7AFRbB0kiDFNL
+        Ul9BUEkGOwBUSSIJdHJ1ZQY7AFRbB0kiEkJhdGNoX0NvbW1hbmQGOwBUSSIX
+        TVRJIC1vcHQxTF9EQ01TIC1FBjsAVFsHSSIQU2lsZW50RW1haWwGOwBUSSIJ
+        dHJ1ZQY7AFRbB0kiD0JhdGNoTm90ZXMGOwBUSSIABjsAVFsHSSIOQmF0Y2hf
+        RW52BjsAVEkiAAY7AFRbB0kiEkVtYWlsX0FkZHJlc3MGOwBUSSIcam9yZGFu
+        QGJpZ25lcmRyYW5jaC5jb20GOwBUWwdJIhBVcExvYWRfRmlsZQY7AFRvOhFG
+        YWtlVXBsb2FkSU8IOhdAb3JpZ2luYWxfZmlsZW5hbWVJIiBpbnB1dDIwMTMw
+        ODIxLTUzNjc1LTFzdmNucTgGOwBGOhJAY29udGVudF90eXBlSSIdYXBwbGlj
+        YXRpb24vb2N0ZXQtc3RyZWFtBjsAVDoKQGJvZHlJIgxhc3BpcmluBjsAVA==
+    headers:
+      Cookie:
+      - MOD_AUTH_CAS=9be57f4c6a32c0d516af796ba4fab944;Path
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '933'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:38:14 GMT
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=ISO-8859-1
+    body:
+      encoding: UTF-8
+      string: |
+        NOT DONE LOOP
+        00000000|Aspirin|C0004057|391|MH|RtM via: Aspirin|AB|MM;RC
+        00000000|Platelet Aggregation Inhibitors|C0032177|85|MH|||RC
+        ------
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:38:46 GMT
+recorded_with: VCR 2.5.0

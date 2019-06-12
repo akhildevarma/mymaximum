@@ -1,0 +1,66 @@
+.form-panel {
+  @include box-shadow(0px 3px 2px, $lightBlueyGrey);
+  background: $white;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+label {
+  font-weight: 400;
+}
+
+.checkbox {
+  input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+}
+
+.form-horizontal {
+  &.style-form .form-group {
+    border-bottom: 1px solid #eff2f7;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .control-label {
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+}
+
+.round-form {
+  @include border-radius(500px);
+}
+
+#focusedInput {
+  @include box-shadow(none);
+  border: 1px solid $cherryRed;
+}
+
+.add-on {
+  float: right;
+  margin-top: -37px;
+  padding: 3px;
+  text-align: center;
+
+  .btn {
+    height: 34px;
+  }
+}
+
+.checkbox.checkbox-lg {
+    margin-bottom: 20px;
+    label {
+      padding-left: 2px;
+    }
+    input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      vertical-align: text-top;
+      margin: 0;
+      margin-top: 2px;
+    }
+}

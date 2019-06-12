@@ -1,0 +1,16 @@
+{{#fda_result}}
+  {{#data}}
+    <h6><a href="{{{url}}}">{{title}}</a></h6>
+    {{#basic_info}}
+      <div><em>{{label}}:</em> {{value}}</div>
+    {{/basic_info}}
+    <div><a href="{{{url}}}">View more information</a></div>
+    <hr/>
+  {{/data}}
+  <div><a href="{{{more_results_url}}}">View
+    on Drugs@FDA
+</a></div>
+{{/fda_result}}
+{{^fda_result}}
+  No Drugs@FDA results found.
+{{/fda_result}}

@@ -1,0 +1,38 @@
+h3 
+  ' User Information
+  - if can_edit_user?
+    .pull-right= link_to "Edit User Information", edit_user_profile_path(id: @user_profile.id), class: "btn btn-primary"
+h4
+  => @user_profile.user.email
+  small= @user_profile.user.role
+
+- if @user_profile.has_profile?
+  p= @user_profile.profile.full_name
+  p= @user_profile.profile.title_and_company
+  p= @user_profile.profile.location
+  p
+    strong
+      ' Phone
+    = @user_profile.profile.phone_number
+
+- else
+  p
+    | No profile information provided.
+
+- if @user_profile.provider.present?
+  p 
+    strong
+      ' Specialty
+    = @user_profile.provider.specialty
+  p
+    strong
+      ' License Number
+    = @user_profile.provider.license_number
+  p 
+    strong
+      ' Licensing State
+    = @user_profile.provider.licensing_state
+  p
+    strong
+      ' Verification Status
+    = render partial: 'shared/provider_verification_badge', locals: { provider: @user_profile.provider }

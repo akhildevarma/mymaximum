@@ -1,0 +1,13 @@
+<% @comments = @inquiry.active_comments(current_user)%>
+<% comments_html = render 'comments/list',
+    reference: @inquiry,
+    comments: @comments,
+    comment: Comment.new,
+    redirect_path: inquiry_url(@inquiry.id) %>
+
+var $listEl = $('.in-comments-list')
+$listEl.html("<%= escape_javascript( comments_html ) %>");
+
+$(document).ready(function(){
+  window.App.Comments.start();
+});

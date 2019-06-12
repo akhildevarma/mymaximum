@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en' style="background: #636363;">
+  <head>
+    <!--[if lt IE 9]>
+      <%= tag :meta, "http-equiv": 'x-ua-compatible', content: "IE=8" %>
+    <![endif]-->
+    <%= csrf_meta_tags -%>
+
+    <%= content_tag :title, "InpharmD™" %>
+    <%= tag :meta, property: 'og:url', content: root_url -%>
+    <%= tag :meta, property: 'og:title', content: "InpharmD" -%>
+    <%= tag :meta, property: 'og:type', content: "website" -%>
+    <%= tag :meta, property: 'og:image', content: "#{image_url('logo-no-tagline.png')}" -%>
+    <%= tag :meta, property: 'og:description', content: "Our goal is to help healthcare providers and patients make better decisions by getting them access to better health information." -%>
+
+    <%= tag :meta, charset: 'utf-8' %>
+    <%= tag :meta, name:"viewport", content: "width=device-width, initial-scale=1.0" %>
+    <%= tag :meta, name: 'stripe-key', content: Rails.application.secrets.stripe_public_key -%>
+    <%= tag :meta, name: 'apple-itunes-app', content: 'app-id=734187524' -%>
+
+    <%= favicon_link_tag -%>
+
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" -%>
+    <%= stylesheet_link_tag "vendor", "application", media: "all" -%>
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+    <script type="text/javascript" src='https://dogaan.github.io/generateperson.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/chat-engine@0.9.18/dist/chat-engine.min.js'></script> -->
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag  "ie", media: "all" %>
+    <![endif]-->
+
+    <% if Rails.env.development? %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+      <script>
+        var parser = document.createElement('a');
+        parser.href = "<%= javascript_url 'heathcare.entry' %>";
+        var assetHost = parser.host
+      </script>
+    <% end %>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" %>
+      <%= javascript_include_tag "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" %>
+    <![endif]-->
+
+    <% if @layout == 'healthcare' %>
+      <%= javascript_include_tag "https://js.stripe.com/v1/?#{ Time.now.to_i }" -%>
+    <% end %>
+
+
+    <%= content_for :head %>
+
+    <!-- Hotjar Tracking Code for inpharmd.com -->
+    <%= render 'shared/hotjar' %>
+  </head>
+  <body class="absolute-container" style="<%= 'background: #E4E4E4;' if footer_required? %>">
+    <% if Rails.env.development? %>
+      <div>
+        <pre>
+Layout: <%= @layout %>
+        </pre>
+      </div>
+      <% else %>
+      <div style='margin-top:70px;'></div>
+    <% end %>
+    <div style="display:none;" id="js-bootstrap"
+      data-current-user-present="<%= !!current_user %>">
+    </div>
+    <!-- NAV -->
+    <nav id="topnav" class="<%= current_layout ? current_layout + '-nav' : '' %>">
+        <%= render 'shared/nav' -%>
+    </nav>
+    <!-- /NAV -->
+
+    <!-- MAIN -->
+    <section id="main-wrapper">
+      <%= yield %>
+    </section>
+    <!-- /MAIN -->
+
+    <!-- FOOTER -->
+    <section id="footer-wrapper">
+      <%= content_for(:footer) %>
+    </section>
+    <!-- /FOOTER -->
+
+    <!-- SCRIPTS -->
+    <%= render "shared/google_analytics" -%>
+    <% unless browser.ie?("<9") %>
+      <%= render "shared/zendesk" -%>
+      <%= render "shared/fullstory" -%>
+    <% end %>
+    <%= render "shared/adroll" -%>
+    <%= content_for :body_scripts %>
+    <!-- /SCRIPTS -->
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+       //DOM manipulation code
+
+    $('#paswd').tooltip();
+    });
+  </script>
+</html>

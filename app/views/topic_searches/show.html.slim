@@ -1,0 +1,61 @@
+h3 Topic Search
+
+#topic-search data-status-url="#{topic_search_job_status_path(@topic_search, format: :json)}" data-complete="#{@topic_search.complete?}"
+  | You searched for:
+  .search-terms= @topic_search.search_terms
+  - if @topic_search.drug_name.present?
+    ' Drug name:
+    span.drug-name= @topic_search.drug_name
+hr
+
+
+ul.nav.nav-tabs
+  li.active
+    a href="#" data={toggle: "tab", target:"#search-results", 'slide-to':"0"} 
+      ' MedlinePlus
+  li
+    a href="#" data={toggle: "tab", target:"#search-results", 'slide-to':"1"} 
+      ' National Guidelines Clearinghouse
+  li
+    a href="#" data={toggle: "tab", target:"#search-results", 'slide-to':"2"} 
+      ' DailyMed
+  li
+    a href="#" data={toggle: "tab", target:"#search-results", 'slide-to':"3"} 
+      ' Drugs@FDA
+#search-results.carousel.slide data-interval="false"
+  .carousel-inner
+    .active.item
+      #medline-plus data-complete="#{@topic_search.medline_plus_query_complete?}"
+        - if @topic_search.medline_plus_query_complete?
+          = render 'medline_plus_result', mustache: { medline_plus_result: @topic_search.medline_plus_result }
+        - else
+          .spinner
+    .item
+      #guideline-gov data-complete="#{@topic_search.guideline_gov_query_complete?}"
+        - if @topic_search.guideline_gov_query_complete?
+          = render 'guideline_gov_result', mustache: { guideline_gov_result: @topic_search.guideline_gov_result }
+        - else
+          .spinner
+    .item
+      #daily-med data-complete="#{@topic_search.daily_med_query_complete?}"
+        - if @topic_search.daily_med_query_complete?
+          = render 'daily_med_result', mustache: { daily_med_result: @topic_search.daily_med_result }
+        - else
+          .spinner
+    .item
+      #fda data-complete="#{@topic_search.fda_query_complete?}"
+        - if @topic_search.fda_query_complete?
+          = render 'fda_result', mustache: { fda_result: @topic_search.fda_result }
+        - else
+          .spinner
+
+script type="text/html" id="tags-template"
+  = render 'shared/tags'
+script type="text/html" id="medline-plus-result-template"
+  = render 'medline_plus_result'
+script type="text/html" id="guideline-gov-result-template"
+  = render 'guideline_gov_result'
+script type="text/html" id="daily-med-result-template"
+  = render 'daily_med_result'
+script type="text/html" id="fda-result-template"
+  = render 'fda_result'

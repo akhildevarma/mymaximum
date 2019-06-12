@@ -1,0 +1,215 @@
+<% content_for :custom_layout do %>
+  <section class="our-story-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class='page-header hero-header'>
+            <p  class="subtitle_text">Our Story</p>
+            <p class="subtitle_our_story">
+              Our goal is to help healthcare providers and patients to provide better access to better information leads to better decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= button_to 'Get Started', (current_user ? my_inquiries_url : signup_url), class: 'btn btn-warning', method: 'get' %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+        <div class="col-xs-12"><br><br></div>
+
+        <div class="row">
+          <div class="col-xs-12" >
+            <section id="what-is-inpharmd" style="">
+              <h4 class="our_story_headers">What is InpharmD&trade;?</h4>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                <div class="our_story_text"> 
+                  <p>
+                    Each year, there are an estimated 1.8 million studies published. How can you ensure you're considering all of the evidence in your decisions? InpharmD™ is here to help.
+                  </p>
+                      <p>
+                    Ask any question, anytime, via website or app, on campus or off, and receive an up to date or real time, customized summary of the available published literature.
+                    </p>
+              <%= render 'shared/vimeo' %>
+                  </div>
+                </div>
+                <div class="col-xs-12 visible-xs-block"><br><br></div>
+                <div class="col-xs-12 col-sm-5">
+                  <div id="testimonial" class="carousel slide">
+                    <div class="carousel-inner">
+                      <% Testimonial.data.each_with_index do |item, index| %>
+                        <div class="item <%= 'active' if index == 0 %>">
+                          <%= render partial: 'shared/testimonial', object: item %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- <div class="col-xs-12"><br><br></div> -->
+        <div class="row">
+          <div class="col-xs-12" >
+            <section id="our-values">
+              <div class="row row-same-height">
+                <div class="col-xs-12 col-sm-4 col-same-height product-goal">
+                  <i class="fa fa-clock-o"></i>
+                  <h5>Saved Time</h5>
+
+                  <p>
+                    Save time by using focused search tools. On average, you'll save 2 hours of literature searching.
+                  </p>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-same-height product-goal">
+                  <i class="fa fa-search-plus"></i>
+                  <h5>More Resources</h5>
+
+                  <p>
+                    Gain access to 20,000+ scientific journals, 20,000,000+ scientific articles, and several other resources.
+                  </p>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-same-height product-goal">
+                  <i class="fa fa-lightbulb-o"></i>
+                  <h5>Superior Decisions</h5>
+
+                  <p>
+                    When decisions are made in line with evidence, healthcare costs decrease while quality increases.
+                  </p>
+                </div>
+              </div>
+
+            </section>
+          </div>
+<div class="col-xs-12">
+          <div class="text-center">
+            <%= link_to signup_path, :class => "call-to-action" do -%>
+              Get InpharmD&trade; Today!
+            <% end %>
+          </div>
+        </div> <br>
+     <div>
+
+<p class="our_story_text info_story "> 
+Our network of Drug Information Centers uses their time and resources, aided by machine learning algorithms, to provide you a customized summary of appropriate evidence all 20,000 journals.
+          </p>
+</div><br>
+
+<div style="text-align:center;margin-top: 20px">
+                       <%=image_tag("GlobalConnection.gif", alt:"our_story", style: 'width:100%') -%>
+      </div><br><br>
+    <div class="col-xs-12"><br><br></div>
+
+        <section id="product-features">
+          <h4 class="our_story_headers">How can InpharmD&trade; help me?</h4> <br><br>
+
+          <div class="row">
+            <div class="col-sm-8 col-sm-push-4 col-xs-12">
+             
+            <div class="our_story_text reason_evidence">
+               <p>Evidence-based medicine is impossible for two reasons:</p>
+
+               <p style="margin-left:2.5em;">Time: The average literature search takes two hours.<p>
+               <p style="margin-left:2.5em;">Resources: Most institutions access less than half of the available 20,000 journals.</p>
+                <p>Existing static references are costly, time consuming, and limited in scope.</p> 
+ 
+                <p>InpharmD&trade; saves time and resources by offering customized literature searches
+                      through a network of academic Drug Information Centers.</p>
+              </div>
+            </div>
+            <div class="col-sm-4 col-sm-pull-8 col-xs-12">
+              <div id="inquiry" class="carousel slide" data-interval="false">
+                <ol class="carousel-indicators">
+                  <li data-target="#inquiry" data-slide-to="0" class="active"></li>
+                  <li data-target="#inquiry" data-slide-to="1"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <a data-target="#inquiry-new" role="button" data-toggle="modal">
+                      <%= image_tag 'inquiry-new-big.png' -%>
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a data-target="#inquiry-response" role="button" data-toggle="modal">
+                      <%= image_tag 'inquiry-response-big.png' -%>
+                    </a>
+                  </div>
+                </div>
+
+                <a class="carousel-control left" href="#inquiry" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#inquiry" data-slide="next">&rsaquo;</a>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="col-xs-12 visible-xs-block"><br><br></div>
+
+        </section>
+
+        <div class="col-xs-12"><br><br></div>
+
+        <section id="last-cta" class="row">
+          <div class="text-center col-xs-10 col-xs-offset-1">
+            <% cta_text = ApplicationSettings.load.require_general_invitations ? 'Get an Invite Today!' : 'Create Your Free Account' %>
+            <%= link_to cta_text, signup_path, :class => "call-to-action" -%>
+          </div>
+        </section>
+
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+            <%= render 'shared/social_share',
+              twitter_link_text: I18n.t('share.twitter_find_us_text'),
+              twitter_link: "twitter_find_us_link",
+              facebook_link_text: I18n.t('share.facebook_find_us_text'),
+              facebook_link: "facebook_find_us_link",
+              app_store: true
+            %>
+          </div>
+        </div>
+
+        <p class="text-center">
+          Questions? Contact us at <a href='mailto:support@InpharmD.com'>support@InpharmD.com</a>.
+        </p>
+
+        <!-- Modal -->
+        <div id="topic-search-new" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div data-dismiss="modal"><%= image_tag 'topic-search-new-big.png', class:'modal-image' -%></div>
+          </div>
+        </div>
+        <div id="topic-search-results" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div data-dismiss="modal"><%= image_tag 'topic-search-results-big.png', class:'modal-image' -%></div>
+          </div>
+        </div>
+        <div id="inquiry-new" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div data-dismiss="modal"><%= image_tag 'inquiry-new-big.png', class:'modal-image' -%></div>
+          </div>
+        </div>
+        <div id="inquiry-response" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div data-dismiss="modal"><%= image_tag 'inquiry-response-big.png', class:'modal-image' -%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

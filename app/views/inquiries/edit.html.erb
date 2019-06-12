@@ -1,0 +1,170 @@
+<%= render 'shared/autosave' %>
+<h3>
+  Respond to an inquiry
+  <div class="pull-right">
+    <%- if @inquiry.status.review? -%>
+      <%= link_to 'Review Response', review_inquiry_path(@inquiry), class: 'btn btn-success' -%>
+    <%- end -%>
+    <%= link_to 'Browse related', inquiry_related_inquiries_path(@inquiry), class: 'btn' -%>
+  </div>
+</h3>
+<div class="question">
+  <%= simple_format(@inquiry.question) -%>
+</div>
+<em class="submitted">
+  <%= 'Submitted by' -%>
+  <strong>
+    <%= link_to @inquiry.submitter.full_name_or_email, user_profile_path(id: @inquiry.submitter_id) -%>
+  </strong>
+  on <%= local_date(@inquiry.created_at, '%B %e, %Y %l:%M%P') -%>
+
+  <p class="turnaround" style='margin-left:15px;'>
+  <%= @inquiry.turnaround_time.text -%>
+  </p>
+</em>
+
+<%= render 'shared/docs_section', resource: @inquiry, resource_type: 'inquiry', doc_name: "#{@inquiry.submitter.private_labeled_user? ? '' : 'P & T'}" if (@inquiry.submitter.private_labeled_user? || @inquiry.project_type_related?)%>
+<hr>
+<%- unless @inquiry.assigned? -%>
+<p class="alert alert-danger alert-block">
+<%- else -%>
+<p>
+<%- end -%>
+  <strong>
+    <%= @inquiry.assignee_name -%>
+  </strong>
+  is working on this inquiry.
+  <%- if @inquiry.assigned_to_me? -%>
+    <%= link_to 'Stop Working', inquiry_assignment_path(@inquiry), method: :delete, class: 'btn btn-small btn-danger' -%>
+  <%- else -%>
+    <%= link_to 'Assign to me', inquiry_assignment_path(@inquiry), method: :post, class: 'btn btn-small btn-success' -%>
+  <%- end -%>
+</p>
+<%= simple_form_for @inquiry do |f| -%>
+  <%= f.input :status, collection: @inquiry.status_options,include_blank: false, label: '<h5><b><u>Current Status</u></b></h5>'.html_safe -%>
+  <%= f.input :tag_list, label: '<h5><b><u>Tags</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', :value => @inquiry.tag_list.join(", "), placeholder: 'Add 3-5 tags using our pre-populated terms if possible.', data: { autocomplete_url: api_legacy_inquiry_tags_path(format: :json), inquiry_id: @inquiry.id } } -%>
+<%= f.input :researchable_question, label:'<h5><b><u>Researchable Question</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', rows: '4', placeholder: 'Drill down the inquiry into a researchable question and enter it in question form here.' } -%>
+   
+   <a href="javascript:void(0)" id='use-research-question' style="margin-left: 140px;margin-bottom:-40px;" class="btn btn-small btn-success">Use Researchable Question</a>
+  <%= f.input :title, label: '<h5 style="margin-top:-14px;margin-left:15px;"><b><u>Publishable Title</u></b></h5>'.html_safe,  input_html: { class: 'input-block-level', rows: '4', placeholder: 'Enter title to show recipient; preferably in the form of question.' } -%>
+
+<%= f.input :custom_response_text, label:'<h5><b><u>Custom Response Text</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', rows: '4', placeholder: 'As the expert, add 3-5 sentences quickly answering the question based on what the literature revealed, insights on the literature you observed, and other clinical pearls. Also, commentary on other material that addresses the question but may not have been relevant enough to add below (e.g. ongoing clinical trials, trials published in another language, results that are too specific but may help understanding of the inquiry) is appreciated. This is the provider’s first impression of the inquiry, so it must be pristine.' } -%>
+ 
+ <!-- <a href="https://www.cebm.net/2009/06/oxford-centre-evidence-based-medicine-levels-evidence-march-2009/" id='level_of_evidence_link' style="margin-left: 140px;margin-bottom:-40px;" class="btn btn-small btn-success" target="_blank">Reference link</a> -->
+ <!-- <a id="copy-evidence-btn" style="margin-left: 10px;margin-bottom:-40px;" class="btn btn-small btn-success">
+      Copy Default Template
+    </a> -->
+<!-- <label><h5><b><u>Level of Evidence</u></b></h5></label><br/>
+<select class="treatment" name="treatment">
+  <option value="Therapy / Prevention, Aetiology / Harm">Therapy / Prevention, Aetiology / Harm</option>
+  <option value="Prognosis">Prognosis</option>
+  <option value="Diagnosis">Diagnosis</option>
+  <option value="Differential diagnosis / symptom prevalence study">Differential diagnosis / symptom prevalence study</option>
+  <option value="Economic and decision analyses">Economic and decision analyses</option>
+</select>
+<div id="level_of_evidence"></div><br/>
+<%#= link_to "https://www.cebm.net/2014/06/glossary/", "https://www.cebm.net/2014/06/glossary/", target: "_blank" %>
+<button type="button" id='evidence' class="btn btn-primary" data-toggle="modal" data-target="#evidenceNotes">Notes</button>
+<%#= f.input :level_of_evidence, label: false, input_html: {rows: '10', placeholder: 'Please pick from above table with a link to this article for explanation' } -%>
+ -->
+<% unless @inquiry.submitter.private_labeled_user? %>
+  <% if @inquiry.has_background? %>
+    <%= f.input :background, input_html: { class: 'input-block-level', rows: '12', placeholder: 'Insert relevant synopsis statements that encompass the literature as a whole. A comprehensive search of tertiary sources is expected here; all primary literature is summarized in the Review of Literature section.' } -%>
+    <%= f.input :background_references, input_html: { class: 'input-block-level', rows: '2' } -%>
+  <% else %>
+    <%= f.input :review_of_clinical_guidelines,  label:'<h5><b><u>Overview of Clinical Guidelines</u></b></h5>'.html_safe,input_html: { class: 'input-block-level', rows: '12', placeholder: 'Insert relevant synopsis statements that encompass the literature as a whole.  Tertiary sources are the only source permissible here; all primary literature is summarized in the Literature Review section.' } -%>
+
+    <%= f.input :review_of_review_articles, label:'<h5><b><u>Overview of Commentaries, Consensus Statements, and Review Articles</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', rows: '12', placeholder: 'Insert relevant synopsis statements that encompass the literature as a whole.  Tertiary sources are the only source permissible here; all primary literature is summarized in the Literature Review section.' } -%>
+   
+    <%= f.input :review_of_meta_analyses, label:'<h5><b><u>Overview of Meta-Analyses</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', rows: '12', placeholder: 'Insert relevant synopsis statements that encompass the literature as a whole.  Tertiary sources are the only source permissible here; all primary literature is summarized in the Literature Review section.' } -%>
+
+     <%= f.input :review_of_other_tertiary_literature,label:'<h5><b><u>Overview of Other Tertiary Sources</u></b></h5>'.html_safe, input_html: { class: 'input-block-level', rows: '12', placeholder: 'Insert relevant synopsis statements that encompass the literature as a whole.  Tertiary sources are the only source permissible here; all primary literature is summarized in the Literature Review section.' } -%>
+    <%= f.input :background_references, input_html: { class: 'input-block-level', rows: '2' } , label: '<h5><b><u>References</u></b></h5>'.html_safe, placeholder: 'List sources for the four above sections here. Numbering should restart in each of the four sections.'-%>
+  <% end %>
+<%= f.input :relevant_prescribing_info, label:'<h5><b><u>Relevant Prescribing Information</u></b></h5>'.html_safe,input_html: { class: 'input-block-level', rows: 20, placeholder: 'Insert only information applicable to the researchable question.  Information copied and pasted directly from the Prescribing Information (Package Insert) is the only source permissible here.', data: { application_stylesheet_path: stylesheet_path("application") } } -%>
+
+  <%= f.input :relevant_prescribing_info_references, label:'<h5><b><u>References</u></b></h5>'.html_safe, placeholder: 'List source(s) for the prescribing information section here.', input_html: { class: 'input-block-level', rows: '2' } -%>
+
+   <h4><b><u>Literature Review</u></b></h4>
+  <%= f.input :search_strategy, label:'<h5><b><u>Search Strategy</u></b></h5>'.html_safe,
+    input_html: {
+      class: 'input-block-level',
+      rows: '4',
+      placeholder: 'Include an objective description of your (primary) literature search strategy and how many studies resulted and how many studies were included for each search (for the Literature Review section. Quotations may be useful if a phrase is needed, but it’s always recommended to conduct the same search without them, too.   For example:   PubMed:  Metformin [Mesh] AND PCOS [Mesh] AND occurrence= # results [# included]; filters (x, y, z) Metformin [Mesh] AND “polycystic ovarian syndrome” [Mesh]= # results [# included]; filters (x, y, z)'
+    } -%>
+    <%= f.input :doc_url, label:'<h5><b><u>Google Docs URL</u></b></h5>'.html_safe, placeholder: 'Google Docs URL'%>
+<% end %>
+<%= f.submit 'Save Changes', class: 'btn btn-primary' -%>
+<%- end -%>
+<% unless include_section?(@inquiry.hidden_sections, 'summary_tables')%>
+<hr>
+<%- if !@inquiry.submitter.private_labeled_user? && @inquiry.summary_tables.empty? -%>
+  <p>
+    No one has submitted any tables yet.
+  </p>
+<%- else -%>
+  <%- @inquiry.summary_tables.each_with_index do |summary_table, index| -%>
+    <h4>
+      Table <%= index + 1 -%>
+      <small>
+        <%= summary_table.responder.try :email -%>
+      </small>
+      <%= link_to 'Edit', [:edit, @inquiry, summary_table], class: 'btn btn-small' -%>
+      <%= link_to 'Delete', [@inquiry, summary_table], method: :delete, data: { confirm: 'Really delete this table?'}, class: 'btn btn-small btn-danger' %>
+      <div class='pull-right'>
+        <%= render partial: 'shared/summary_table_status', locals: { summary_table: summary_table } -%>
+      </div>
+    </h4>
+    <%= render partial: 'shared/summary_table', locals: { summary_table: summary_table } -%>
+    <hr>
+  <%- end -%>
+<% end %>
+<% if !@inquiry.submitter.private_labeled_user? %>
+   <%= link_to 'Add a Table', new_inquiry_summary_table_path(@inquiry), class: 'btn btn-primary' -%>
+<% end %>
+<% end %><!--unless-->
+<!-- google doc -->
+<%= render 'doc' if !@inquiry.submitter.private_labeled_user? %>
+<!-- evidence notes -->
+<%= render 'notes' %>
+
+<script> 
+$(document).ready(function()
+  {
+    $('textarea').change(function()
+      {
+        $("#flash-messages-wrapper").show();
+        $(".alert-success").show();
+        $.ajax({
+          type: 'POST',
+          url: "<%= auto_save_inquiry_path(@inquiry)%>",
+          data: $(this).serialize(),
+          success: function(data)
+           {
+             $('#autosave').html(data.ok);
+           }
+      });
+    });
+});
+
+$('.treatment').change(function(){
+  var level = $('#level').val();
+  var treatment = $(this).val();
+  console.log(level);
+  console.log(treatment);
+  $.ajax({
+    type: 'POST',
+    url: "<%= level_of_evidence_inquiry_path %>",
+    data: {level: level, treatment: treatment},
+    success: function(data)
+     {
+        $('#inquiry_level_of_evidence').html(data.ok);
+     }
+  });
+});
+
+$('#level_of_evidence').change(function(){
+  var medicine = $('#option').val();
+  document.getElementById('inquiry_level_of_evidence').value = medicine; 
+});
+</script>

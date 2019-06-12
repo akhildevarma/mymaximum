@@ -1,0 +1,7 @@
+h3 Reset Your Password
+= form_tag password_reset_path, class: 'simple_form form-horizontal' do
+  .control-group
+    = label_tag :email, nil, class: 'control-label'
+    .controls= text_field_tag :email, params[:email]
+  .controls
+    = submit_tag "Reset Password", class: "btn btn-primary"

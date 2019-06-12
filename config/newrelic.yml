@@ -1,0 +1,54 @@
+# Generated September 25, 2013 (Development Staging) - app16555970@heroku.com
+# Generated January 09, 2015 (Production) - app16577984@heroku.com
+
+common: &default_settings
+  license_key: '8bc6e45a2233ba37c8f60b187be133d4a683da4e'
+  monitor_mode: true
+  developer_mode: false
+  log_level: info
+  log_file_name: 'newrelic_agent.log'
+
+  browser_monitoring:
+      auto_instrument: true
+
+  audit_log:
+    enabled: false
+
+  capture_params: true
+
+  transaction_tracer:
+    enabled: true
+    transaction_threshold: apdex_f
+    record_sql: obfuscated
+    stack_trace_threshold: 0.500
+    capture_attributes: true
+
+  error_collector:
+    enabled: true
+    capture_source: true
+    ignore_errors: "ActionController::RoutingError,Sinatra::NotFound"
+
+
+development:
+  <<: *default_settings
+  app_name: Inpharmd Development
+  monitor_mode: false
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  app_name: Inpharmd Test
+  monitor_mode: false
+
+production:
+  <<: *default_settings
+  license_key: 'd8f5e3f2e97eb3466a50caab249d2d5c6fbdbf75'
+  app_name: Inpharmd
+  monitor_mode: true
+  log_file_name: 'newrelic_agent_prod.log'
+
+staging:
+  <<: *default_settings
+  app_name: Inpharmd Staging
+  monitor_mode: true
+  log_file_name: 'newrelic_agent_staging.log'

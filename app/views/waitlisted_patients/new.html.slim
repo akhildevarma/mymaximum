@@ -1,0 +1,6 @@
+h3 Request a Patient Invitation
+.alert.alert-info
+  | Due to the nature of our service, we must be mindful about how fast we grow. By entering your email below, you will be added to our waitlist. We will be in touch soon.
+= simple_form_for @waitlisted_user, url: waitlisted_patient_path do |f|
+  = f.input :email
+  = f.submit class: "btn btn-primary"

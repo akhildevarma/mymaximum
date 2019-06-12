@@ -1,0 +1,7 @@
+<div class="text-center">
+  <%- if inquiry.closed? -%>
+    <%= link_to "View Response", summary_tables_my_inquiry_path(inquiry), class: "btn btn-default" -%>
+  <%- else -%>
+    <%= render partial: "shared/inquiry_status_progress_bar", locals: { inquiry: inquiry } -%>
+  <%- end -%>
+</div>

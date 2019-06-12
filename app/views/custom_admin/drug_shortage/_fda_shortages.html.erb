@@ -1,0 +1,50 @@
+<div>
+  <h2>   
+   FDA Drug Shortages
+  </h2>
+  <div class="pull-right" style='margin-top: -50px;'>
+    <%= link_to 'Refresh Drugs', drug_shortages_refresh_path, class: 'btn btn-primary' -%>
+  </div>
+  <hr>
+
+  <p>
+  <%= form_tag request.path, :method => 'get' do %>
+      Search Hospital Drugs:
+      <%= text_field_tag :fda_search, params[:fda_search] %>
+      <%= hidden_field_tag :active_tab, 'fda-tab' %>
+      <button type="submit"><i class="fa fa-search"></i></button>
+  <% end %>
+</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drugs.each do |drug| %>
+    <tr id="<%= dom_id(drug) -%>">
+      <td>
+        <%= link_to drug.title, drug.link, target: '_blank' %>
+      </td>
+      <td><%=drug.description%>
+      </td>
+      <td><%= local_time(drug.published_date, '%b %e, %Y') %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="4">
+        <div class="pull-right">
+          <%= will_paginate @drugs, :param_name => 'fda_page', params: {active_tab: 'fda-tab'} %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+

@@ -1,0 +1,41 @@
+<% content_for :custom_layout do %>
+
+  <% unless authenticated? %>
+    <section class="home-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+            <div class='page-header hero-header'>
+              <h1>Better Health Information</h1>
+              <p class="subtitle">
+                Our goal is to help healthcare providers and patients make better decisions by getting them access to better health information.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= button_to 'Get Started', (current_user ? my_inquiries_url : signup_url), class: 'btn btn-warning', method: 'get' %>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="cards-container content-wrapper">
+
+    <% if @news.present? %>
+
+        <div class="container">
+          <div class="row">
+            <header class="card-header">Recently Published Inquiries</header>
+          </div>
+          <div class="row">
+            <%= render partial: "news/news", collection: @news %>
+          </div>
+        </div>
+
+    <% end %>
+  </section>
+<% end %>

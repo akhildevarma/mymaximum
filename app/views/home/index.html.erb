@@ -1,0 +1,80 @@
+<% content_for :custom_layout do %>
+
+  <% unless authenticated? %>
+    <section class="home-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+            <div class='page-header hero-header'>
+              <h1>Better Health Information</h1>
+              <p class="subtitle">
+                Our goal is to help healthcare providers and patients make better decisions by getting them access to better health information.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <%= button_to 'Get Started', (current_user ? my_inquiries_url : signup_url), class: 'btn btn-warning', method: 'get' %>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% else %>
+
+    <section class="cards-container content-wrapper">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+            <% if @inquiry && ( provider? || admin? ) %>
+              <%= render 'inquiries/form' -%>
+            <% end %>
+
+            <% if @asked_by_me.present? %>
+              <div class="card">
+                <div class="card-list-header ">
+                  Asked By Me
+                 <!--  <span style="float:right;">
+                    <%# @unread_by_me.count %> unread
+                  </span> -->
+                </div>
+                <br/>
+                <div class="inquiries-list">  
+                <%= render partial: "home/item", collection: @asked_by_me, locals: { show_name: false } %>
+                 <br/>
+                <%= link_to "See all", my_inquiries_path, class: "" %>
+              </div>
+             </div>
+            <% end %>
+            <% if @news.present? && !current_user.private_labeled_user?%>
+                <%= render partial: "home/news", collection: @news %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+  <% end %>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if (!!$.prototype.truncate) {
+        $("[data-truncate='title']").truncate({
+          lines: 2
+        });
+        $('.truncate-container').css('visibility','visible');
+      }
+    });
+  </script>
+
+
+<% end %>

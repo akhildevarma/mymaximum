@@ -1,0 +1,46 @@
+.message-p {
+  background: #f5f5f5;
+
+  .message-header {
+    background: #dcdfe3;
+    padding: 3px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  h5 {
+    font-weight: 200;
+    margin-top: 10px;
+  }
+
+  p {
+    margin-left: 10px;
+  }
+
+  .small {
+    font-size: 11px;
+    color: #aab2bd;
+    margin-top: -10px;
+  }
+
+  name {
+    color: #ed5565;
+    font-weight: 700;
+  }
+
+  .message {
+    font-size: 12px;
+  }
+
+  .form-inline {
+    margin-left: 10px;
+
+    .form-group {
+      width: 80%;
+    }
+
+    .form-control {
+      width: 100%
+    }
+  }
+}

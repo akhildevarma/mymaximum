@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dailymed.nlm.nih.gov/dailymed/services/v1/drugname/albuterol/spls.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 06 Sep 2013 18:48:12 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - CFAUTHORIZATION_dailymed_48863B5BDCA01B090A4358859A61B7726=;expires=Thu, 06-Sep-2012
+        18:48:12 GMT;path=/
+      - CFID=158428866;expires=Sun, 30-Aug-2043 18:48:12 GMT;path=/
+      - CFTOKEN=2725566c247e4aac-8E068D25-DA17-5CC0-E7404CC9D3A8A12C;expires=Sun,
+        30-Aug-2043 18:48:12 GMT;path=/
+      - JSESSIONID=8430449ff035c5a28d22185a58733e6d2434;path=/
+      Access-Control:
+      - allow <*>
+      Vary:
+      - Accept
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/xml; charset=UTF-8
+      X-Vip-Info:
+      - 130.14.16.124:80
+      X-Pool-Info:
+      - /Common/dailymed_p 10.1.11.29 80
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <spls><spl><setid>5f06a992-93ae-461d-b605-9962249daeba</setid><spl_version>1</spl_version><published_date>January 25, 2008</published_date><title>PROVENTIL (ALBUTEROL) AEROSOL, SPRAY [SCHERING CORPORATION]</title></spl><spl><setid>29d24a6d-f9c1-4300-97c7-fec26bdbc22b</setid><spl_version>1</spl_version><published_date>July 22, 2011</published_date><title>ALBUTEROL AEROSOL, METERED [REBEL DISTRIBUTORS CORP]</title></spl><spl><setid>a000abb9-92a1-4c84-8932-cd40c476dc00</setid><spl_version>1</spl_version><published_date>January 26, 2007</published_date><title>ALBUTEROL (ALBUTEROL) AEROSOL, SPRAY [WARRICK PHARMACEUTICALS CORPORATION]</title></spl><spl><setid>2e7c1e97-b8b2-44c0-aeac-18f9142a522b</setid><spl_version>1</spl_version><published_date>August 18, 2011</published_date><title>ALBUTEROL TABLET [UDL LABORATORIES, INC.]</title></spl><spl><setid>3e95d573-74b2-4b0e-9397-c2cdaf7f41e5</setid><spl_version>2</spl_version><published_date>January 12, 2012</published_date><title>ALBUTEROL (ALBUTEROL SULFATE) TABLET [PD-RX PHARMACEUTICALS, INC.]</title></spl><spl><setid>1c1f3881-2b68-4bdb-a12f-8134fe8ba961</setid><spl_version>4</spl_version><published_date>May 11, 2012</published_date><title>ALBUTEROL (ALBUTEROL SULFATE) TABLET [MYLAN PHARMACEUTICALS INC.]</title></spl><spl><setid>808e2b04-9e84-440a-b00e-2cbe858041da</setid><spl_version>1</spl_version><published_date>December 12, 2007</published_date><title>ALBUTEROL (ALBUTEROL) AEROSOL, METERED [ARMSTRONG PHARMACEUTICALS, INC.]</title></spl></spls>
+    http_version: 
+  recorded_at: Fri, 06 Sep 2013 18:48:22 GMT
+recorded_with: VCR 2.5.0

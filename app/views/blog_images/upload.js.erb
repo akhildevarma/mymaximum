@@ -1,0 +1,8 @@
+$(document).ready(function(){
+<% if @errors.blank? %>
+  if (!!$.prototype.modal) { $('#modalProfile').modal('hide'); }
+    // location.reload();
+<% else %>
+  alert("<%=@errors.full_messages.join(', ').html_safe%>")
+<% end %>
+});

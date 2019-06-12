@@ -1,0 +1,9 @@
+<h4><%= I18n.t("account.created") %></h4>
+<p>
+  <%= I18n.t("account.activation.required") %>
+</p>
+<br/><br/>
+<p style="font-style: italic;">
+  <%= I18n.t("account.activation.resend") %>
+  <%= link_to I18n.t("account.activation.resend_link"), new_account_activation_path %>
+</p>

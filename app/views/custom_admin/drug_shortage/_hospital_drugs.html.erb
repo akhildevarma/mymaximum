@@ -1,0 +1,47 @@
+<div>
+  <h2>   
+   Hospital Available Drugs
+  </h2>
+  <div class="pull-right">
+  <button type="button" id='upload_users' class="btn btn-primary" data-toggle="modal" data-target="#myHospitalDrugs" style ='margin-top:15px;'>Bulk Upload</button>
+</div>
+
+  <hr>
+
+  <p>
+  <%= form_tag request.path, :method => 'get' do %>
+      Search Hospital Drugs:
+      <%= text_field_tag :search, params[:search] %>
+      <%= hidden_field_tag :active_tab, 'hospital-tab' %>
+      <button type="submit"><i class="fa fa-search"></i></button>
+  <% end %>
+</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hospital_drugs.each do |drug| %>
+    <tr id="<%= dom_id(drug) -%>">
+      <td>
+       <%=drug.title%>
+      </td>
+      
+      <td><%= local_time(drug.created_at, '%b %e, %Y') %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="4">
+        <div class="pull-right">
+          <%= will_paginate @hospital_drugs, :param_name => 'hospital_page', params: {active_tab: 'hospital-tab'} %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<%= render 'drug_uploader' %>

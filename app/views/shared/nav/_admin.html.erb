@@ -1,0 +1,53 @@
+<li class="<%=nav_link_class("dashboard")%>">
+  <%= link_to "Dashboard", custom_admin_dashboard_index_path %>
+</li>
+<li role="separator" class="divider"></li>
+<li class="<%=nav_link_class("dashboard")%>">
+  <%= link_to "MailChimp", custom_admin_mailchimp_index_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+<li class"<%=nav_link_class("news")%>">
+  <%= link_to "News", custom_admin_news_index_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+<li class="<%=nav_link_class("invitations")%>">
+  <%= link_to "Invite", new_invitation_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li class="<%=nav_link_class("users")%>">
+  <%= link_to "Users", custom_admin_users_path %>
+</li>
+
+<li class="<%=nav_link_class("students")%>">
+  <%= link_to "Students", custom_admin_students_path %>
+</li>
+
+<li class="<%=nav_link_class("teams")%>">
+  <%= link_to "Teams", custom_admin_teams_path %>
+</li>
+
+<li class="<%=nav_link_class("comments")%>">
+  <%= link_to "Manage Comments", custom_admin_comments_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li class="<%=nav_link_class("survey_responses")%>">
+  <%= link_to "Survey Responses", survey_responses_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li class="<%=nav_link_class("application_settings")%>">
+  <%= link_to "Application Settings", edit_application_settings_path %>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li class="<%=nav_link_class("apidoc")%>">
+  <%= link_to "API Doc", apidoc_path ,target: '_blank'%>
+</li>

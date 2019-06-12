@@ -1,0 +1,32 @@
+.dataTables_paginate {
+  padding: 15px 0;
+
+  &.paging_bootstrap.pagination {
+    float: right;
+    margin-top: -5px;
+    margin-bottom: 15px;
+
+    &.pagination li {
+      @include border-radius(3px)
+      float: left;
+      margin: 0 1px;
+      border: 1px solid #ddd;
+
+      a {
+        color: #797979;
+        padding: 5px 10px;
+        display: inline-block;
+      }
+
+      &:hover, &.active {
+        a {
+          @include border-radius(3px);
+          color: #fff;
+          background: #4ECDC4;
+        }
+      }
+    }
+  }
+}
+  
+

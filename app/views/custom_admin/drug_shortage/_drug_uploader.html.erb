@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div id="myHospitalDrugs" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Bulk Upload Drugs</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :hospital_drug, url: drug_upload_path, html: { :multipart => true, id: 'hospital_drug_form' } do |f| -%>
+       <label class="control-label">Select File</label>
+        <%= f.file_field :file -%>   <br/>
+         <%= f.hidden_field :team_id, value: current_user.team_id %>
+         <br/>
+        <input name="button" value="Submit" onclick=" $('#hospital_drug_form').submit();" type="button"></br>
+       <% end -%>
+       <p><a href="/docs/Hospital_Drugs_Sample.xlsx">Download Sample file</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

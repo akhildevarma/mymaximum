@@ -1,0 +1,21 @@
+
+<% if @inquiry.doc_url.present? && @inquiry.doc_url.include?('http')%>
+<div class="doc_strategy" style='position: fixed;bottom: 0;right: 120px;'>
+  <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#doc_strategy">Google Doc</button><br>
+  <div id="doc_strategy" class="collapse">
+    <div class="doc-container clearfix">
+     <div class="doc">
+      <iframe src="<%=@inquiry.doc_url%>" width='950' height='620'></iframe>
+     </div>
+</div>
+  </div>
+<div>
+<% else %>
+<div class="doc_strategy" style='position: fixed;bottom: 0;right: 120px;'>
+  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add_doc_url">Google Doc</button><br>
+  </div>
+  <%= render 'add_doc_url'%>
+<% end %>
+
+
+

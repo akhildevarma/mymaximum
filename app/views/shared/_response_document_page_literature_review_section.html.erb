@@ -1,0 +1,36 @@
+<section class="response-document-page-section">
+  <header class="response-document-page-section-title">
+    <%= title %>
+  </header>
+  <article class="response-document-page-section-content">
+    <p class="custom-response-text">
+      A search of the published medical literature revealed
+      <%= pluralize(object.count, 'study') -%>
+      investigating the researchable question:
+
+      <blockquote>
+        <%= simple_format h(inquiry.researchable_question.blank? ? inquiry.question : inquiry.researchable_question) -%>
+      </blockquote>
+
+      <%- if object.count > 0 -%>
+        Please see
+        <%- if object.count > 1 -%>
+          Tables 1-<%= object.count -%>
+        <%- else -%>
+          Table 1
+        <%- end -%>
+        for your response.
+      <%- end -%>
+    </p>
+
+    <hr style="border-top: 1px solid #E0E0E0"/>
+  </article>
+</section>
+
+<%- if object.count > 0 -%>
+     <% if browser.modern? %>
+      <%= render 'summary_table_tabs', object: object %> 
+     <% else %>
+      <%= render 'summary_table_no_tabs', object: object %> 
+    <%- end -%>
+<%- end -%>

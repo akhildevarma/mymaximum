@@ -1,0 +1,11 @@
+<h3 class="page-header">
+  Review a Response&nbsp;
+  <div class="pull-right">
+    <%= link_to "Approve and Send", [:send_response, @inquiry], method: :post, data: { confirm: "Are you sure you want to send this response?" }, class: "btn btn-primary" %>&nbsp;
+    <%= link_to "Don't Send", [:edit, @inquiry], class: "btn" %>
+    <%= link_to "#{@inquiry.submitter.private_labeled_user? ? 'Review Documents' : 'Review P & T Documents'}", docs_view_path(resource_id: @inquiry.id, resource_type: 'inquiry'), method: :get, remote: true, class: "btn btn-link" if @inquiry.submitter.private_labeled_user? || @inquiry.project_type_related?%>
+  </div>
+</h3>
+<%= render "shared/response", inquiry: @inquiry %>
+<div id='view-docs'></div>
+

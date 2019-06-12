@@ -1,0 +1,47 @@
+.badge {
+  &.bg-primary {
+    background: #8075c4;
+  }
+
+  &.bg-success {
+    background: #a9d86e;
+  }
+
+  &.bg-warning {
+    background: $yellow;
+  }
+
+  &.bg-important {
+    background: $salmon;
+  }
+
+  &.bg-info {
+    background: $turquoise;
+  }
+
+  &.bg-inverse {
+    background: $darkBlueyGrey;
+  }
+}
+
+.badge-hot {
+  background: $cherryRed;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 18px;
+  color: $white;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.badge-popular {
+  background: $darkSkyBlue;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 13px;
+  color: $white;
+  text-align: center;
+  border-radius: 100%;
+}

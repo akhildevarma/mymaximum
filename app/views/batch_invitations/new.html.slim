@@ -1,0 +1,18 @@
+h3 Invite Waitlisted Users
+
+.alert.alert-info
+  ' Current waitlist size:
+  =>pluralize(@waitlisted_providers_count, "waitlisted provider")
+  ' and
+  = pluralize(@waitlisted_patients_count, "waitlisted patient")
+  '.
+
+= form_tag batch_invitation_path, class: 'simple_form' do
+  .control-group
+    = label_tag :number_of_invitations, nil, class: 'control-label'
+    .controls= number_field_tag :number_of_invitations, 0, min: 0
+  .control-group
+    = label_tag :user_role, nil, class: 'control-label'
+    .controls= select_tag :user_role, options_for_select([['Provider', 1], ['Patient', 0]])
+  .controls
+    = submit_tag "Invite Users", class: "btn btn-primary"

@@ -1,0 +1,9 @@
+<div class="pull-right">
+  <% if current_user.document_user? %>
+    <%= link_to "View #{doc_name} Documents", docs_view_path(resource_id: resource.id, resource_type: resource_type), method: :get, remote: true, class: "btn btn-link" %>
+	<%= link_to "Upload #{doc_name} Documents", docs_uploader_path(resource_id: resource.id, resource_type: resource_type), method: :get, remote: true, class: "btn btn-link" %>
+  <% end %>
+</div>
+<div id='upload-docs'></div>
+<div id='view-docs'></div>
+  

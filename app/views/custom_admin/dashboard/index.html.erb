@@ -1,0 +1,158 @@
+<p>
+  Downloads:
+  <%= link_to "All Users", custom_admin_downloads_path(id: 'users', format: "csv") %>
+  |
+  <%= link_to "Active Users", custom_admin_downloads_path(id: 'users-active', format: "csv") %>
+  |
+  <%= link_to "Inactive Users", custom_admin_downloads_path(id: 'users-team-inactive', format: "csv") %>
+  |
+  <%= link_to "Inactive Non-team Users", custom_admin_downloads_path(id: 'users-nonteam-inactive', format: "csv") %>
+  |
+  <%= link_to "Invited Team Users", custom_admin_downloads_path(id: 'users-team-invited', format: "csv") %>
+  |
+  <%= link_to "All Inquiries", custom_admin_downloads_path(id: 'inquiries', format: "csv") %>
+</p>
+
+
+<ul class="nav nav-pills">
+  <li class="active">
+    <a href="#dashboard" data-toggle="tab" data-target="#dashboard">
+      Dashboard
+    </a>
+  </li>
+  <li class="">
+    <a href="#users" data-toggle="tab" data-target="#users">
+      Users
+    </a>
+  </li>
+  <li>
+    <a href="#inquires" data-toggle="tab" data-target="#inquires">
+      Inquiries
+    </a>
+  </li>
+
+  <li>
+    <a href="#students_inquires" data-toggle="tab" data-target="#students_inquires">
+      Students Inquiry Count
+    </a>
+  </li>
+   <li>
+    <a href="#topic_searches" data-toggle="tab" data-target="#topic_searches">
+      Topic Searches
+    </a>
+  </li>
+  <li>
+    <a href="#user_inquiry" data-toggle="tab" data-target="#user_inquiry">
+      Users Inquiry Count
+    </a>
+  </li>
+</ul>
+<div id="response" class="carousel slide" data-interval="false">
+  <div class="carousel-inner">
+    <div id="my-tab-content" class="tab-content">
+
+
+      <div class="tab-pane active" id="dashboard">
+        <%= column_chart @charts[:new_users_by_month], library: {title: { text: "Users: New by month" }} %>
+        <%= column_chart @charts[:last_active_by_month], library: {title: { text: "Users: Last active by month" }} %>
+        <%= column_chart @charts[:new_inquiries_by_month], library: {title: { text: "Inquiries: New By Month" }} %>
+
+      </div>
+
+
+      <div class="tab-pane" id="users">
+        <pre>
+          Users
+          / Total: <%= @users[:total] %>
+          / Active today: <%= @users[:active_today] %>
+          / Active in 30 days: <%= @users[:active_last_30] %>
+          / Active in last week: <%= @users[:active_last_week] %>
+          / Registered in last week: <%= @users[:registered_last_week] %>
+        </pre>
+
+    </div>
+    <div class="tab-pane" id="inquires">
+      <pre>
+        Inquiries
+        / Total: <%= @inquiry[:total] %>
+        / New today: <%= @inquiry[:new_today] %>
+        / Per user in 30 days: <%= @inquiry[:per_user_last_30] %>
+        / Per team in 30 days:
+        <% for team_name, stats in @inquiry[:per_team_last_30] -%>
+          - <%= stats[:total_inquiries] %> (<%= stats[:inquiries_per_member] %> per member) <%= team_name.to_s.humanize %>
+        <% end -%>
+      </pre>
+      <pre>
+            <% time_array = ['week','month','year']
+               turn_arround_array = ['asap','one_day','a_few_days','a_week']
+            %>
+            <% time_array.each { |interval| %>
+              <pre>
+              <b>Last <%=interval.camelize%> Turnarround Time for ASAP Inquiries</b>
+                Average Time : <%=average_time(@inquiry["last_#{interval}_asap".to_sym]) %>
+                Shortest Turnaround : <%= minimum_time(@inquiry["last_#{interval}_asap".to_sym])%>
+                Longest Turnaround : <%= maximum_time(@inquiry["last_#{interval}_asap".to_sym])%>
+                </pre>
+            <% } %>
+            <% time_array.each { |interval| %>
+              <pre>
+              <b>Last <%=interval.camelize%> Turnarround Time for All Inquiries</b>
+                Average Time : <%=average_time(@inquiry["last_#{interval}_all".to_sym]) %>
+                Shortest Turnaround : <%= minimum_time(@inquiry["last_#{interval}_all".to_sym])%>
+                Longest Turnaround : <%= maximum_time(@inquiry["last_#{interval}_all".to_sym])%>
+                </pre>
+            <% } %>
+            <% turn_arround_array.each { |turn_arround| %>
+            <% time_array.each { |interval| %>
+              <pre>
+              <b>Last <%=interval.camelize%> successfully delivered <%= turn_arround.humanize%> inquiries </b>%:
+               <%=@percentages["last_#{interval}_#{turn_arround}".to_sym][:success_percentage] %>
+              <b>Last <%=interval.camelize%> failed to deliver <%= turn_arround.humanize%> Inquiries</b> % :
+              <%=@percentages["last_#{interval}_#{turn_arround}".to_sym][:failure_percentage] %>
+              </pre>
+            <% } %>
+             <% } %>
+
+            Inquiry/ Most recent
+            <% @inquiry[:recent].each do |inquiry| %>
+              Question: <%= inquiry.question %>
+              <%= inquiry.created_at %>
+              ======
+            <% end %>
+        </pre>
+
+      </div>
+      <div class="tab-pane" id="students_inquires">
+        <pre>
+          Students and Inquiries:
+            <% @student[:per_student][:count].each {|key,value| %>
+                 Student Email:: <%= key %>
+                  Count:: <%=value%>
+                  Students Completed Questions::
+                  <pre><%=@student[:per_student][:questions][key].to_s.split('#$#').join('<br>').html_safe%></pre>
+                <%}%>
+        </pre>
+      </div>
+      <div class="tab-pane" id="topic_searches">
+        <pre>
+          Topic Search/ Total: <%= @topic_search[:total] %>
+
+          Most Recent:
+          <% @topic_search[:recent].each do |topic| %>
+            <%= topic.slice(:search_terms, :drug_name, :result_stats, :created_at)%>
+            ======
+          <% end %>
+        </pre>
+      </div>
+      <div class="tab-pane" id="user_inquiry">
+        <pre>
+          Inquiries By User By Count:
+          <% for user in @users[:by_inquiries_count] %>
+            <%= user.inquiries_count %> <%= user.email %>
+          <% end %>
+        </pre>
+      </div>
+    </div>
+
+  </div>
+</div>

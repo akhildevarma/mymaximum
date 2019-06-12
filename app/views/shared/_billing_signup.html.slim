@@ -1,0 +1,8 @@
+- if payment_account.stripe_card_token
+  .controls= "Card ending with #{payment_account.decorate.pretty_last_four_digits} has already been provided."
+  = f.error :billing
+  = f.hidden_field :stripe_card_token
+  = f.hidden_field :last_four_digits
+- else
+  = render partial: "shared/credit_card_fields", locals: { f: f }
+= f.association :plan, as: :radio_buttons, collection: plans, label_method: :pretty_description

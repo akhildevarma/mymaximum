@@ -1,0 +1,20 @@
+h3 
+  ' My Automated Topic Searches
+  .pull-right
+    = link_to "Begin a New Search", new_topic_search_path, class: "btn btn-primary"
+- if @topic_searches.empty?
+  hr
+  p You haven't started any automated topic searches yet.
+- else
+  .nav-units
+    hr
+    - @topic_searches.each do |topic_search|
+      .nav-unit
+        = link_to topic_search do
+          .topic-search
+            .search-terms= topic_search.search_terms
+            - if topic_search.drug_name.present?
+              ' Drug name:
+              span.drug_name= topic_search.drug_name
+      hr
+

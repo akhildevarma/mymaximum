@@ -1,0 +1,19 @@
+= @name ? "#{@name}," : ''
+= "\n\n"
+| Thanks for your inquiry (reference #
+= @inquiry.id
+' )!
+= "\n\n"
+| "
+= @inquiry.question
+| "
+= "\n\n"
+' You will be alerted when your response is ready.
+= "\n\n"
+' In the meantime, you may track the progress of your response here:
+=> my_inquiries_url
+
+= "\n\n"
+| Let's do this again sometime,
+= "\n"
+| InpharmD™ Administrators

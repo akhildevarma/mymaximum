@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dailymed.nlm.nih.gov/dailymed/services/v1/drugname/not+a+real+drug+name/spls.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: NO SPLs found for drugname=not a real drug name
+    headers:
+      Date:
+      - Fri, 06 Sep 2013 18:53:11 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - CFAUTHORIZATION_dailymed_48863B5BDCA01B090A4358859A61B7726=;expires=Thu, 06-Sep-2012
+        18:53:11 GMT;path=/
+      - CFID=158429574;expires=Sun, 30-Aug-2043 18:53:11 GMT;path=/
+      - CFTOKEN=2d1b4ef745c9a1c6-8E342F86-A834-AA10-874E5966BBE96B7C;expires=Sun,
+        30-Aug-2043 18:53:11 GMT;path=/
+      - JSESSIONID=8430ed894588f0d136fb13203b73754e2965;path=/
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+      X-Vip-Info:
+      - 130.14.16.124:80
+      X-Pool-Info:
+      - /Common/dailymed_p 10.1.11.29 80
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 06 Sep 2013 18:53:21 GMT
+recorded_with: VCR 2.5.0

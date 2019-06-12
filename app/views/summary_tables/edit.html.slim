@@ -1,0 +1,4 @@
+h3 
+  ' Edit Table 
+  small= @summary_table.responder.try(:email)
+= render partial: "form", locals: { inquiry: @inquiry, summary_table: @summary_table }

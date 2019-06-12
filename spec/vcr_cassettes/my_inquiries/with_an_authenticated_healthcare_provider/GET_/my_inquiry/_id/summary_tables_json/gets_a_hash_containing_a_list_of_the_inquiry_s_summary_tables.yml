@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://AC9eb5b3a067dc8a423c3aa4485a0b3236:86e9f3c1b6e97a389331c50c120684b5@api.twilio.com/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B17706089695&Body=Thank+you+for+your+first+inquiry+to+InpharmD%21+We+would+appreciate+your+help+in+shaping+the+direction+of+this+service.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 11 May 2015 17:58:54 GMT
+      Etag:
+      - 66a2424e60908c0e8984f0e4ea20a99c
+      Last-Modified:
+      - Mon, 11 May 2015 17:58:54 +0000
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '648'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SMcf8c456a163e4730bf0032402444e911", "date_created": "Mon,
+        11 May 2015 17:58:54 +0000", "date_updated": "Mon, 11 May 2015 17:58:54 +0000",
+        "date_sent": null, "account_sid": "AC9eb5b3a067dc8a423c3aa4485a0b3236", "to":
+        "+17706089695", "from": "+15005550006", "body": "Thank you for your first
+        inquiry to InpharmD! We would appreciate your help in shaping the direction
+        of this service.", "status": "queued", "direction": "outbound-api", "api_version":
+        "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages/SMcf8c456a163e4730bf0032402444e911.json",
+        "num_segments": "1"}'
+    http_version: 
+  recorded_at: Mon, 11 May 2015 17:58:54 GMT
+- request:
+    method: post
+    uri: https://AC9eb5b3a067dc8a423c3aa4485a0b3236:86e9f3c1b6e97a389331c50c120684b5@api.twilio.com/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B17706089695&Body=Please+take+a+few+minutes+to+provide+your+feedback+via+a+3+question+survey+sent+via+text.+To+begin%2C+simply+reply+to+this+message%2C+or+opt+out+by+replying+STOP.
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/3.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 11 May 2015 17:58:55 GMT
+      Etag:
+      - d838a7ae5bb67a9143205afb5a7b05e3
+      Last-Modified:
+      - Mon, 11 May 2015 17:58:54 +0000
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '689'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SM2f3071fb1db245a6b09e4fc6a2293a98", "date_created": "Mon,
+        11 May 2015 17:58:54 +0000", "date_updated": "Mon, 11 May 2015 17:58:54 +0000",
+        "date_sent": null, "account_sid": "AC9eb5b3a067dc8a423c3aa4485a0b3236", "to":
+        "+17706089695", "from": "+15005550006", "body": "Please take a few minutes
+        to provide your feedback via a 3 question survey sent via text. To begin,
+        simply reply to this message, or opt out by replying STOP.", "status": "queued",
+        "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit":
+        "USD", "uri": "/2010-04-01/Accounts/AC9eb5b3a067dc8a423c3aa4485a0b3236/SMS/Messages/SM2f3071fb1db245a6b09e4fc6a2293a98.json",
+        "num_segments": "1"}'
+    http_version: 
+  recorded_at: Mon, 11 May 2015 17:58:54 GMT
+recorded_with: VCR 2.5.0

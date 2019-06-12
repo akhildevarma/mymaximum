@@ -1,0 +1,80 @@
+#profile-01 {
+  @include background-size(100%);
+  @include background-size(cover);
+  // background: url(../img/profile-01.jpg) no-repeat center top;
+  margin-top: -15px;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 150px;
+  width: 100%;
+
+  h3 {
+    color: $white;
+    padding-top: 50px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  h6 {
+    color: $white;
+    text-align: center;
+    margin-bottom: 0px;
+    font-weight: 900;
+  }
+}
+
+.profile-01 {
+  background: #4ECDC4;
+  height: 50px;
+
+  &:hover {
+    @include transition(background-color 0.6s);
+    background: #2f2f2f;
+    cursor: pointer;
+  }
+
+  p {
+    color: $white;
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+#profile-02 {
+  @include background-size(100%);
+  @include background-size(cover);
+  // background: url(../img/profile-02.jpg) no-repeat center top;
+  margin-top: -15px;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 200px;
+  width: 100%;
+
+  .user {
+    padding-top: 40px;
+    text-align: center;
+  }
+
+  h4 {
+    color: $white;
+    margin:0px;
+    padding-top: 8px;
+  }
+}
+
+.pr2-social {
+  a {
+    color: #cdcdcd;
+
+    &:hover {
+      color: #4ECDC4;    
+    }
+  }
+
+  i {
+    margin-top: 15px;
+    margin-right: 12px;
+    font-size: 20px;
+  }
+}

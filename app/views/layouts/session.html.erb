@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InpharmD™</title>
+    <meta name="description" content="">
+
+    <%= csrf_meta_tags -%>
+    <%= tag :meta, name: 'stripe-key', content: Rails.application.secrets.stripe_public_key -%>
+    <%= tag :meta, name: 'apple-itunes-app', content: 'app-id=734187524' -%>
+    <%= tag :meta, name: 'og:image', content: "#{image_url('inpharmd_OGimage_square.png')}" -%>
+
+    <%= favicon_link_tag 'favicon.ico' -%>
+
+    <%= stylesheet_link_tag "session", media: "all" -%>
+    <%= javascript_include_tag "//js.stripe.com/v1/" -%>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="login-page">
+      <div class="container">
+        <%= image_tag "inpharmd-logo.png", id: "logo", class: 'login-logo' -%>
+        <%= yield -%>
+      </div>
+    </div>
+
+    <%= javascript_include_tag "healthcare.modern.entry" -%>
+
+    <%- if Rails.env.production? -%>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-47776455-1', 'inpharmd.com');
+        ga('send', 'pageview');
+      </script>
+    <%- end %>
+    <%= render "shared/zendesk" -%>
+  </body>
+</html>

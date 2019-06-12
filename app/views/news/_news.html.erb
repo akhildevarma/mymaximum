@@ -1,0 +1,52 @@
+<div class="inquiry-item card truncate-container" style="margin-bottom: 30px;">
+  
+ 
+  <%= link_to unique_inquiry_url(news), class: "inquiry-item-link", id: "published_inquiry_#{news.id}" do %>
+      <div class="row">
+         <% if news.closed? && news.completed_at %>
+            <span class="submitted"><i>Answered  <%= local_date(news.completed_at,'%B %e, %Y') -%></i>
+            </span>
+         <% end %>
+        <% if @image = news.images.last %>
+          <div style='margin-top:12px' class ="col-md-2 col-sm-6">
+          <%= image_tag @image.image.url(:thumb) %>
+          </div>
+        <% end %>
+        <div class="col-xs-10" style="
+              font-size: 14px;
+              color: #545454;
+              font-weight: bold;
+              margin-bottom: 10px;">
+          <%= news.send((news.title.present?) ? :title : :question).try(:capitalize_first) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="jsTruncate">
+            <%= simple_format(news.background).capitalize_first.html_safe %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <% if admin? && news.published_at? %>
+    <div class="inquiry-item-admin-actions">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= link_to 'Unpublish', remove_custom_admin_news_path(news), id: "completed_inquiry_#{news.id}", rel: "Unpublish", class: "btn btn-danger pull-right" if news.published_at? %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    if (!!$.prototype.truncate) {
+      $('.jsTruncate').truncate({
+        lines: 2,
+        showMore: '<a>Read More</a>'
+      });
+      $('.truncate-container').css('visibility','visible');
+    }
+  });
+</script>

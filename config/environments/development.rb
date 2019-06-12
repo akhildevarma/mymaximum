@@ -1,0 +1,48 @@
+MercerInpharmd::Application.configure do
+  # Settings specified here will take precedence over those in config/application.rb.
+
+  # In the development environment your application's code is reloaded on
+  # every request. This slows down response time but is perfect for development
+  # since you don't have to restart the web server when you make code changes.
+  config.cache_classes = false
+
+  # Do not eager load code on boot.
+  config.eager_load = false
+
+  # Show full error reports and disable caching.
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.default_url_options = { host: "#{ENV['HOSTNAME']}:3000" }
+  config.action_mailer.asset_host = "http://#{ENV['HOSTNAME']}:3000"
+
+
+  # Print deprecation notices to the Rails logger.
+  config.active_support.deprecation = :log
+
+  # Raise an error on page load if there are pending migrations
+  config.active_record.migration_error = :page_load
+
+  # Debug mode disables concatenation and preprocessing of assets.
+  # This option may cause significant delays in view rendering with a large
+  # number of complex assets.
+  config.assets.debug = false
+
+  # In development send *wp-bundle.js to the webpack-dev-server running on 8080
+  # NOTE For this to work correctly you MUST have a version of the file in your app/assets/javascripts directory.
+  config.action_controller.asset_host = Proc.new do |source|
+    if source =~ /entry\.js$/i
+      "http://#{ENV['HOSTNAME']}:8080"
+    end
+  end
+
+  config.paperclip_defaults = {
+    # storage: :file,
+  }
+
+  # Whitelist IPs for Virtual Networks
+  config.web_console.whitelisted_ips = '10.211.55.0/16'
+
+end

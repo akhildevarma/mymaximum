@@ -1,0 +1,24 @@
+<div class="response-document-page">
+  <% case key %>
+  <% when :literature_review %>
+    <%- unless section[:object].count < 1 -%>
+      <div style="padding-top:40px; margin-top:-40px;">
+        <%= render partial: 'shared/response_document_page_literature_review_section',
+          locals: inquiry_document_sections(nil,enable_discussion)[key]
+        %>
+      </div>
+    <%- end -%>
+  <% when :discussion %>
+  <div style="padding-top:40px; margin-top:-40px;">
+    <%= render partial: 'shared/discussion', locals: inquiry_document_sections(nil, enable_discussion)[key] %>
+  </div>
+  <% else %>
+    <% unless section[:object].blank? %>
+      <div style="padding-top:40px; margin-top:-40px;">
+        <%= render partial: 'shared/response_document_page_section',
+          locals: inquiry_document_sections(nil,enable_discussion)[key]
+        %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

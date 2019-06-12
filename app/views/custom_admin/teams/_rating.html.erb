@@ -1,0 +1,11 @@
+<% if (stars = inquiry.rating(inquiry.submitter)) && !stars.try(:zero?)%>
+<div class='rated'>
+  <% stars.times do  %>
+  <span class="glyphicon glyphicon-star" style='color:orange;'></span>
+  <% end %>
+  <% (5 - stars).times do  %>
+    <span class="glyphicon glyphicon-star-empty"></span>
+  <% end %>
+  <span>(Rating: <%= stars %>)</span>
+</div>
+<% end %>

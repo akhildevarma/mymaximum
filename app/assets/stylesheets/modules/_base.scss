@@ -1,0 +1,39 @@
+body {
+  color: $primaryTextColor;
+  background: $white;
+  font-family: $openSansFontFamily;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
+}
+
+::selection, ::-moz-selection {
+  background: $blue;
+  color: $white;
+}
+
+#container {
+  @extend .container-fluid;
+  width: 100%;
+  height: 100%;
+}
+
+#main-content {
+  margin: 0 auto;
+
+  @media (max-width: $screen-sm) {
+    margin: 0px !important;
+    position: none !important;
+  }
+}
+
+.wrapper {
+  @extend .xs-col-12 !optional;
+  background: white;
+  // display: inline-block;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // padding-bottom: 15px;
+  // padding-top: 0px;
+  // width: 100%;
+}

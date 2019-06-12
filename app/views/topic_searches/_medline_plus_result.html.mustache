@@ -1,0 +1,14 @@
+{{#medline_plus_result}}
+  {{#data}}
+    <h5>
+      <a href="{{{url}}}" target="_blank">{{title}}</a>
+    </h5>
+    <div>{{{summary}}}</div>
+    <div><a href="{{{url}}}" target="_blank">View more details</a></div>
+    <hr/>
+  {{/data}}
+  <div><a href="{{{more_results_url}}}" target="_blank">View on MedlinePlus</a></div>
+{{/medline_plus_result}}
+{{^medline_plus_result}}
+  No MedlinePlus topics found.
+{{/medline_plus_result}}

@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: description=eelliott%40tazzy.org&email=eelliott%40tazzy.org&plan=a_la_carte&card=tok_103j0c2S246iGQtm40OTKnrU&trial_end=1404172799
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.7
+      Authorization:
+      - Bearer sk_test_MB59014jDr66tZMknnJ3726g
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.8.7","lang":"ruby","lang_version":"2.2.0 (2015-01-15)","platform":"x86_64-darwin12.4.0","publisher":"stripe","uname":"Darwin
+        Wiggins.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST
+        2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '130'
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 24 Mar 2014 13:59:05 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '153'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '300'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "message": "Your card's security code is incorrect.",
+            "type": "card_error",
+            "param": "cvc",
+            "code": "incorrect_cvc"
+          }
+        }
+    http_version: 
+  recorded_at: Mon, 24 Mar 2014 13:59:05 GMT
+recorded_with: VCR 2.5.0

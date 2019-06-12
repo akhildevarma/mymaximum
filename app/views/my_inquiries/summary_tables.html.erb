@@ -1,0 +1,40 @@
+<h3>Inquiry</h3>
+
+<%= render 'shared/response', inquiry: @inquiry -%>
+<%- unless @inquiry.intervention_response? -%>
+<div class="well hide">
+  <div class="row">
+    <div class="col-xs-12">
+      Did this result in a therapeutic intervention?
+    </div>
+  </div>
+
+  <%= form_for Intervention.new, url: interventions_path, html: {class: "form-horizontal"} do |f| -%>
+    <%= f.hidden_field :inquiry_id, value: @inquiry.id %>
+    <%= f.hidden_field :taken, value: false %>
+
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-2 text-right">
+        <button type="button" class="btn btn-success btn-block" id="intervention-yes">
+          Yes
+        </button>
+      </div>
+      <div class="col-xs-4">
+        <%= f.submit "No", class: "btn btn-danger btn-block" %>
+      </div>
+    </div>
+
+    <div id="intervention-response-container" style="display:none;">
+      <div class="control-group">
+        <%= f.label :response, "Please tell us more about the intervention.", class: "control-label text-left", style: "width:auto;margin-top:24px;" %>
+        <div class="control">
+          <%= f.text_area :response, rows: 4, style: "width:98%;" %>
+        </div>
+      </div>
+      <div class="controls text-right">
+        <%= f.submit "Submit", class: "btn btn-success" %>
+      </div>
+    </div>
+  <%- end -%>
+</div>
+<%- end -%>

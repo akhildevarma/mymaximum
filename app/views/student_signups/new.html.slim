@@ -1,0 +1,13 @@
+h3 Create a Student Account
+= simple_form_for @student_signup, url: student_signup_path, html: { class: "form-horizontal"} do |f|
+  = f.simple_fields_for @student_signup.user do |ff|
+    = ff.input :email
+    = ff.input :password
+    = ff.input :password_confirmation, label: "Confirm Password", required: true
+  = f.simple_fields_for @student_signup.invitation do |ff|
+    = ff.input :token, label: "Invitation token", required: true
+  fieldset
+    = f.input :accept_terms_of_service, as: :boolean, label: false, inline_label: I18n.t("accept_terms_of_service.label").html_safe
+
+  .form-actions
+    = f.button :submit, "Create Account", class: "btn btn-primary"

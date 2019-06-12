@@ -1,0 +1,555 @@
+en:
+  time:
+    formats:
+      default: ! "%b %d, %Y"
+
+  cancel: Cancel
+
+  greeting_morning: Good morning
+  greeting_afternoon: Good afternoon
+  greeting_evening: Good evening
+
+  share:
+    facebook_find_us_text: 'Find us on'
+    facebook_find_us_link: https://www.facebook.com/Inpharmd
+    twitter_find_us_text: 'Find us on'
+    twitter_find_us_link: https://twitter.com/InPharmD
+
+
+  accept_terms_of_service:
+    label: "I have read and agree to the <a href='/terms_of_use' target='_blank'>Terms of Use</a> and <a href='/privacy_policy' target='_blank'>Privacy Policy</a>"
+  application_settings:
+    success: Successfully updated settings.
+  errors:
+    generic: Oops! Something went wrong...
+    authorization: You are not authorized to visit that page.
+    not-logged-in: Log in or create an account first!
+    need_cc_info:
+      Your trial has ended, and you do not have a credit card on file. Please enter a credit card to continue
+      your InpharmD™ service.
+    delinquent_account:
+      Your account is currently disabled due to an outstanding balance. Please update payment information in your Profile
+      to continue using the inquiries feature. If you have already updated your payment information successfully
+      and are still seeing this message, we are still processing any outstanding invoices. Please try back again soon.
+    missing_license_number:
+      As an individual provider, you are required to have a registered license number. Please update your license
+      number to continue using InpharmD™.
+    missing_profile_info:
+      As an individual provider, you are required to complete your profile information. Please update your profile
+      information to continue using InpharmD™.
+
+
+  sessions:
+    success: Logged in successfully.
+    error: Invalid email or password.
+    destroy: Logged out.
+    deprecation_warning: "Your team no longer supports this email. In future please login with %{email}"
+
+  billing:
+    delinquent: Your account is delinquent. Please contact support@inpharmd.com.
+    inquiry_invoice_item: "Inquiry: %{snippet}"
+    topic_search_invoice_item: "Topic Search: %{snippet}"
+
+  password_reset:
+    sent: "Thanks! Password reset instructions will be sent to %{email} if there is an account associated with that email address."
+    expired: Sorry, your password reset token has expired.
+    success: Changed password successfully.
+    subject: Reset your password on InpharmD™
+
+  personal_email:
+    subject: Checking in
+
+  waitlisted_provider:
+    success: "Thanks! We're currently limiting the number of registrations per day to manage our demand, and we'll notify you at %{email} as soon as your invitation is ready."
+  waitlisted_patient:
+    success: "Thanks! We haven't yet made this service available for patients, but we'll notify you at %{email} as soon as your invitation is ready."
+  invitation:
+    submit: Send Invitation
+    sent: "Invitation sent to %{email}."
+    invite_subject: Create an account on InpharmD™
+    invite_student_subject: Create a student account on InpharmD™
+    reminder_subject: Your InpharmD™ account is just a click away!
+  batch_invitation:
+    started: "Sending %{number} invitations."
+  documents:
+    deleted: 'File has been deleted.'
+    unavailable: 'File is unavailable.'
+  images:
+    deleted: 'Image has been deleted.'
+    unavailable: 'Image is unavailable.'
+  signup:
+    disclaimer:
+      We aim to provide you with unbiased, evidence-based information to assist
+      in making your own medical decisions. The information is offered as an
+      educational aid and not as medical advice. The information discussed may
+      include products or uses that have not been approved by the U.S. Food and
+      Drug Administration. Please use this information at your discretion.
+    provider:
+      success: Successfully created healthcare provider account.
+      inactive_account: An account with this email already exists and is inactive. Please login again to reactive it.
+    team_provider:
+      success: Your account has been created!
+      email_taken: An account with this email already exists. Please login or reset your password.
+      invalid: Invalid email. Please try again.
+      password: can't be blank
+      password_confirmation: must match password
+      password_length: minimum 6 character length
+    patient:
+      success: Successfully created patient account.
+    student:
+      success: Successfully created student account.
+      invalid_invitation_token: not a valid student invitation token
+    error: Oops! There was a problem creating your account.
+    invalid_invitation_token: not a valid invitation token
+    welcome_subject: Welcome to InpharmD™!
+    fourth_welcome_subject: Checking in
+    fourth_welcome_text: "Hey %{name}, we haven't seen you around in a while. Don't forget, you can ask us anything."
+
+  account:
+    created: Your account has been created!
+    activation:
+      required: Please check your email for a message from us containing your activation link.
+      success: Your account has been successfully activated.
+      errors:
+        invalid_token: Account activation token invalid, please try again.
+      resend: Didn't receive an email?
+      resend_link: Resend activation link
+      mailer_subject: Activate your account now!
+      add_team_subject: Your InpharmD™ Account
+    deactivate:
+      button: Deactivate
+      title: DEACTIVATE YOUR ACCOUNT
+      message: Once you account is deactivated you will stop receiving any notifications, and be logged out immediatly. Simply login again to reactivate at any time.
+    activate_other_email:
+      subject: Activate this added email to use InpharmD™!
+      success: Successfully activated your new email address.
+      errors:
+        invalid_token: Account activation token is invalid, please try again.
+    account_updated:
+      subject: Account updated in InpharmD™!
+
+  teams:
+    new: Create Team
+    invalid_email: 'Error: Invalid Email Address'
+    existing_user_success: 'Successfully Added this email : %{email} to team'
+    new_user_success: 'The invitation has been sent to this email : %{email}'
+  users:
+    errors:
+      invitation_matches_email: does not match the address on the invitation
+      invitation_required: must have a valid invitation
+      email_format: doesn't appear to be a valid email address
+    trial_ended_subject: Your trial to InpharmD™ has ended. Action required to continue service.
+    last_active_at: Last active at
+    invite_sent_at: Invite sent at
+
+  user_profiles:
+    success: Successfully updated profile.
+
+  upload_users:
+    success: Successfully uploaded to our processing queue. We will update this page once these users processed successfully.
+
+  comments:
+    success: Successfully updated selected comment
+    reply_notification_subject: 'Comments and replies for Inquiry : %{question}'
+
+  providers:
+    specialties:
+      ["Primary Care", "Hematology", "Urology", "Oncology", "Rheumatology",
+      "Dermatology", "Orthopedics", "Endocrinology", "OB/GYN", "Nephrology",
+      "Cardiology", "Immunology", "Pulmonology", "Infectious Disease",
+      "Gastroenterology", "Neurology", "Pathology", "Radiology", "Psychiatry",
+      "Rehabilitation", "Surgery"]
+    specialty_na: N/A
+
+  roles:
+    student: Mercer University Pharmacy Student
+    provider: Healthcare Provider
+    patient: Patient
+    administrator: Administrator
+
+  my_inquiries:
+    new: New Inquiry
+    empty: You haven't submitted any inquiries yet.
+
+  notifications:
+    inactive_for_last_3hours:
+      "Your inquiry has been inactive for 3 hours.Please update the status on InpharmD™, and contact your preceptor if there's a delay."
+
+  inquiries:
+    headers:
+      date_submitted: Date Submitted
+      turnaround_time: Turnaround Time
+      status: Status
+      question: Question
+    updated: Inquiry updated successfully.
+    autosave: Inquiry auto saved successfully.
+    success: Inquiry submitted successfully.
+    reopened: Inquiry reopened successfully.
+    added_doc: Added Google docs url successfully.
+    no_assignee: No one
+    response_sent: Inquiry response sent successfully. The inquiry is now closed.
+    response_notification_subject: The response to your InpharmD™ inquiry is ready.
+    rating_feedback: Your InpharmD™ Response Feedback
+    submission_notification_subject: Thanks for your InpharmD™ inquiry!
+    assignment_notification_subject: You have been assigned a new inquiry!
+    disclaimers:
+      turnaround_time:
+        all:
+          We aim to provide objective information to help you make better
+          healthcare decisions.Therefore, we cannot offer recommendations or
+          analysis.
+        asap:
+          Inquiries marked ‘ASAP’ will include a comprehensive search of relevant tertiary literature, prescribing information,
+          and pearls from the PharmD reviewer-- but without a review of primary literature.
+      objectivity:
+        "We aim to provide objective information to help you make better
+        healthcare decisions; therefore, we cannot offer recommendations or
+        analysis. You may still make edits before submitting.
+        \n\n Submit this inquiry?"
+
+  related_inquiries:
+    warning:
+      "This will copy all the responses and tables from the related inquiry
+      into the original inquiry. Any existing responses or tables in the
+      original inquiry response will be overwritten. Also old inquiry background will be copied to Review of clinical guidelines section.
+      \n\nCopy this response?"
+
+  inquiry_copies:
+    success: Response copied successfully.
+
+  summary_tables:
+    created: Table added successfully.
+    updated: Table updated successfully.
+    deleted: Table deleted successfully.
+    for_your_convenience: The following fields are for your convenience only and will not be displayed in the response.
+    complete_label: Ready for review?
+    editor_placeholder: Copy and paste a table from Microsoft Word into this field.
+    editor_tips_label: Hey, what happened to my formatting?
+    editor_tips_html:
+      "Since these tables will be viewed on many kinds of devices (such as phones,
+      tablets, and desktop computers), only very basic formatting is preserved.
+      When making your table, keep the following in mind:
+      <ul>
+        <li>
+          Try to have just one value or heading per table cell. Avoid separating multiple
+          values or headings with newlines.
+        </li>
+        <li>
+          The first row of each table will automatically be bolded
+          for you. Otherwise, italicized and bolded text won't show up.
+        </li>
+        <li>
+          Don't worry if the column widths seem odd: the table will be resized
+          as necessary for each device.
+        </li>
+        <li>
+          If you need to make a change, you can edit the table directly on this
+          page, or you can copy and paste the table from this page back into Word.
+        </li>
+      </ul>"
+
+  interventions:
+    success: Intervention recorded! Thanks for sharing!
+
+  topic_searches:
+    tips_html:
+      "(For best results, use keywords and optionally Boolean operators: eg.
+      <code>MRSA</code>, <code>tpa OR stroke</code>, <code>flu NOT bird</code>.)"
+    success: Search started successfully. This page will update automatically.
+
+  survey_questions:
+    thanks:
+      Thanks for your first InpharmD question! We'd love your feedback via a 3 question survey.
+    begin: &begin
+      To opt out, just reply STOP.
+    followup:
+      Thank you for using InpharmD™. Please take a few minutes for a 3 question survey.
+      To begin, simply reply to this message, or opt out by replying STOP.
+    appropriate:
+      Was the answer appropriate? Yes / No
+    appropriate_answer:
+      Was the answer appropriate?
+    appropriate_followup:
+      In general, have the responses you received appropriately answered
+      your questions? Yes / No
+    intervention:
+      Did you make an intervention? Yes / No
+    intervention_answer:
+      Did you make an intervention?
+    intervention_followup:
+      In general, have the responses you received make an intervention? Yes / No
+    what_was_intervention: &what_was_intervention
+      What was it?
+    what_was_intervention_answer:
+      What was it?
+    what_was_intervention_followup: *what_was_intervention
+    outcome: &outcome
+      What was the outcome?
+    outcome_answer:
+       What was the outcome?
+    outcome_followup: *outcome
+    rating:
+      How would you rate the initial experience?
+      Excellent (5)
+      Good (4)
+      Acceptable (3)
+      Poor (2)
+      Very poor (1)
+    rating_followup:
+      How would you rate the overall experience?
+      Excellent (5)
+      Good (4)
+      Acceptable (3)
+      Poor (2)
+      Very poor (1)
+    recommendation_likelihood: &recommendation_likelihood
+      How likely are you to recommend this service?
+      Very likely (5)
+      Somewhat likely (4)
+      Neutral / unsure (3)
+      Somewhat unlikely (2)
+      Very unlikely (1)
+    recommendation_likelihood_followup: *recommendation_likelihood
+    complete:
+      Thanks for sharing your first impression. We will only text you
+      once more, at some point after your trial has ended. To opt out, simply reply STOP.
+    complete_followup:
+      Thanks for sharing! We won't text again, but we urge you to keep in touch
+      via email at support@inpharmd.com. Please send us any feedback anytime.
+    recommend:
+      "Share your InpharmD™ experience on Facebook: http://inpharmd.com/fb or on Twitter: http://inpharmd.com/tw"
+    stop_keyword:
+      STOP
+    stop_confirmation:
+      Thank you for your time. We will not contact you via text again.
+    error_keyword:
+      ERROR
+    error_unassign:
+      Thank you for your time. We will re-assign this inquiry to other available student.
+    error:
+      Sorry, something went wrong. Please try again.
+
+  helpers:
+    submit:
+      summary_table:
+        create: Add Table
+        update: Update Table
+      payment_account:
+        update: Update Billing Information
+      application_settings:
+        create: Update Application Settings
+        update: Update Application Settings
+      waitlisted_user:
+        create: Request Invitation
+
+  activerecord:
+    errors:
+      models:
+        topic_search:
+          attributes:
+            drug_name:
+              blank: "required when search terms are empty"
+            search_terms:
+              blank: "required when drug name is empty"
+        user:
+          attributes:
+            email:
+              blank: "can't be blank"
+              taken: "taken"
+              invalid: "invalid format"
+            password:
+              blank: "can't be blank"
+              too_short: "too short"
+            password_confirmation:
+              blank: "can't be blank"
+              confirmation: "must match password"
+        profile:
+          attributes:
+            user_id:
+              blank: "can't be blank"
+            first_name:
+              blank: "can't be blank"
+            last_name:
+              blank: "can't be blank"
+            name_title:
+              blank: "can't be blank"
+            city:
+              blank: "can't be blank"
+            state:
+              blank: "can't be blank"
+            phone_number:
+              blank: "can't be blank"
+              taken: "taken"
+              wrong_length: "wrong length"
+        provider_signup:
+          attributes:
+            accept_terms_of_service:
+              accepted: "must accept to continue"
+        provider:
+          attributes:
+            user_id:
+              blank: "can't be blank"
+            license_number:
+              blank: "can't be blank"
+              taken: "taken"
+            licensing_state:
+              blank: "can't be blank"
+            specialty:
+              blank: "can't be blank"
+        patient_signup:
+          attributes:
+            accept_terms_of_service:
+              accepted: "must accept to continue"
+        patient:
+          attributes:
+            user_id:
+              blank: "can't be blank"
+        payment_account:
+          attributes:
+            user_id:
+              blank: "can't be blank"
+              taken: "taken"
+            plan_id:
+              blank: "can't be blank"
+        inquiry:
+          attributes:
+            title:
+              blank: "can't be blank"
+              taken: 'taken'
+
+  simple_form:
+    required:
+      text: 'required'
+      mark: '*'
+    labels:
+      defaults:
+        password_confirmation: Confirm Password
+      summary_table:
+        dropbox_url: Dropbox URL
+      inquiry:
+        dropbox_urls: Dropbox URLs
+      profile:
+        name_suffix: Suffix
+        name_title: Title
+      invitation:
+        token: Invitation token
+      application_settings:
+        require_general_invitations: Require invitations for non-student users?
+      team:
+        signup_url_path: Signup URL path
+
+
+  enumerize:
+    inquiry:
+      status:
+        literature_search: Literature Search
+        response_formulation: Response Formulation
+        review: Review
+        complete: Complete
+      turnaround_time:
+        asap: As soon as possible
+        one_day: Within a day or so
+        a_few_days: Within a couple days
+        a_week: Within a week or so
+        not_urgent: Not urgent
+      project_types:
+        none: None
+        drug_monograph: Drug Monograph
+        class_review: Class Review
+        drug_use_evaluation: Drug Use Evaluation
+        therapeutic_interchange: Therapeutic Interchange
+        beyond_use_dating: Beyond Use Dating Policy Examination
+        other: Other
+    document:
+      status:
+        review: Review
+        complete: Complete
+        progress: In Progress
+
+  mailer:
+    notification:
+      response_overdue:
+        subject: Response overdue
+
+  jsonapi-resources:
+    exceptions:
+      internal_server_error:
+        title: 'Internal Server Error'
+        detail: 'Internal Server Error'
+      invalid_resource:
+        title: 'Invalid resource'
+        detail: "%{resource} is not a valid resource."
+      record_not_found:
+        title: 'Record not found'
+        detail: "The record identified by %{id} could not be found."
+      not_acceptable:
+        title: 'Not acceptable'
+        detail: "All requests must use the '%{needed_media_type}' Accept without media type parameters. This request specified '%{media_type}'."
+      unsupported_media_type:
+        title: 'Unsupported media type'
+        detail: "All requests that create or update must use the '%{needed_media_type}' Content-Type. This request specified '%{media_type}.'"
+      has_many_relation:
+        title: 'Relation exists'
+        detail: "The relation to %{id} already exists."
+      to_many_set_replacement_forbidden:
+        title: 'Complete replacement forbidden'
+        detail: 'Complete replacement forbidden for this relationship'
+      invalid_filter_syntax:
+        title: 'Invalid filters syntax'
+        detail: "%{filters} is not a valid syntax for filtering."
+      filter_not_allowed:
+        title: "Filter not allowed"
+        detail: "%{filter} is not allowed."
+      invalid_filter_value:
+        title: 'Invalid filter value'
+        detail: "%{value} is not a valid value for %{filter}."
+      invalid_field_value:
+        title: 'Invalid field value'
+        detail: "%{value} is not a valid value for %{field}."
+      invalid_field_format:
+        title: 'Invalid field format'
+        detail: 'Fields must specify a type.'
+      invalid_links_object:
+        title: 'Invalid Links Object'
+        detail: 'Data is not a valid Links Object.'
+      type_mismatch:
+        title: 'Type Mismatch'
+        detail: "%{type} is not a valid type for this operation."
+      invalid_field:
+        title: 'Invalid field'
+        detail: "%{field} is not a valid field for %{type}."
+      invalid_include:
+        title: 'Invalid field'
+        detail: "%{relationship} is not a valid relationship of %{resource}"
+      invalid_sort_criteria:
+        title: 'Invalid sort criteria'
+        detail: "%{sort_criteria} is not a valid sort criteria for %{resource}"
+      parameters_not_allowed:
+        title: 'Param not allowed'
+        detail: "%{param} is not allowed."
+      parameter_missing:
+        title: 'Missing Parameter'
+        detail: "The required parameter, %{param}, is missing."
+      count_mismatch:
+        title: 'Count to key mismatch'
+        detail: 'The resource collection does not contain the same number of objects as the number of keys.'
+      key_not_included_in_url:
+        title: 'Key is not included in URL'
+        detail: "The URL does not support the key %{key}"
+      missing_key:
+        title: 'A key is required'
+        detail: 'The resource object does not contain a key.'
+      record_locked:
+        title: 'Locked resource'
+      save_failed:
+        title: 'Save failed or was cancelled'
+        detail: 'Save failed or was cancelled'
+      invalid_page_object:
+        title: 'Invalid Page Object'
+        detail: 'Invalid Page Object.'
+      page_parameters_not_allowed:
+        title: 'Page parameter not allowed'
+        detail: "%{param} is not an allowed page parameter."
+      invalid_page_value:
+        title: 'Invalid page value'
+        detail: "%{value} is not a valid value for %{page} page parameter."

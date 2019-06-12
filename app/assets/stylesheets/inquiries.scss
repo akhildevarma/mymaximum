@@ -1,0 +1,36 @@
+.assignee {
+  font-style: italic;
+  color: #FF0000;
+}
+.turnaround {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #aaa;
+}
+
+.submitted {
+  color: #aaa;
+}
+
+.question {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Merriweather', serif;
+  font-size: 17.5px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.inquiry {
+  padding: 20px;
+}
+
+#response {
+  min-height: 500px;
+
+  .item {
+    padding: 16px;
+  }
+}
+
+

@@ -1,0 +1,18 @@
+<div id="<%= key %>">
+
+  <!-- DOCUMENT -->
+  <div class="">
+    <div class="">
+      <% if key == :all %>
+        <% inquiry_document_sections(:content,enable_discussion).each do |key, section| %>
+          <%= render partial: 'shared/inquiry_response_document_sections', locals: { key: key, section: section, enable_discussion: enable_discussion } %>
+        <% end %>
+      <% else %>
+        <%= render partial: 'shared/inquiry_response_document_sections', locals: { key: key, section: section, enable_discussion: enable_discussion} %>
+      <% end %>
+
+    </div>
+  </div>
+  <!-- /DOCUMENT -->
+ 
+</div>

@@ -1,0 +1,13 @@
+<% if feature?(:discussion, inquiry: @inquiry) %>
+<% if current_user && (!current_user.profile.try :decorate)  %>
+      <div class="pull-right"><button  class="btn btn-primary" style="margin-right:10px;" data-toggle="modal" data-target="#modalProfile">Join Discussion</button></div>
+    <% end %>
+  <div class="">
+    <% if feature?(:discussion_composer, inquiry: @inquiry) %>
+      <%= render 'comments/form', reference: reference, redirect_path: redirect_path, button_name: 'Submit' %>
+    <% end %>
+    <ul class="in-comments-list">
+      <%= render 'comments/list', comments: comments, reference: reference, redirect_path: redirect_path %>
+    </ul>
+  </div>
+<% end %>

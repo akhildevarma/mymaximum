@@ -1,0 +1,76 @@
+<% content_for :custom_layout do %>
+  <div class="cards-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="card card-content">
+            <%= form_tag session_path, class: 'form-login' do %>
+              <h2 class="form-login-heading">
+                Login
+              </h2>
+              <div class="login-wrap">
+            <div class="form-group">
+                  <%= label_tag :email, nil, class: '' -%>
+                  <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', autofocus: true -%>
+            </div>
+              <div class="form-group">
+                  <%= label_tag :password, nil, class: '' -%>
+                  <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password' -%>
+                </div>
+
+                <div class="form-group">
+                  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                  <%= t('.remember_me') %>
+                </div>
+
+              <%= button_tag type: 'submit', class: 'btn btn-theme btn-block' do -%>
+                  <i class="fa fa-lock"></i>
+                  Login
+                <%- end -%>
+              </div>
+            <hr>
+             <div>
+                <div class="forgot-password">
+                  Forgotten password?&nbsp;
+                  <a data-toggle="modal" href="#passwordReset">
+                    Reset your password
+                  </a>
+                </div>
+           <div class="registration">
+                  Don't have an account yet?&nbsp;
+                  <%= link_to 'Create an account', signup_path -%>
+                </div>
+              </div>
+            <%- end -%>
+   <div aria-hidden="true" aria-labelledby="passwordReset" role="dialog" tabindex="-1" id="passwordReset" class="modal fade">
+              <%= form_tag password_reset_path do -%>
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                      </button>
+              <h4 class="modal-title">
+                        Forgot Password?
+                      </h4>
+                    </div>
+           <div class="modal-body">
+                      <p>
+                        Enter your e-mail address below to reset your password.
+                      </p>
+                      <%= text_field_tag :email, params[:email], placeholder: 'Email', autocomplete: 'off', class: 'form-control placeholder-no-fix' -%>
+                    </div>
+               <div class="modal-footer">
+                      <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                      <%= submit_tag "Reset Password", class: "btn btn-theme" -%>
+                    </div>
+                  </div>
+                </div>
+              <%- end -%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

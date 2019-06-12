@@ -1,0 +1,62 @@
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+@mixin box-shadow($borders: none, $color: #ccc, $inset: null) {
+     -moz-box-shadow:$inset $borders $color;
+  -webkit-box-shadow:$inset $borders $color;
+          box-shadow:$inset $borders $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-sizing($box-size) {
+  -webkit-box-sizing: $box-size;
+     -moz-box-sizing: $box-size;
+          box-sizing: $box-size;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate(#{$degree}deg);
+     -moz-transform: rotate(#{$degree}deg);
+      -ms-transform: rotate(#{$degree}deg);
+       -o-transform: rotate(#{$degree}deg);
+             filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$degree/90});
+}
+
+@mixin mask($rule) {
+  -webkit-mask: $rule;
+          mask: $rule;
+}
+
+@mixin user-select($rule) {
+  -webkit-user-select: $rule;
+     -moz-user-select: $rule;
+      -ms-user-select: $rule;
+       -o-user-select: $rule;
+          user-select: $rule;
+}
+
+@mixin backface-visibility($rule) {
+ -webkit-backface-visibility: $rule;
+    -moz-backface-visibility: $rule;
+         backface-visibility: $rule;
+}
+
+@import './mixins/*'

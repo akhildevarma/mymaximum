@@ -1,0 +1,49 @@
+<div>
+  <h3>
+   <%= @team.try :name %>
+   <div class="pull-right">
+    <%= link_to 'Back to members', members_custom_admin_team_path(@team), class: 'btn btn-primary' -%>
+  </div>
+
+</h3>
+  <hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Specialty</th>
+      <th>Status</th>
+      <th>Message</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @bulk_users.each do |user| -%>
+    <tr id="<%= dom_id(user) -%>">
+      <td>
+        <%= user.email -%>
+      </td>
+      <td><%=user.specialty%>
+      </td>
+      <td><%=user.status%>
+      </td>
+      <td><%=user.message%>
+      </td>
+      <td>
+       <%= link_to 'Edit', edit_custom_admin_upload_user_path(user), class: 'btn btn-info btn-sm' -%>
+      </td>
+    </tr>
+    <%- end -%>
+    <tr>
+      <td colspan="4">
+        <div class="pull-right">
+          <%= will_paginate @bulk_users %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+

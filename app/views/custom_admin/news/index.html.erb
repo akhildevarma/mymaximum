@@ -1,0 +1,29 @@
+<% content_for :custom_layout do %>
+  <section class="cards-container content-wrapper">
+
+        <div class="container">
+          <div class="row">
+            <header class="card-header">Published Inquiries</header>
+          </div>
+           <div class="row pull-right" style='margin-top:-50px;'>
+            <%= will_paginate @published_inquiries, :param_name => 'published_page' %>
+          </div>
+          <div class="row">
+            <%= render partial: "news/news", collection: @published_inquiries %>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <header class="card-header">Publishable Inquiries</header>
+          </div>
+          <div class="row">
+            <%= render partial: "news/news", collection: @publishable_inquiries %>
+          </div>
+          <div class="row">
+            <%= will_paginate @publishable_inquiries %>
+          </div>
+        </div>
+
+  </section>
+<% end %>

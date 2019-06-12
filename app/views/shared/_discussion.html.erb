@@ -1,0 +1,16 @@
+<div style="padding-top:40px; margin-top:-40px;" class="discussions">
+  <section class="response-document-page-section">
+    <header class="response-document-page-section-title">
+      <%= title %> 
+    </header>
+    <article class="response-document-page-section-content">
+        <%= render 'comments/index',
+              reference: @inquiry,
+              comments: @inquiry.active_comments(current_user),
+              comment: @comment,
+              redirect_path: inquiry_url(@inquiry.id) %>
+    </article>
+  </section>
+</div>
+
+

@@ -1,0 +1,56 @@
+<p>
+  Filter: <%= link_to "Non-Team", custom_admin_users_path(filter: 'non-team') %>&nbsp;|&nbsp;<%= link_to "All", custom_admin_users_path %>
+</p>
+<p>
+  Download:
+  <%= link_to "All Active Users", custom_admin_downloads_path(id: 'users-active', format: "csv") %> | 
+  <%= link_to "Active Non-team Users", custom_admin_downloads_path(id: 'users-nonteam-active', format: "csv") %>
+</p>
+<p>
+  <%= form_tag request.path, :method => 'get' do %>
+      Search Users:
+      <%= text_field_tag :search, params[:search] %>
+      <button type="submit"><i class="fa fa-search"></i></button>
+  <% end %>
+</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Team</th>
+      <th>Created At</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @users.each do |user| -%>
+    <tr id="<%= dom_id(user) -%>">
+      <td>
+        <%= user.full_name -%>
+      </td>
+      <td>
+        <%= user.email -%>
+      </td>
+      <td>
+        <%= user.phone_number -%>
+      </td>
+      <td>
+        <%= user.team.try( :name ) || 'None' -%>
+      </td>
+      <td>
+        <%= local_time(user.created_at, '%b %e, %Y %H:%M:%S') -%>
+      </td>
+      <td>
+        <%= link_to 'View', custom_admin_user_path(user), class: 'btn btn-info' -%>
+        <%= link_to 'Delete', custom_admin_user_path(user), method: :delete, rel: 'delete-user', class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this user?' } -%>
+      </td>
+    </tr>
+    <%- end -%>
+  </tbody>
+</table>
+<div class="flickr_pagination">
+  <%= will_paginate @users %>
+</div>
+ 

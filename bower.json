@@ -1,0 +1,24 @@
+{
+  "name": "inpharmd",
+  "homepage": "https://github.com/InpharmD/inpharmd",
+  "authors": [
+    "Matt Dreamer <matt.dreamer@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-tag": "^0.0.1",
+    "bootstrap-tagsinput": "^0.8.0",
+    "typeahead.js": "^0.11.1",
+    "tinymce-placeholder-attribute": "^0.1.6"
+  }
+}

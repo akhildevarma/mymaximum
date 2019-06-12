@@ -1,0 +1,22 @@
+== CSV.generate_line([ "Answers were appropriate", 
+                       "Overall experience", 
+                       "Recommendation likelihood",
+                       "Intervention?",
+                       "What was intervention?",
+                       "Outcome?",
+                       "Initial survey?",
+                       "Response date",
+                       "Responder ID",
+                       "User role"])
+- @survey_responses.each do |survey_response|
+  == CSV.generate_line([survey_response.appropriate, 
+                        survey_response.rating, 
+                        survey_response.recommendation_likelihood,
+                        survey_response.intervention,
+                        survey_response.what_was_intervention, 
+                        survey_response.outcome, 
+                        survey_response.initial?,
+                        survey_response.created_at.to_date,
+                        survey_response.responder_id,
+                        survey_response.responder.role])
+

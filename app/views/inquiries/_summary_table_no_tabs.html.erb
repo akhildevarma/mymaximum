@@ -1,0 +1,26 @@
+<%- object.each_with_index do |summary_table, idx| -%>
+      <section class="response-document-page-section">
+        <article class="response-document-page-section-content">
+          <div id="table-responses" class="tab-content">
+            <div id="table_<%= idx + 1 %>" class="table-anchor">
+              <div class="table-window">
+                <div class="table-content">
+                  <div class="summary-table-body">
+                    <%= summary_table.body_html.html_safe %>
+                  </div>
+                  <div class="scroll-shadow"></div>
+                </div>
+                <%- if summary_table.references? %>
+                  <div>
+                    References:
+                    <small class="references">
+                      <%= simple_format(summary_table.references) %>
+                    </small>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    <%- end -%>

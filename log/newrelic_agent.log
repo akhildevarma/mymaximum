@@ -1,0 +1,131 @@
+# Logfile created on 2019-06-08 15:39:56 +0530 by logger.rb/54072
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Environment: development
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Dispatcher: webrick
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Application: Inpharmd Development
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] WARN : Agent configured not to send data in this environment.
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing deferred Rack instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Rack::Builder middleware instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Rails 3+ middleware instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing ActiveJob instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Sinatra instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Net instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing New Relic supported Grape instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Rails 4 Error instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Installing Rails 4 view instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Finished instrumentation
+[06/08/19 15:39:56 +0530 mallesh-H81M-S (12683)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Environment: development
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : No known dispatcher detected.
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Application: Inpharmd Development
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] WARN : Agent configured not to send data in this environment.
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing deferred Rack instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Rack::Builder middleware instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Rails 3+ middleware instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing ActiveJob instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Sinatra instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Net instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing New Relic supported Grape instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Rails 4 Error instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Installing Rails 4 view instrumentation
+[06/08/19 15:41:39 +0530 mallesh-H81M-S (13030)] INFO : Finished instrumentation
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Environment: development
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Dispatcher: webrick
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Application: Inpharmd Development
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] WARN : Agent configured not to send data in this environment.
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Installing deferred Rack instrumentation
+[06/08/19 15:43:12 +0530 mallesh-H81M-S (13255)] INFO : Installing Rack::Builder middleware instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Rails 3+ middleware instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing ActiveJob instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Sinatra instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Net instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing New Relic supported Grape instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Rails 4 Error instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Installing Rails 4 view instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Finished instrumentation
+[06/08/19 15:43:13 +0530 mallesh-H81M-S (13255)] INFO : Doing deferred dependency-detection before Rack startup
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Environment: development
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : No known dispatcher detected.
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Application: Inpharmd Development
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] WARN : Agent configured not to send data in this environment.
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing deferred Rack instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Rack::Builder middleware instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Rails 3+ middleware instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing ActiveJob instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Sinatra instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Net instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing New Relic supported Grape instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Rails 4 Error instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Installing Rails 4 view instrumentation
+[06/08/19 15:43:55 +0530 mallesh-H81M-S (13454)] INFO : Finished instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Starting the New Relic agent in "development" environment.
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : New Relic Agent Developer Mode enabled.
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Environment: development
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Dispatcher: webrick
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Application: Inpharmd Development
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] WARN : Agent configured not to send data in this environment.
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing deferred Rack instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Rack::Builder middleware instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Rails 3+ middleware instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing ActiveRecord 4 instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing ActiveJob instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Sinatra instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Net instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing New Relic supported Grape instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Rails 4 Error instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Rails 4 Controller instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Installing Rails 4 view instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Finished instrumentation
+[06/08/19 15:52:33 +0530 mallesh-H81M-S (13808)] INFO : Doing deferred dependency-detection before Rack startup
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Starting the New Relic agent in "development" environment.
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Reading configuration from config/newrelic.yml (/home/mallesh/Client_Workspace/inpharmd)
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : New Relic Agent Developer Mode enabled.
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Environment: development
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Dispatcher: webrick
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Application: Inpharmd Development
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] WARN : Agent configured not to send data in this environment.
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing deferred Rack instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Rack::Builder middleware instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Rails 3+ middleware instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing ActiveRecord 4 instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing ActiveJob instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Sinatra instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Net instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing New Relic supported Grape instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Rails 4 Error instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Rails 4 Controller instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Installing Rails 4 view instrumentation
+[06/12/19 09:18:10 +0530 mallesh-H81M-S (4543)] INFO : Finished instrumentation
+[06/12/19 09:18:11 +0530 mallesh-H81M-S (4543)] INFO : Doing deferred dependency-detection before Rack startup

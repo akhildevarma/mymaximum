@@ -1,0 +1,8 @@
+<h4>Unsubscribe from email lists</h4>
+<p>By unsubscribing, you will no longer receive signup emails.</p>
+<%= form_for(@unscribe_list, url: settings_update_path) do |f| %>
+  <%= f.hidden_field(:group_id, value: @group.id) %>
+  <%= f.hidden_field(:email, value: @user.email) %>
+  <%= f.submit 'Unsubscribe' %>
+  <%= link_to 'Cancel', root_url %>
+<% end %>

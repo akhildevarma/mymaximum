@@ -1,0 +1,23 @@
+{{#guideline_gov_result}}
+  {{#data}}
+    <h5><a href="{{{url}}}">{{title}}</a></h5>
+    <h6>Bibliographic Source(s):</h6>
+    <div>{{{bibliographic_sources}}}</div>
+    <h6>Disease/Condition(s):</h6>
+    <div>{{{condition}}}</div>
+    <h6>Guideline Objectives:</h6>
+    <div>{{{objectives}}}</div>
+    <h6>Target Population:</h6>
+    <div>{{{target_population}}}</div>
+    <h6>Interventions and Practices Considered:</h6>
+    <div>{{{interventions_considered}}}</div>
+    <h6>Major Outcomes Considered:</h6>
+    <div>{{{outcomes_considered}}}</div>
+    <div><a href="{{{url}}}">View full guideline</a></div>
+  {{/data}}
+  <hr/>
+  <div><a href="{{{more_results_url}}}">View on National Guidelines Clearinghouse</a></div>
+{{/guideline_gov_result}}
+{{^guideline_gov_result}}
+  No National Guidelines Clearinghouse results found.
+{{/guideline_gov_result}}

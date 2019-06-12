@@ -1,0 +1,26 @@
+
+
+.home-hero {
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+
+  background-image: asset-url('home_hero.jpg');
+
+  min-height: 270px;
+  height: inherit;
+  background-position: right;
+  padding: 60px 0 30px 0;
+  text-align: center;
+  margin-top: -20px;
+
+  .hero-header {
+    color: #fff;
+    text-shadow: 0px 0px 20px #000;
+    border: none;
+
+    .subtitle {
+      font-size: 0.9em;
+    }
+  }
+}

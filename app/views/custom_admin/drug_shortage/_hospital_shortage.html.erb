@@ -1,0 +1,40 @@
+<div>
+  <h2>   
+   Hospital Shortages
+  </h2>
+
+  <hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Alternatives</th>
+      <th>Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shortages.each do |key, drug| %>
+    <tr id="<%= dom_id(drug) -%>">
+      <td>
+        <%= link_to "#{drug.title}" , drug.link, target: '_blank'%>
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary open-alternatives" data-title="<%=drug.title.gsub(/[\(]+[\w\s\W]+[\)]/,'')%>" data-toggle="modal" data-target="#modalAlternatives">Ask about alternatives</button>
+      </td>
+      <td><%= local_time(drug.published_date, '%b %e, %Y') %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<%= render 'alternatives' -%>
+
+<script>
+ $(document).on("click", ".open-alternatives", function () {
+     var title = $(this).data('title');
+     $(".modal-body #inquiry_question").val('What are therapeutic alternatives for '+  title  + '?');
+     $("#modalAlternatives .modal-content .modal-title").text( 'Ask about alternatives for "' + title + '".' );
+});
+</script>

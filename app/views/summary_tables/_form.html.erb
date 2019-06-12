@@ -1,0 +1,42 @@
+<%= simple_form_for([inquiry, summary_table]) do |f| %>
+  <%= f.input :body_html, as: :text, label: "<h4><b><u>Table</u></b></h4>".html_safe, input_html: { class: "input-block-level", rows: 20, data: { application_stylesheet_path: stylesheet_path("application"), auto_save_url:  summary_tables_auto_save_path(inquiry_id: inquiry.id, id: summary_table.id) }}, placeholder: I18n.t("summary_tables.editor_placeholder") %>
+
+  <a class="btn btn-small btn-danger pull-right" id="clear-btn">
+    <i class="icon-remove icon-white"></i>
+    Clear Table
+  </a>
+  <br>
+
+  <p class="controls" style="margin-top:10px;">
+    <%= link_to "Download Table Template", summary_table_template_path %>&nbsp;|
+    <a class="btn" style='font-size:13px;padding:0px;' id="load-btn">
+      Copy Table Template
+    </a>
+  </p>
+
+  <%- if !student? %>
+    <p class="controls">
+      <a data-toggle="collapse" data-target="#editor-tips">
+        <%= I18n.t("summary_tables.editor_tips_label") %>
+        <i class="icon-chevron-down"></i>
+      </a>
+    </p>
+
+    <div class="controls">
+      <div id="editor-tips" class="collapse">
+        <div class="well">
+          <%= I18n.t("summary_tables.editor_tips_html").html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.input :references, label: "<h4><b><u>References</u></b></h4>".html_safe, input_html: { class: "input-block-level", rows: 10 } %>
+
+  <%= f.input :complete, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: I18n.t("summary_tables.complete_label") %>
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to I18n.t("cancel"), [:edit, inquiry], class: "btn" %>
+  </div>
+<% end %>
+

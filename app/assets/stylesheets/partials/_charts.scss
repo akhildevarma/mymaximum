@@ -1,0 +1,269 @@
+.main-chart {
+  padding-top: 20px;
+}
+
+.border-head h3 {
+  border-bottom: 1px solid $yetAnotherGrey;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  font-weight: normal;
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+  font-weight: 300; 
+}
+
+.custom-bar-chart {
+  height: 290px;
+  margin-top: 20px;
+  margin-left: 10px;
+  position: relative;
+  border-bottom: 1px solid $yetAnotherGrey;
+
+  @media (min-width: 980px) {
+    margin-bottom: 40px;
+  }
+
+  .bar {
+    height: 100%;
+    position: relative;
+    width: 6%;
+    margin: 0px 4%;
+    float: left;
+    text-align: center;
+    z-index: 10;
+
+    .title {
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .value {
+      @include border-radius(5px 5px 0 0);
+      @include transition(all .3s ease);
+      position: absolute;
+      bottom: 0;
+      background: $green;
+      color: $green;
+      width: 100%;
+
+      &:hover {
+        background-color: $secondaryGrey;
+        color: $white;
+      }
+    }
+  }
+}
+
+.y-axis {
+  color: $slightlyDarkerGrey;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  font-size: 11px;
+
+  li {
+    border-top: 1px dashed $slightlyLighterGrey;
+    display: block;
+    height: 58px;
+    width: 100%;
+
+    &:last-child {
+      border-top: none;
+    }
+  }
+}
+
+.donut-chart {
+  p {
+    margin-top: 20px;
+    font-weight: 700;
+    margin-left: 15px;
+  }
+
+  h2 {
+    font-weight: 900;
+    color: #ff6b6b;
+  }
+}
+
+.chart {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+
+  .heading {
+    text-align: left;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+#barchart {
+  margin-bottom: -15px;
+  display: inline-block;
+}
+
+.panel.green-chart {
+  background: #a9d96c;
+  color: #fff;
+
+  .chart-tittle {
+    @include border-radius(0px 0px 4px 4px);
+    font-size: 16px;
+    padding: 15px;
+    display: inline-block;
+    font-weight:normal;
+    background: #99c262;
+    width: 100%;
+
+    .value {
+      float: right;
+      color: #c0f080;
+    }
+  }
+}
+
+.panel.terques-chart {
+  background: transparent;
+  color: #797979;
+
+  .chart-tittle {
+    @include border-radius(0px 0px 4px 4px);
+    font-size: 16px;
+    padding: 15px;
+    display: inline-block;
+    font-weight:normal;
+    background: #39b7ac;
+    width: 100%;
+
+    .value {
+      float: right;
+      color: #fff;
+
+      a {
+        color: #2f2f2f;
+        font-size: 12px;
+
+        &:hover, &.active {
+          color: #4ECDC4;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* Flot Chart */
+.flot-chart .chart, .flot-chart .pie, .flot-chart .bars {
+  height: 300px;
+}
+
+/* xchart */
+.demo-xchart {
+  height: 400px;
+  width: 100%;
+}
+
+/* Easy Pie Chart*/
+.easy-pie-chart {
+  display: inline-block;
+  padding: 30px 0;
+}
+
+.chart-info, 
+.chart-info .increase,
+.chart-info .decrease {
+    display: inline-block;
+}
+
+.chart-info {
+  width: 100%;
+  margin-bottom:5px;
+
+  span {
+    margin: 0 3px;
+  }
+
+  .increase {
+    background: #ff6c60;
+    width: 10px;
+    height: 10px;
+  }
+
+  .decrease {
+    background: #f2f2f2;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.chart-position {
+  margin-top: 70px;
+}
+
+.panel-footer.revenue-foot {
+  @include border-radius(0px 0px 4px 4px);
+  background-color: #e6e7ec;
+  border: none;
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    margin-bottom: -4px;
+  }
+
+  ul  {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: inline-flex;
+
+    li {
+      float: left;
+      width: 33.33%;
+
+      &.first a, &.first a:hover {
+        @include border-radius(0px 0px 0px 4px);
+      }
+
+      &.last a, &.last a:hover {
+        @include border-radius(0px 0px 4px 0px);
+        border-right: none;
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 15px;
+        text-align: center;
+        border-right: 1px solid #d5d8df;
+        color: #797979;
+
+        i {
+          color: #c6cad5;
+          display: block;
+          font-size: 16px;
+        }
+      }
+
+      &.active a, a:hover {
+        background: #fff;
+        position: relative;
+
+        i {
+          color: #ff6c60;
+          display: block;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

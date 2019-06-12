@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div id="modalUploader" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upload Documents</h4>
+      </div>
+      <div class="modal-body">
+        <div id='errors'><%=@errors.full_messages.join(' ') if @errors.present?%></div>
+        <%= form_for :document, remote: true, authenticity_token: true, url: docs_upload_path(resource_id: @resource.id, resource_type: @resource.class.name.downcase), html: {multipart: true , id: 'upload-form'} do |f| -%>
+       <label class="control-label">Select File</label>
+        <%= f.file_field :file -%>   <br/>
+         <%= f.label "Description" %>
+            <%= f.text_area :description, rows: 2, cols: 60 %> <br />
+         
+         <br/>
+        <input name="button" value="Submit" onclick=" $('#upload-form').submit();" type="button"></br>
+       <% end -%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

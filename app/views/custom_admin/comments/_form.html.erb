@@ -1,0 +1,11 @@
+
+<%= simple_form_for @comment, url: custom_admin_comment_path(@comment), html: { class: 'form-horizontal' } do |f| -%>
+  <%= f.input :title, required: true -%>
+  <%= f.input :body, required: true -%>
+  <%= f.input :deleted, required: true -%>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-4">
+      <%= f.submit class: 'btn btn-primary' -%>
+    </div>
+  </div>
+<%- end -%>

@@ -1,0 +1,13 @@
+<% content_for :custom_layout do %>
+
+  <section class="cards-container content-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <%= render partial: "my_inquiries/item", collection: @inquiries, locals: { show_name: false } %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% end %>

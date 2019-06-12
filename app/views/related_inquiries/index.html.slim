@@ -1,0 +1,21 @@
+h3 
+  ' Related Inquiries
+h5 Original:
+hr
+.inquiry
+  .question= @inquiry.question
+  = render 'shared/tags', mustache: { tags: @inquiry.tag_list }
+hr
+h5 Related:
+- if @related_inquiries.empty?
+  p No related inquiries found.
+- else
+  #inquiries
+    hr
+    - @related_inquiries.each do |related_inquiry|
+      = link_to inquiry_related_inquiry_path(@inquiry, related_inquiry), class: "inquiry-wrapper" do
+        .inquiry
+          .question= related_inquiry.question
+          = render 'shared/tags', mustache: { tags: related_inquiry.tag_list }
+      hr
+

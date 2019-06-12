@@ -1,0 +1,28 @@
+common: &common
+  adapter: postgresql
+  encoding: utf8
+  min_messages: WARNING
+
+development: &development
+  <<: *common
+  database: <%= ENV['MERCER_DEV_DATABASE'] || 'mercer-inpharmd_development' %>
+  host: <%= ENV['MERCER_DEV_HOST'] || 'localhost' %>
+  user: <%= ENV['MERCER_DEV_USER'] || 'postgres' %>
+  password: <%= ENV['MERCER_DEV_PASSWORD'] || 'postgres' %>
+  port: <%= ENV['MERCER_DEV_PORT'] || '5432' %>
+
+production:
+  <<: *development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  <<: *common
+  database: <%= ENV['MERCER_DEV_DATABASE'] || 'mercer-inpharmd_development' %>
+  host: <%= ENV['MERCER_DEV_HOST'] || 'localhost' %>
+  user: <%= ENV['MERCER_DEV_USER'] || 'postgres' %>
+  password: <%= ENV['MERCER_DEV_PASSWORD'] || 'postgres' %>
+  port: <%= ENV['MERCER_DEV_PORT'] || '5432' %>
+cucumber:
+  <<: *test

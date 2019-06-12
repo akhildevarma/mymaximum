@@ -1,0 +1,95 @@
+<% if authenticated? && current_user.in_team? %>
+  <div id='view-docs'></div> 
+<%end%>
+<div id="nav-xs" class="visible-xs-block">
+  <% if authenticated? %>
+      <ul class="nav navbar-nav navbar-right navbar-mobile">
+        <%- if student? || administrator? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Researcher&nbsp;<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="<%= nav_link_class("inquiries")%> ">
+                <%= link_to "Inquiries", inquiries_path %>
+              </li>
+              <li>
+              <%= link_to "Write Blog Post", write_blog_path %>
+            </li>
+            </ul>
+          </li>
+        <%- end %>
+        <% if current_user.in_team? && team_admin? %>
+        <li class="<%=nav_link_class("teams")%>">
+          <%= link_to "Manage Users", members_custom_admin_team_path(current_user.team) %>
+        </li>
+      <% end %>
+        <%- if administrator? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Admin&nbsp;<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <%= render "shared/nav/admin" %>
+            </ul>
+          </li>
+
+        <% end %>
+        <!-- <li role="separator" class="divider" style="border-top: solid 1px #eee;"></li> -->
+        <% if !current_user.private_labeled_user? && (provider? || admin? ) %>
+          <li class="<%=nav_link_class("home")%>">
+          <%= link_to "New Inquiry",root_path %>
+        </li>
+        <li class"<%=nav_link_class("my_inquiries")%>">
+            <%= link_to "Asked By Me", my_inquiries_path %>
+          </li>
+        <% end %>
+          <% if !current_user.team_admin? && current_user.private_labeled_user? && provider?%>
+           <li class="<%=nav_link_class('home')%>">
+          <%= link_to "New Inquiry",root_path %>
+        </li>
+          <li class"<%=nav_link_class("my_inquiries")%>">
+            <%= link_to "Asked By Me", my_inquiries_path %>
+          </li>
+          <% end %>
+          <!-- <li class"<%=nav_link_class("my_inquiries")%>"> -->
+            <%#= link_to "Asked By Others", my_inquiries_path %>
+          <!-- </li> -->
+        <li class="<%= nav_link_class("my_profiles") %>">
+          <%= link_to "My Profile", edit_my_profile_path %>
+        </li>
+        <% if current_user.in_team? && !current_user.private_labeled_user?%>
+            <li class="<%= nav_link_class("my_profiles") %>">
+              <%= link_to "Drug Shortage Update", drug_shortages_path %>
+            </li>
+            <li class="<%= nav_link_class("my_profiles") %>">
+              <%= link_to "View Hospital Documents", docs_view_path(resource_id: current_user.team.id, resource_type: 'team'), method: :get, remote: true %>
+            </li>
+             
+        <% end %>
+        <!-- <li role="separator" class="divider" style="border-top: solid 1px #eee;"></li> -->
+        <% unless current_user.private_labeled_user? %>
+        <li role="separator" class="divider"></li>
+            <li class="<%= nav_link_class("mme_calculator") %>">
+              <%= link_to "MME Calculator", mme_calculator_path %>
+            </li>
+                 <% end %>
+        <li>
+          <%= link_to "FAQ", "//support.inpharmd.com" %>
+        </li>
+        <li>
+          <%= link_to "Our Story", "/our_story" %>
+        </li>
+        <!-- <li role="separator" class="divider" style="border-top: solid 1px #eee;"></li> -->
+        <li>
+          <%= link_to "Log Out", session_path, method: :delete %>
+        </li>
+
+    <% else %>
+
+      <%= render "shared/nav/logged_out" %>
+
+    <% end %>
+
+  </ul>
+</div><!-- /.navbar-collapse -->

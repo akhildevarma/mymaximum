@@ -1,0 +1,24 @@
+<% content_for(:head) do %>
+  <% if browser.ie?("<9")  %>
+    <%= javascript_include_tag "healthcare.ie8.entry" -%>
+  <% else %>
+    <%= javascript_include_tag "healthcare.modern.entry" -%>
+  <% end %>
+<% end %>
+
+<%= render layout: 'layouts/base' do %>
+
+  <section id="main-content">
+    <section class="wrapper">
+      <%= render partial: "shared/flash_messages", flash: flash %>
+
+      <%= render template: "layouts/main" %>
+
+    </section>
+  </section>
+
+  <% content_for(:footer) do %>
+    <%= render 'shared/footer' if footer_required? %>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,13 @@
+h3 
+  | Edit User Information 
+  - if current_user == @user_profile.user && current_user.payment_account.present?
+    .pull-right
+      = link_to "My Billing Information", edit_payment_account_path, class: "btn btn-primary"
+h4 
+  => @user_profile.user.email
+  small= @user_profile.user.role
+= simple_form_for @user_profile, url: user_profile_path(id: @user_profile.id), method: "patch", html: { class: "form-horizontal" } do |f|
+  = render partial: 'shared/user_profile_fields', locals: { f: f, user_profile: @user_profile }
+  .form-actions
+    => f.button :submit, "Update User Information", class: "btn btn-primary"
+    = link_to "Cancel", user_profile_path(id: @user_profile.id), class: "btn"

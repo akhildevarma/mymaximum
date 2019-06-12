@@ -1,0 +1,4 @@
+{
+   "description": "Response when user session credentials submitted",
+   "type": "string"
+}

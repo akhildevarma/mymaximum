@@ -1,0 +1,36 @@
+@import url(//fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300,700);
+@import url(//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic);
+
+$rudaFontFamily: 'Ruda', sans-serif;
+$openSansFontFamily: 'Open Sans', sans-serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+
+.fontawesome-icon-list {
+  h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  a {
+    color: $primaryTextColor;
+
+    &:hover {
+      color: #35404D
+    }
+  }
+
+  i {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+  .page-header {
+    border-bottom: 1px solid #C9CDD7;
+  }
+
+  .col-sm-4, .col-md-3, .col-xs-6 {
+    margin-bottom: 10px;
+  }
+}

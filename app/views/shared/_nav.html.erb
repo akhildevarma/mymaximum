@@ -1,0 +1,26 @@
+<nav class="stickynav navbar navbar-default navbar-inpharmd navbar-fixed-top" id="stickynav">
+  <div class="">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <!-- <span class="sr-only">Toggle navigation</span> -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: "navbar-brand-link" do -%>
+        <%= image_tag 'logo-no-tagline.png', class: "navbar-brand-image", height: "50" %>
+        <% if @team.present? && @team.logo.present? %>
+           <%= image_tag @team.logo.url(:medium), class: "navbar-brand-image"%>
+        <% end %>
+       
+      <% end %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <%= render 'shared/nav_xs' %>
+      <%= render 'shared/nav_sm' %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- / -->
+</nav>

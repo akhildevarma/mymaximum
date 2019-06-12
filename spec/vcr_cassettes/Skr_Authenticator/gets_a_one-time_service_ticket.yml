@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://utslogin.nlm.nih.gov/cas/v1/tickets
+    body:
+      encoding: UTF-8
+      string: username=inpharmd&password=BigNerd99!
+    headers:
+      Accept:
+      - text/plain
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:03:57 GMT
+      Location:
+      - https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-283580-W6u9ydYn5kF930GCP6A7foocf3TZREUsWaoLrf5dcFcnZBQlMk-cas
+      Accept-Ranges:
+      - bytes
+      Server:
+      - Noelios-Restlet-Engine/1.1.10
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '440'
+      X-Vip-Info:
+      - 130.14.16.164:443
+      X-Pool-Info:
+      - /Common/utslogin_p 10.1.5.113 8080
+    body:
+      encoding: UTF-8
+      string: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>201
+        The request has been fulfilled and resulted in a new resource being created</title></head><body><h1>TGT
+        Created</h1><form action="https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-283580-W6u9ydYn5kF930GCP6A7foocf3TZREUsWaoLrf5dcFcnZBQlMk-cas"
+        method="POST">Service:<input type="text" name="service" value=""><br><input
+        type="submit" value="Submit"></form></body></html>
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:03:58 GMT
+- request:
+    method: post
+    uri: https://utslogin.nlm.nih.gov/cas/v1/tickets/TGT-283580-W6u9ydYn5kF930GCP6A7foocf3TZREUsWaoLrf5dcFcnZBQlMk-cas
+    body:
+      encoding: UTF-8
+      string: service=http%3A%2F%2Fskr.nlm.nih.gov%2Fcgi-bin%2FSKR%2FRestricted_CAS%2FAPI_batchValidationII.pl
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 Aug 2013 18:03:57 GMT
+      Accept-Ranges:
+      - bytes
+      Server:
+      - Noelios-Restlet-Engine/1.1.10
+      Content-Type:
+      - text/plain;charset=ISO-8859-1
+      Content-Length:
+      - '34'
+      X-Vip-Info:
+      - 130.14.16.164:443
+      X-Pool-Info:
+      - /Common/utslogin_p 10.1.5.113 8080
+    body:
+      encoding: UTF-8
+      string: ST-795399-tHZGVt34xwRiZ7cK3EG7-cas
+    http_version: 
+  recorded_at: Wed, 21 Aug 2013 18:03:59 GMT
+recorded_with: VCR 2.5.0

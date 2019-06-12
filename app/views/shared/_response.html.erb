@@ -1,0 +1,172 @@
+<p>
+  <em>
+  <%= local_date(inquiry.created_at) -%>
+  </em>
+</p>
+<p>
+  Dear <%= inquiry.submitter.name -%>,
+</p>
+<p>
+  Thank you for your inquiry (reference #<%= inquiry.id -%>):
+</p>
+<blockquote>
+  <div class="question"><%= simple_format h(inquiry.question) -%></div>
+</blockquote>
+
+<% if @image = inquiry.images.last %>
+        <div style='margin-top:12px'>
+        
+        <%= image_tag @image.image.url(:thumb) %>
+      
+    </div>
+    <% end %>
+<%- unless inquiry.custom_response_text.blank? -%>
+<div class="custom-response-text" id="response-text-id">
+  <%= simple_format h(inquiry.custom_response_text) -%>
+</div>
+<%- end -%>
+
+<%- unless inquiry.level_of_evidence.blank? -%>
+<div class="custom-response-text" id="response-text-id">
+  <%= inquiry.level_of_evidence -%>.
+</div>
+<br />
+<%- end -%>
+
+<%- unless inquiry.search_strategy.blank? %>
+<div class="accordion" id="search-strategy-accordion">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#search-strategy-accordion" href="#collapseOne">
+        Search Strategy
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <%= inquiry.search_strategy %>
+      </div>
+    </div>
+  </div>
+</div>
+<%- end -%>
+<p>
+  Please see the following tabs below for your response.
+  For customer service, please contact us at
+  <%= mail_to "support@inpharmd.com", nil, { subject: "Inquiry ##{inquiry.id}", body: "\"#{inquiry.question}\"" } -%>.
+</p>
+
+<hr>
+
+<ul class="nav nav-pills">
+  <%- idx = 0 -%>
+  <%- unless inquiry.background.blank? -%>
+  <li class="<%= 'active' if idx == 0 -%>">
+    <a href="#" data-toggle="tab" data-target="#response" data-slide-to="<%= idx -%>">
+      Background
+    </a>
+  </li>
+  <%-
+    active_tab ||= 0
+    idx += 1
+  -%>
+  <%- end -%>
+
+  <%- unless inquiry.relevant_prescribing_info.blank? -%>
+  <li class="<%= 'active' if idx == 0 -%>">
+    <a href="#" data-toggle="tab" data-target="#response" data-slide-to="<%= idx -%>">
+      Relevant Prescribing Information
+    </a>
+  </li>
+  <%-
+    active_tab ||= 1
+    idx += 1
+  -%>
+  <%- end -%>
+
+  <li class="<%= 'active' if idx == 0 -%>">
+    <a href="#" data-toggle="tab" data-target="#response" data-slide-to="<%= idx -%>">
+      Review of Literature
+    </a>
+  </li>
+  <%- active_tab ||= 2 -%>
+</ul>
+
+<div id="response" class="carousel slide" data-interval="false">
+  <div class="carousel-inner">
+    <%- unless inquiry.background.blank? -%>
+    <div class="item <%= 'active' if active_tab == 0 -%>">
+      <p class="custom-response-text">
+        <%= simple_format h(inquiry.background) -%>
+      </p>
+
+      <%- unless inquiry.background_references.blank? -%>
+      <div class="reference-section">
+        References:
+        <small class="references">
+          <%= simple_format h(inquiry.background_references) -%>
+        </small>
+      </div>
+      <%- end -%>
+    </div>
+    <%- end -%>
+
+    <%- unless inquiry.relevant_prescribing_info.blank? -%>
+    <div class="item <%= 'active' if active_tab == 1 -%>">
+      <p class="custom-response-text">
+        <%= simple_format h(strip_tags(inquiry.relevant_prescribing_info)) -%>
+      </p>
+
+      <%- unless inquiry.relevant_prescribing_info_references.blank? -%>
+      <div class="reference-section">
+        References:
+        <small class="references">
+          <%= simple_format h(inquiry.relevant_prescribing_info_references) -%>
+        </small>
+      </div>
+      <%- end -%>
+    </div>
+    <%- end -%>
+
+    <div class="item <%= 'active' if active_tab == 2 -%>">
+      <p class="custom-response-text">
+        A search of the published medical literature revealed
+        <%= pluralize(inquiry.summary_tables.count, 'study') -%>
+        investigating the researchable question:
+
+        <blockquote>
+          <%= simple_format h(inquiry.researchable_question.blank? ? inquiry.question : inquiry.researchable_question) -%>
+        </blockquote>
+
+        <%- if inquiry.summary_tables.count > 0 -%>
+          Please see
+          <%- if inquiry.summary_tables.count > 1 -%>
+            Tables 1-<%= inquiry.summary_tables.count -%>
+          <%- else -%>
+            Table 1
+          <%- end -%>
+          for your response.
+        <%- end -%>
+      </p>
+
+      <%- if inquiry.summary_tables.count > 0 -%>
+      <ul class="nav nav-tabs" role="tablist">
+        <%- (1..inquiry.summary_tables.count).each do |index| -%>
+        <li class="<%= 'active' if index == 1 -%>">
+          <a href="#table-<%= index -%>" role="tab" data-toggle="tab">
+            Table <%= index -%>
+          </a>
+        </li>
+        <%- end -%>
+      </ul>
+
+      <div id="table-responses" class="tab-content">
+        <%- inquiry.summary_tables.each_with_index do |summary_table, idx| -%>
+        <div id="table-<%= idx + 1 -%>" class="tab-pane <%= 'active' if summary_table == inquiry.summary_tables.first -%>">
+          <%= render partial: "shared/summary_table", locals: { summary_table: summary_table } -%>
+        </div>
+        <%- end -%>
+      </div>
+      <%- end -%>
+    </div>
+  </div>
+</div>

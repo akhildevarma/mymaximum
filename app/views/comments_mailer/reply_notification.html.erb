@@ -1,0 +1,17 @@
+<style>
+.replies {margin-left: 50px;}
+/* 5 levels nesting */
+.replies .replies .replies .replies .replies {margin-left: 0;}
+
+</style>
+
+<div style="width:600px" width="600">
+
+  <div style="margin:15px;">
+  <h3>Inquiry</h3>
+  <h4><%=@inquiry.question%></h4>
+  <hr>
+  <h3>Comments and Replies </h3>
+		<%= comments_tree_for @comments, 'comments/mail_comment' %>
+	</div>
+</div>

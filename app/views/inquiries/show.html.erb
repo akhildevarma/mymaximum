@@ -1,0 +1,90 @@
+<% content_for(:custom_layout) do %>
+
+  <%= render 'publish' if admin? && (@inquiry.publishable? || @inquiry.published?)%>
+
+  <section id="inquiry-response-question">
+      <% if @inquiry.published? && @inquiry.researchable_question? %>
+        <%= simple_format h(@inquiry.researchable_question.capitalize_first) -%>
+      <% elsif @inquiry.question %>
+        <%= simple_format h(@inquiry.question.capitalize_first) -%>
+      <% elsif @inquiry.title %>
+        <%= simple_format h(@inquiry.title.capitalize_first) -%>
+      <% end %>
+  </section>
+  <% if @inquiry.inquiry_type!='blog' %>
+    <section id="inquiry_rating_<%=@inquiry.id%>" class="pull-right">
+      <%= render partial: 'shared/rating', locals: {inquiry: @inquiry} %>
+    </section>
+  <% end %>
+
+  <% if @inquiry.custom_response_text %>
+  <section style="padding: 40px;
+    font-size: large;">
+    <header>
+      <h4 style="font-weight: bold;font-size: 1em;">
+        Comment by InpharmD Researcher
+      </h4>
+    </header>
+    <blockquote><%= @inquiry.custom_response_text %></blockquote>
+    <% if @inquiry.level_of_evidence %>
+      <div class="level_of_evidence">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#level_of_evidence">Level of evidence</button><br>
+        <div id="level_of_evidence" class="collapse">
+         <p> <blockquote><%= @inquiry.level_of_evidence %>.</blockquote> </p>
+        </div><br><br>
+      <div>
+    <% end %>
+    <%= button_to "Reopen to Include Review of Literature Section", re_open_inquiry_path(@inquiry), method: :put, style: 'margin-bottom:5px; border-bottom: solid 1px ##d6d6d6;', data: { confirm: 'Are you sure you want to reopen this inquiry?' } , class: "btn btn-primary" if current_user && !current_user.private_labeled_user? && !@enable_discussion && include_section?(@inquiry.hidden_sections, 'summary_tables')%>
+  </section>
+  <% end %>
+<% if @inquiry.search_strategy %>
+  <div class="search_strategy">
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#search_strategy">Search Strategy</button><br>
+    <div id="search_strategy" class="collapse">
+     <p> <blockquote><%= @inquiry.search_strategy %></blockquote> </p>
+    </div><br><br>
+   <div>
+<% end %>
+
+<%#= link_to "View P&T Documents", docs_view_path(resource_id: @inquiry.id, resource_type: 'inquiry'), method: :get, remote: true, style: 'margin-left: 800px; border-bottom: solid 1px ##d6d6d6;', class: "btn btn-link" if !@enable_discussion && @inquiry.project_type_related?%>
+<% if @inquiry.documents.present? %>
+<table class="table table-striped">
+  <thead>
+    <th>File Name</th>
+    <!-- <th>Status</th> -->
+    <th>Description</th>
+  </thead>
+  <tbody>
+<% @inquiry.documents.each do |doc|%>
+ <tr>
+   <td><%=link_to doc.file_file_name,docs_download_path(token: doc.token) ,target: '_blank'%></td>
+   <!-- <td><%#= doc.status_text%></td> -->
+   <td><%=doc.description%></td>
+ </tr>
+<%end%>
+</tbody>
+</table>
+
+<% end %>
+  <!-- RESPONSE DOCUMENT -->
+  <section id="response-document">
+    <% if browser.modern? %>
+      <%= render partial: 'response_tabs' %>
+    <% else %>
+      <div style="padding: 40px 0;">
+        <%= render partial: 'shared/inquiry_response_document_body', locals: { key: :all, enable_discussion: false } %>
+      </div>
+    <% end %>
+  </section>
+<% end %>
+  <!-- /RESPONSE DOCUMENT -->
+  <%= render 'shared/profile' if current_user && (!current_user.profile.try :decorate) %>
+
+  <!-- View Documents -->
+  <div id='view-docs'></div>
+  <script>
+  function reset_comments(){
+    window.App.Comments.start();
+  }
+</script>
+

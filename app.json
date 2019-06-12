@@ -1,0 +1,61 @@
+{
+  "name": "Inpharmd",
+  "website": "https://inpharmd.com/",
+  "repository": "https://github.com/inpharmd/inpharmd",
+  "logo": "https://inpharmd.com/images/inpharmd-logo-socialsquare.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake deploy:setup"
+  },
+  "env": {
+    "APP_NAME": {
+      "required": true
+    },
+    "HEROKU_API_KEY": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "STRIPE_API_KEY": {
+      "required": true
+    },
+    "STRIPE_PUBLIC_KEY": {
+      "required": true
+    },
+    "TWILIO_ACCOUNT_SID": {
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "required": true
+    },
+    "TWILIO_PHONE_NUMBER": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    },
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "newrelic:wayne",
+    "papertrail:choklad",
+    "heroku-postgresql:hobby-dev",
+    "scheduler:standard",
+    "postmark:10k"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
