@@ -7,7 +7,7 @@
     "npm": "3.10.9"
   },
   "devDependencies": {
-    "bower": "1.8.0",
+    "bower": "1.8.8",
     "node-sass": "4.1.1",
     "webpack-dev-server": "1.16.2"
   },
@@ -34,7 +34,7 @@
     "backbone-validation": "^0.11.5",
     "bloodhound-js": "1.2.1",
     "bootstrap": "3.3.7",
-    "bower": "1.8.0",
+    "bower": "1.8.8",
     "bower-webpack-plugin": "0.1.9",
     "chartkick": "^2.1.0",
     "chosen-js": "1.6.2",
