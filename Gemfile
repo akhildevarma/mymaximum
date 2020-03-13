@@ -105,7 +105,7 @@ gem 'best_in_place'
 gem 'chartkick'
 
 # Admin
-gem "administrate", "~> 0.2.2"
+gem "administrate", "~> 0.13.0"
 gem 'bourbon'
 
 gem "non-stupid-digest-assets"
