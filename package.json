@@ -52,7 +52,7 @@
     "ie8-eventlistener": "0.1.1",
     "imports-loader": "0.6.5",
     "inflection": "^1.10.0",
-    "jquery": "1.11.3",
+    "jquery": "3.5.0",
     "jquery-autosize": "1.18.18",
     "jquery-ujs": "1.2.2",
     "js-cookie": "^2.1.3",
