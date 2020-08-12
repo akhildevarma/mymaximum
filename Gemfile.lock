@@ -138,7 +138,7 @@ GEM
       mail
     capybara-slow_finder_errors (0.1.2)
       capybara (~> 2.0)
-    chartkick (2.0.0)
+    chartkick (3.4.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.1.0)
