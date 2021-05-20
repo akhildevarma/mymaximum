@@ -39,7 +39,7 @@ gem 'delayed_job_web', '~> 1.2.5'
 gem 'bcrypt', '~> 3.1.1'
 gem 'enumerize', '~> 0.6.1' # handy enumerated type gem
 gem 'workflow', '~> 1.2.0' # finite state machine DSL
-gem 'nokogiri', '~> 1.6.0'
+gem 'nokogiri', '~> 1.9.1'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'validates_email_format_of', '~> 1.5.3'
 
