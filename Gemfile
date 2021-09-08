@@ -119,7 +119,7 @@ gem 'has_secure_token'
 gem 'gibbon'
 
 group :development do
-  gem 'better_errors', '~> 2.1.1'
+  gem 'better_errors', '~> 2.9.1'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'guard-bundler'
   # gem 'guard-rspec'
