@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "bower": "1.8.0",
-    "node-sass": "4.1.1",
+    "node-sass": "7.0.0",
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
